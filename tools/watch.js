@@ -1,5 +1,5 @@
-// Vigila notebooks/ y relanza build.js (incremental) cuando algo cambia.
-// Sondeo cada segundo: funciona igual en carpetas montadas, donde fs.watch no siempre avisa.
+// Watches notebooks/ and reruns build.js (incremental) when anything changes.
+// Polls every second: works on mounted folders too, where fs.watch doesn't always fire.
 const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
@@ -16,7 +16,7 @@ function signature() {
       if (f.startsWith('.')) continue;
       const st = fs.statSync(path.join(full, f));
       parts.push(`${dir}/${f}:${st.size}:${st.mtimeMs}`);
-      // un nivel más: assets/
+      // one level down: assets/
       if (st.isDirectory()) {
         for (const g of fs.readdirSync(path.join(full, f))) {
           if (g.startsWith('.')) continue;
@@ -41,16 +41,16 @@ function build() {
   child.stderr.on('data', (d) => process.stderr.write(d));
   child.on('exit', (code) => {
     running = false;
-    console.log(`${new Date().toLocaleTimeString()} build ${code === 0 ? 'ok' : `falló (${code})`} en ${Date.now() - started} ms`);
+    console.log(`${new Date().toLocaleTimeString()} build ${code === 0 ? 'ok' : `failed (${code})`} in ${Date.now() - started} ms`);
     if (pending) { pending = false; build(); }
   });
 }
 
 setInterval(() => {
   let now;
-  try { now = signature(); } catch { return; } // archivo a medio copiar
+  try { now = signature(); } catch { return; } // file still being copied
   if (now !== last) { last = now; changedAt = Date.now(); return; }
-  // espera 1 s sin cambios (copias grandes) antes de construir
+  // wait 1 s without changes (large copies) before building
   if (changedAt && Date.now() - changedAt > 1000) {
     changedAt = 0;
     if (running) pending = true;
@@ -58,4 +58,4 @@ setInterval(() => {
   }
 }, 1000);
 
-console.log('vigilando', SRC);
+console.log('watching', SRC);

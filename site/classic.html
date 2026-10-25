@@ -1,14 +1,18 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Drawing Talks</title>
 <meta http-equiv="Cache-Control" content="no-cache">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 <main id="shelf" class="view">
+  <nav class="corner">
+    <a href="./" data-i18n="threeDView"></a>
+    <button type="button" data-lang-toggle></button>
+  </nav>
   <header class="shelf-head">
     <h1>Drawing Talks</h1>
     <p id="shelf-count"></p>
@@ -26,18 +30,18 @@
     <div class="book" id="book"></div>
   </div>
   <footer class="toolbar">
-    <button id="btn-back" aria-label="Volver a los cuadernos" title="Cuadernos">
+    <button id="btn-back" data-i18n-aria="backToNotebooks" data-i18n-title="notebookList">
       <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
     </button>
-    <button id="btn-prev" aria-label="Lámina anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button id="btn-prev" data-i18n-aria="previousSketchnote"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
     <span id="r-pos" class="pos"></span>
-    <button id="btn-next" aria-label="Lámina siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-    <button id="btn-full" aria-label="Pantalla completa" title="Pantalla completa">
+    <button id="btn-next" data-i18n-aria="nextSketchnote"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button id="btn-full" data-i18n-aria="fullscreen" data-i18n-title="fullscreen">
       <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
     </button>
   </footer>
 </main>
 
-<script src="app.js?v=9"></script>
+<script type="module" src="app.js?v=10"></script>
 </body>
 </html>

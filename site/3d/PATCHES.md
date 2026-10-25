@@ -20,7 +20,7 @@ against the original source text, and the script is the full list of changes:
   the relief
 - the open book: page stacks as thick as the real leaves, the left board drops to table level,
   the spine flattens and every leaf bends down to the same point of the spine
-- orbit limits, Spanish labels, URL hooks (`openBook`, `onSpreadChange`)
+- orbit limits, URL hooks (`openBook`, `onSpreadChange`), UI copy through `callbacks.t` (English and Spanish, `../i18n.js`)
 
 To regenerate:
 

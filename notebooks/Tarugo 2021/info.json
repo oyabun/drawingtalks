@@ -1,63 +1,63 @@
 {
-  "evento": "Tarugo",
-  "edicion": "2021",
-  "fecha": "2021",
-  "lugar": "",
+  "event": "Tarugo",
+  "edition": "2021",
+  "date": "2021",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 7,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 7,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png",
-      "titulo": "Aportando Transparencia a la Administración Pública",
-      "ponente": "Jaime Gómez-Obregón",
+      "sketchnote": 1,
+      "file": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png",
+      "title": "Aportando Transparencia a la Administración Pública",
+      "speaker": "Jaime Gómez-Obregón",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png",
-      "titulo": "Palabras Mágicas",
-      "ponente": "Eva Janeiro",
+      "sketchnote": 2,
+      "file": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png",
+      "title": "Palabras Mágicas",
+      "speaker": "Eva Janeiro",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png",
-      "titulo": "Cómo construir tu propio páncreas",
-      "ponente": "Antonio Santos",
+      "sketchnote": 3,
+      "file": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png",
+      "title": "Cómo construir tu propio páncreas",
+      "speaker": "Antonio Santos",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png",
-      "titulo": "Cómo hacer las américas en 2021",
-      "ponente": "Diego Ballesteros y Evaristo Babé",
+      "sketchnote": 4,
+      "file": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png",
+      "title": "Cómo hacer las américas en 2021",
+      "speaker": "Diego Ballesteros y Evaristo Babé",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png",
-      "titulo": "La historia de la primera programadora de España",
-      "ponente": "Paz Gimeno",
+      "sketchnote": 5,
+      "file": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png",
+      "title": "La historia de la primera programadora de España",
+      "speaker": "Paz Gimeno",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png",
-      "titulo": "Menores y redes sociales · La realidad que no conoces",
-      "ponente": "Pablo Duchement",
+      "sketchnote": 6,
+      "file": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png",
+      "title": "Menores y redes sociales · La realidad que no conoces",
+      "speaker": "Pablo Duchement",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "Tarugo 21 - 7 - Ousman Umar.png",
-      "titulo": "Ousman Umar",
-      "ponente": "",
+      "sketchnote": 7,
+      "file": "Tarugo 21 - 7 - Ousman Umar.png",
+      "title": "Ousman Umar",
+      "speaker": "",
       "url": ""
     }
   ]

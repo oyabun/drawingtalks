@@ -1,39 +1,41 @@
+import { t, translatePage } from './i18n.js';
+
 const $ = (id) => document.getElementById(id);
 const shelf = $('shelf'), reader = $('reader'), stage = $('stage'), bookEl = $('book');
 
-// Modelo de libro: cada lámina (4:3) ocupa el libro abierto entero.
-// Hoja -1 = tapa: cara = portada, dorso = mitad izquierda de la lámina 0.
-// Hoja j: cara = mitad derecha de la lámina j, dorso = mitad izquierda de la j+1.
-// Hoja N-1 = contratapa: su dorso es la contraportada.
-// page: -1 = cerrado por delante, 0..N-1 = lámina abierta, N = cerrado por detrás.
-const OPEN = 24;      // grados que se levanta cada mitad hacia el espectador
-const FAN = 0.7;      // grados extra por hoja apilada; el canto del bloque asoma sin abanico
-const FAN_Z = 1.5;    // profundidad entre hojas apiladas
-const STACK = 6;      // hojas visibles a cada lado (las tapas siempre se ven, debajo)
-const STRIPS = 12;    // tiras por hoja para poder curvarla
-const BEND = 70;      // curvatura máxima al pasar página (grados entre lomo y borde)
+// Book model: each sketchnote (4:3) fills the whole open book.
+// Leaf -1 = front board: front = cover, back = left half of sketchnote 0.
+// Leaf j: front = right half of sketchnote j, back = left half of sketchnote j+1.
+// Leaf N-1 = back board: its back is the back cover.
+// page: -1 = closed showing the front, 0..N-1 = open at that sketchnote, N = closed showing the back.
+const OPEN = 24;      // degrees each half lifts towards the viewer
+const FAN = 0.7;      // extra degrees per stacked leaf; the block's edge shows without fanning
+const FAN_Z = 1.5;    // depth between stacked leaves
+const STACK = 6;      // leaves visible on each side (the boards always show underneath)
+const STRIPS = 12;    // strips per leaf so it can bend
+const BEND = 70;      // maximum bend while turning (degrees between spine and edge)
 const PRELOAD = 3;
 
 let notebooks = [];
 let current = null;
 let page = -1;
-let leaves = [];      // índice j+1 -> hoja j
-let anim = null;      // animación de giro en curso
-let pw = 0;           // ancho de media página en px
+let leaves = [];      // index j+1 -> leaf j
+let anim = null;      // turn animation in progress
+let pw = 0;           // half-page width in px
 
-const label = (n) => `${n} ${n === 1 ? 'lámina' : 'láminas'}`;
+const label = (n) => t('sketchnotes', n);
 const rad = (d) => (d * Math.PI) / 180;
 
 function hashFor(nb, p) {
   if (p < 0) return `#/${nb.slug}`;
-  if (p >= nb.pages.length) return `#/${nb.slug}/fin`;
+  if (p >= nb.pages.length) return `#/${nb.slug}/end`;
   return `#/${nb.slug}/${p + 1}`;
 }
 
-/* ---------- Estantería: libretas cerradas ---------- */
+/* ---------- Shelf: closed notebooks ---------- */
 let shelfCols = 0;
 function renderShelf() {
-  $('shelf-count').textContent = `${notebooks.length} cuadernos`;
+  $('shelf-count').textContent = t('notebooks', notebooks.length);
   const grid = $('grid');
   const cs = getComputedStyle(grid);
   const bw = parseFloat(cs.getPropertyValue('--book-slot')), gap = parseFloat(cs.columnGap) || 0;
@@ -41,7 +43,7 @@ function renderShelf() {
   if (cols === shelfCols) return;
   shelfCols = cols;
   const cards = notebooks.map(card);
-  // una balda por fila de libretas
+  // one shelf per row of notebooks
   const rows = [];
   for (let i = 0; i < cards.length; i += cols) {
     const row = document.createElement('div');
@@ -82,7 +84,7 @@ function card(nb) {
   return a;
 }
 
-/* ---------- Libro ---------- */
+/* ---------- Book ---------- */
 function layout() {
   if (!current) return;
   const w = stage.clientWidth * 0.72, h = stage.clientHeight * 0.8;
@@ -102,7 +104,7 @@ function makeLeaf(j, n) {
   if (j === -1) leaf.classList.add('cover-leaf');
   if (j === n - 1) leaf.classList.add('back-leaf');
   leaf.strips = [];
-  // tapas: cartón rígido algo más grande que las hojas
+  // boards: rigid card slightly larger than the leaves
   leaf.rigid = j === -1 || j === n - 1;
   if (leaf.rigid) leaf.insertAdjacentHTML('beforeend', '<div class="board"><div class="b-out"></div><div class="b-in"></div><div class="b-side"></div></div>');
   let parent = leaf;
@@ -120,7 +122,7 @@ function makeLeaf(j, n) {
 
 function buildBook(nb) {
   const n = nb.pages.length;
-  // bloque de hojas: canto y cabeza visibles con el libro cerrado
+  // page block: fore-edge and head visible when closed
   bookEl.innerHTML = '<div class="block"><div class="fore"></div><div class="head"></div></div>';
   bookEl.style.setProperty('--t', `${thickness(n)}px`);
   leaves = [];
@@ -151,8 +153,8 @@ function loadImages(p) {
 
 const thickness = (n) => Math.min(24, 6 + n);
 
-// Posición en reposo de la hoja j cuando la vista está en p.
-// Cerrado: todas planas y apretadas en un bloque. Abierto: dos pilas en V.
+// Resting pose of leaf j when the view is at p.
+// Closed: all flat and packed into a block. Open: two stacks in a V.
 function rest(j, p) {
   const n = current.pages.length;
   const right = j >= p;
@@ -175,7 +177,7 @@ function flatten(leaf) {
   });
 }
 
-// Coloca todas las hojas (menos `skip`) en reposo para la vista p.
+// Puts every leaf (except `skip`) at rest for view p.
 function placeLeaves(p, skip) {
   const n = current.pages.length;
   for (let j = -1; j < n; j++) {
@@ -188,26 +190,26 @@ function placeLeaves(p, skip) {
   }
 }
 
-// Libro cerrado: se centra la tapa desplazando el libro media página.
+// Closed book: the cover is centred by shifting the book half a page.
 function placeBook(p) {
   const n = current.pages.length;
   const shift = p < 0 ? -pw / 2 : p >= n ? pw / 2 : 0;
-  // cerrado, se gira un poco para que se vea el canto de las hojas
+  // closed, it turns slightly so the fore-edge shows
   const turn = p < 0 ? -16 : p >= n ? 16 : 0;
   bookEl.style.transform = `rotateX(12deg) rotateY(${turn}deg) translateX(${shift}px)`;
   bookEl.classList.toggle('closed-front', p < 0);
   bookEl.classList.toggle('closed-back', p >= n);
 }
 
-// Hoja j girando en dirección dir (1 = adelante) con progreso t en [0, 1].
+// Leaf j turning in direction dir (1 = forward) with progress t in [0, 1].
 function curl(j, dir, t) {
   const leaf = leafAt(j);
   const from = rest(j, page).a;
-  // se detiene 1° antes de la pila de destino para quedar siempre por delante
+  // stops 1° short of the target stack so it always stays in front
   const to = rest(j, page + dir).a + dir;
   const a = from + (to - from) * t;
   let bend = leaf.rigid ? 0 : BEND * Math.sin(Math.PI * t);
-  // el borde no puede atravesar la pila de destino
+  // the edge cannot pass through the target stack
   bend = Math.max(0, Math.min(bend, dir > 0 ? a - to : to - a));
   const step = (dir > 0 ? -bend : bend) / (STRIPS - 1);
   leaf.style.visibility = '';
@@ -225,7 +227,7 @@ function curl(j, dir, t) {
 
 function updateUI() {
   const n = current.pages.length;
-  $('r-pos').textContent = page < 0 ? 'Portada' : page >= n ? 'Contraportada' : `${page + 1} / ${n}`;
+  $('r-pos').textContent = page < 0 ? t('cover') : page >= n ? t('backCoverLabel') : `${page + 1} / ${n}`;
   $('btn-prev').disabled = page <= -1;
   $('btn-next').disabled = page >= n;
   const h = hashFor(current, page);
@@ -242,7 +244,7 @@ function render() {
 
 const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
 
-// Anima el giro de la hoja de t0 a t1; si llega a 1, la página cambia.
+// Animates the leaf turn from t0 to t1; reaching 1 changes the page.
 function animateFlip(dir, t0, t1, done) {
   finishAnim();
   const j = dir > 0 ? page : page - 1;
@@ -376,7 +378,7 @@ function route() {
   const nb = notebooks.find((x) => x.slug === slug);
   if (!nb) { if (current) closeNotebook(); return; }
   const total = nb.pages.length;
-  const p = n === 'fin' ? total : n ? Math.max(0, Math.min(total - 1, (parseInt(n, 10) || 1) - 1)) : -1;
+  const p = n === 'end' || n === 'fin' ? total : n ? Math.max(0, Math.min(total - 1, (parseInt(n, 10) || 1) - 1)) : -1;
   if (current !== nb) openNotebook(nb, p, p === -1);
   else if (p !== page) jump(p);
 }
@@ -399,6 +401,7 @@ addEventListener('keydown', (e) => {
 addEventListener('hashchange', route);
 addEventListener('resize', () => { layout(); if (!shelf.hidden) renderShelf(); });
 
+translatePage();
 fetch('notebooks.json', { cache: 'no-cache' }).then((r) => r.json()).then((data) => {
   notebooks = data;
   renderShelf();

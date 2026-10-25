@@ -16,8 +16,9 @@ import { RectAreaLightUniformsLib } from "./three165/RectAreaLightUniformsLib.js
 
 export function createBookshelfRenderer(host, canvas, callbacks = {}) {
   let destroyed = false;
+  const t = callbacks.t || ((key) => key);
 
-    // Drawing Talks: cada cuaderno de notebooks.json (ver 3d/main.js).
+    // Drawing Talks: one book per notebook in notebooks.json (see 3d/main.js).
     const BOOKS = callbacks.books;
 
     // The walnut map and the new GPT Image cover atlas are embedded so the browser
@@ -510,7 +511,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.drawImage(image, (width - drawWidth) / 2, (height - drawHeight) / 2, drawWidth, drawHeight);
     }
 
-    // máscara del barniz: lo que se separa del color de fondo de la portada
+    // varnish mask: whatever differs from the cover's background colour
     function makeSpotUvMask(image) {
       const width = 512;
       const height = 768;
@@ -556,7 +557,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
     }
 
     function makeFoilTexture(book) {
-      // la portada ya es una ilustración: sin texto estampado encima
+      // the cover is already artwork: no foil text on top
       if (book.coverImage) {
         const blank = document.createElement("canvas");
         blank.width = blank.height = 4;
@@ -1495,7 +1496,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         transparent: true
       });
       if (book.spotUv) {
-        // barniz UVI: un reflejo que recorre las zonas barnizadas al inclinar el libro
+        // spot UV: a reflection that sweeps the varnished areas as the book tilts
         coverArt.onBeforeCompile = (shader) => {
           shader.uniforms.spotUvTime = spotUvTime;
           shader.fragmentShader = shader.fragmentShader
@@ -1503,7 +1504,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
             .replace("#include <opaque_fragment>", `
 #ifdef USE_CLEARCOATMAP
 {
-  // reflejo de una ventana de luz arriba a la izquierda: se mueve al inclinar el libro
+  // reflection of a window light up and to the left: it moves as the book tilts
   float varnish = texture2D( clearcoatMap, vClearcoatMapUv ).r;
   vec3 reflected = reflect( -normalize( vViewPosition ), normalize( vNormal ) );
   vec2 toLight = reflected.xy - vec2( -0.06 + sin( spotUvTime * 0.4 ) * 0.04, 0.07 );
@@ -1640,8 +1641,8 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       });
       const pageMaterial = createFadeMaterial(shared.page);
       const headbandMaterial = createFadeMaterial(shared.headband);
-      // Cada lámina (4:3) ocupa un pliego: mitad izquierda y mitad derecha.
-      // Hasta abrir el libro llevan papel en blanco (ver loadPlates).
+      // Each sketchnote (4:3) fills one spread: left half and right half.
+      // Until the book opens they show blank paper (see loadPlates).
       const makePlateMaterial = () => {
         const material = createFadeMaterial(shared.pageSheet);
         material.map = paperFaceTexture;
@@ -1658,11 +1659,11 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         right: makePlateMaterial(),
         textures: null
       }));
-      // primera página: solo el nombre del cuaderno
+      // first page: just the notebook's name
       const titlePageMaterial = makePlateMaterial();
       titlePageMaterial.map = makeTitlePageTexture(book);
       const interiorPageMaterials = [titlePageMaterial, ...plates.flatMap((plate) => [plate.left, plate.right])];
-      // pliegos: portadilla + uno por lámina
+      // spreads: title page + one per sketchnote
       const leafCount = plates.length + 1;
       const blankPageMaterial = createFadeMaterial(shared.pageSheet);
       blankPageMaterial.map = paperFaceTexture;
@@ -1742,7 +1743,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
       const pageBlock = createMesh(pageGeometry, pageMaterial, `${book.id}-page-block`);
       pageBlock.position.x = 0.018;
-      // hojas sin pasar (derecha, sobre la contratapa); se escala en z según las que quedan
+      // unturned leaves (right, on the back board); scaled in z by how many remain
       const rightStack = new THREE.Group();
       rightStack.name = `${book.id}-right-stack`;
       rightStack.add(pageBlock);
@@ -1868,8 +1869,8 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       frontPivot.add(frontGroove);
       motion.add(frontPivot);
 
-      // Hoja 0: cara = portadilla. Hoja j: dorso = mitad izquierda de la lámina j,
-      // cara de la hoja j+1 = mitad derecha; así cada lámina cruza el pliego entre dos hojas iguales.
+      // Leaf 0: front = title page. Leaf j: back = left half of sketchnote j,
+      // front of leaf j+1 = right half; so each sketchnote spans the spread across two leaves.
       const pagePivots = [];
       const pageSurfaces = [];
       const pivotCount = leafCount + 1;
@@ -2088,7 +2089,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         rightStack.add(edge);
       });
 
-      // hojas ya pasadas (izquierda): van con la tapa delantera, sobre su cara interior
+      // turned leaves (left): carried by the front board, on its inner face
       const leftStack = new THREE.Group();
       leftStack.name = `${book.id}-left-stack`;
       const leftPageWidth = pageWidth - spineWidth * 0.42;
@@ -2357,7 +2358,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
     const WALL_Z = -0.62;
 
-    // UVs a escala real (tile = unidades de mundo por repetición) para la veta de la madera
+    // world-scale UVs (tile = world units per repeat) for the wood grain
     function applyBoxUVs(geometry, tile) {
       const position = geometry.getAttribute("position");
       const normal = geometry.getAttribute("normal");
@@ -2381,7 +2382,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       return geometry;
     }
 
-    // Paper006 (ambientCG, CC0) envejecido: manchas de té, cercos, puntitos y juntas de papel pintado
+    // aged Paper006 (ambientCG, CC0): tea stains, rings, foxing and wallpaper seams
     function makeAgedWallpaper(image) {
       const size = 2048;
       const canvas = document.createElement("canvas");
@@ -2389,7 +2390,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0, size, size);
       const random = seededRandom(hashSeed("drawing-talks-wallpaper"));
-      // cada marca se dibuja en las 9 posiciones vecinas para que la textura siga siendo continua
+      // each mark is drawn at the 9 neighbouring positions so the texture stays seamless
       const tiled = (draw) => {
         for (let ox = -1; ox <= 1; ox += 1) {
           for (let oy = -1; oy <= 1; oy += 1) {
@@ -2507,14 +2508,14 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       });
     }
 
-    // pattern: mosaico en espejo (sin costuras) por toda la pared, baldosas de PATTERN_TILE de ancho
-    // wallpaper: una sola imagen escalada a la pared visible
+    // pattern: mirrored (seamless) tiling across the wall, tiles PATTERN_TILE wide
+    // wallpaper: a single image scaled to the visible wall
     const WALL_WIDTH = 34;
     const WALL_HEIGHT = 20;
     const PATTERN_TILE = 6.5;
     const wallLayers = [];
 
-    // color medio oscurecido: el tono de la pared fuera de la imagen
+    // darkened average colour: the wall tone outside the image
     function wallpaperShade(image) {
       const probe = document.createElement("canvas");
       probe.width = probe.height = 16;
@@ -2539,7 +2540,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0, width, height);
       const [red, green, blue] = wallpaperShade(image);
-      // viñeta: la luz cae en el centro, los bordes se apagan hacia el tono de la pared
+      // vignette: light falls in the centre, edges fade to the wall tone
       const radius = Math.hypot(width, height) * 0.5;
       const vignette = ctx.createRadialGradient(width * 0.5, height * 0.42, radius * 0.3, width * 0.5, height * 0.42, radius);
       vignette.addColorStop(0, `rgba(${red},${green},${blue},0)`);
@@ -2547,7 +2548,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       vignette.addColorStop(1, `rgba(${red},${green},${blue},0.92)`);
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, width, height);
-      // el último tramo funde del todo con el tono de la pared
+      // the last stretch blends fully into the wall tone
       const feather = Math.round(Math.min(width, height) * 0.07);
       const edges = [
         [0, 0, feather, 0, 0, 0, feather, height],
@@ -2569,7 +2570,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       return texture;
     }
 
-    // relieve del yeso: la luminancia de la imagen sin el color de fondo (grietas y desconchones más oscuros)
+    // plaster relief: the image's luminance minus its background colour (cracks and chips are darker)
     function makeWallBumpTexture(image) {
       const width = Math.min(1600, image.naturalWidth);
       const height = Math.round(width * image.naturalHeight / image.naturalWidth);
@@ -2579,14 +2580,14 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const ctx = canvas.getContext("2d");
       ctx.filter = "grayscale(1) contrast(1.6)";
       ctx.drawImage(image, 0, 0, width, height);
-      // resta la versión borrosa: queda solo el detalle fino, no las manchas grandes de color
+      // subtract a blurred copy: only fine detail remains, not large colour patches
       ctx.filter = "grayscale(1) contrast(1.6) blur(10px) invert(1)";
       ctx.globalAlpha = 0.5;
       ctx.drawImage(image, 0, 0, width, height);
       return configureCanvasTexture(new THREE.CanvasTexture(canvas), { color: false, anisotropy: 8 });
     }
 
-    // papel encolado: ondulaciones suaves y algo de grano; uno para todos los pósters
+    // pasted paper: soft ripples and a little grain; shared by every poster
     let posterBumpTexture = null;
     function getPosterBumpTexture() {
       if (posterBumpTexture) return posterBumpTexture;
@@ -2615,7 +2616,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       return posterBumpTexture;
     }
 
-    // sombra de contacto: la silueta del póster, borrosa
+    // contact shadow: the poster's blurred silhouette
     function makePosterShadowTexture(image) {
       const canvas = document.createElement("canvas");
       canvas.width = 160;
@@ -2626,7 +2627,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       return configureCanvasTexture(new THREE.CanvasTexture(canvas), { anisotropy: 1 });
     }
 
-    // huecos alrededor de la balda: [x, y, alto, giro en grados]; info.json "posters" puede fijarlos
+    // slots around the shelf: [x, y, height, rotation in degrees]; info.json "posters" can pin them
     const POSTER_SLOTS = [
       [-3.1, 2.75, 2.3, -2.2],
       [3.15, 2.85, 2.2, 1.6],
@@ -2648,14 +2649,14 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         const lap = Math.floor(index / POSTER_SLOTS.length);
         const x = poster.x ?? slot[0] + lap * 0.4;
         const y = poster.y ?? slot[1] - lap * 0.3;
-        const height = poster.alto ?? slot[2];
-        const turn = THREE.MathUtils.degToRad(poster.giro ?? slot[3]);
+        const height = poster.height ?? slot[2];
+        const turn = THREE.MathUtils.degToRad(poster.rotation ?? slot[3]);
         const width = height * poster.image.naturalWidth / poster.image.naturalHeight;
         const map = new THREE.Texture(poster.image);
         map.colorSpace = THREE.SRGBColorSpace;
         map.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
         map.needsUpdate = true;
-        // satinado: algo de brillo y una capa de barniz que refleja la luz rasante
+        // satin: some gloss and a varnish layer that catches the raking light
         const material = new THREE.MeshPhysicalMaterial({
           map,
           bumpMap: getPosterBumpTexture(),
@@ -2710,7 +2711,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         const tileHeight = PATTERN_TILE * image.naturalHeight / image.naturalWidth;
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.repeat.set(WALL_WIDTH / PATTERN_TILE, WALL_HEIGHT / tileHeight);
-        // una baldosa entera centrada detrás de la balda
+        // one whole tile centred behind the shelf
         texture.offset.set(
           0.5 - texture.repeat.x * 0.5,
           0.5 - texture.repeat.y * 0.5 - (shelfBoardTop + 1.2 - 4) / tileHeight
@@ -2737,7 +2738,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         mesh.position.set(0, 2, WALL_Z + zOffset);
       }
       mesh.visible = false;
-      // orden fijo: si no, three.js las ordena por distancia y el patrón tapaba el mural
+      // fixed order: otherwise three.js sorts them by distance and the pattern covered the mural
       mesh.renderOrder = renderOrder;
       scene.add(mesh);
       let backdrop = null;
@@ -2759,22 +2760,22 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       wallLayers.push({ key, tiled, mesh, backdrop, book: null, textures: new Map() });
     }
 
-    // el wallpaper cubre la pared que ve la cámara de la estantería (con margen para girar),
-    // recortado tipo cover: sin repetir ni deformar
+    // the wallpaper covers the wall seen by the shelf camera (with a margin for orbiting),
+    // cover-cropped: no tiling, no stretching
     function fitWallpaper(mesh, texture) {
       const distance = shelfCameraPosition.z - WALL_Z;
       const height = 2 * distance * Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5)) * 1.1;
       const width = Math.max(height * camera.aspect, height) * 1.08;
       const centerY = shelfCameraPosition.y
         + (shelfCameraTarget.y - shelfCameraPosition.y) * distance / (shelfCameraPosition.z - shelfCameraTarget.z);
-      // sin recortar: el plano conserva la proporción y lo sobrante (con el fundido) cae fuera de la vista
+      // uncropped: the plane keeps its aspect and the excess (with the fade) falls outside the view
       const aspect = texture.userData.aspect;
       const planeWidth = Math.max(width, height * aspect) * 1.08;
       mesh.scale.set(planeWidth, planeWidth / aspect, 1);
       mesh.position.y = centerY;
     }
 
-    // los pósters se muestran aunque el cuaderno no tenga wallpaper
+    // posters show even when the notebook has no wallpaper
     function updatePosters(layer, delta) {
       const book = BOOKS[selectedIndex];
       const wanted = book?.posters?.length ? book : null;
@@ -2804,7 +2805,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const material = layer.mesh.material;
       const speed = reducedMotion ? 1000 : 5;
       if (layer.book !== wanted) {
-        // fundido de salida antes de cambiar de imagen
+        // fade out before swapping the image
         material.opacity = damp(material.opacity, 0, speed * 1.8, delta);
         if (material.opacity < 0.02) {
           material.opacity = 0;
@@ -2843,7 +2844,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
     }
 
     function addRoom() {
-      // suelo fuera de cuadro: la balda cuelga de la pared empapelada
+      // floor out of frame: the shelf hangs on the papered wall
       const floor = createMesh(shared.plane, new THREE.MeshStandardMaterial({
         color: 0xd8c8aa,
         roughness: 0.92,
@@ -2863,7 +2864,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       back.position.set(0, 4, WALL_Z);
       scene.add(back);
 
-      // pattern.* queda en el JSON pero de momento no se usa
+      // pattern.* stays in the JSON but is unused for now
       addWallLayer("wallpaperImage", false, 0.006, -1);
 
       const oak = new THREE.MeshPhysicalMaterial({
@@ -2884,7 +2885,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       shelf.position.set(0, shelfBoardTop - 0.1, WALL_Z + shelfDepth * 0.5);
       shelfStage.add(shelf);
 
-      // escuadras de hierro atornilladas a la pared
+      // iron brackets screwed to the wall
       const iron = new THREE.MeshStandardMaterial({ color: 0x24201d, roughness: 0.42, metalness: 0.75 });
       [-3.1, 3.1].forEach((x, index) => {
         const bracket = new THREE.Group();
@@ -2950,7 +2951,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       scene.add(softKey);
       roomLights.softKey = softKey;
 
-      // foco cálido sobre la balda: halo en el papel pintado y sombras de los libros en la pared
+      // warm spotlight over the shelf: a pool of light on the wallpaper and book shadows on the wall
       const spot = new THREE.SpotLight(0xffd6a0, 26, 0, 0.58, 0.85, 1.4);
       spot.name = "wall-wash";
       spot.position.set(0.6, 5.8, 3.4);
@@ -3037,7 +3038,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         button.className = "marker";
         button.type = "button";
         button.role = "tab";
-        button.setAttribute("aria-label", `Cuaderno ${index + 1}: ${book.title}`);
+        button.setAttribute("aria-label", t("notebook", index + 1, book.title));
         button.setAttribute("aria-current", index === 0 ? "true" : "false");
         button.setAttribute("aria-selected", index === 0 ? "true" : "false");
         button.addEventListener("click", () => selectMarker(index, button));
@@ -3146,7 +3147,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       selectionNote.textContent = book.note;
       counter.textContent = `${selectedIndex + 1} / ${BOOKS.length}`;
       paletteLabel.textContent = book.paletteLabel;
-      inspectButton.setAttribute("aria-label", `Abrir ${book.title}`);
+      inspectButton.setAttribute("aria-label", t("openTitle", book.title));
       applyBookTheme(book);
       callbacks.onSelectionChange?.({ index: selectedIndex, total: BOOKS.length, title: book.title });
 
@@ -3158,7 +3159,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       });
 
       if (announce) {
-        liveRegion.textContent = `Selected volume ${selectedIndex + 1} of ${BOOKS.length}: ${book.title}. ${book.note}`;
+        liveRegion.textContent = t("selected", selectedIndex + 1, BOOKS.length, book.title, book.note);
       }
     }
 
@@ -3173,7 +3174,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
     }
 
     function getSpreadLabels(book) {
-      return ["Portadilla", ...book.pages.map((_, index) => `Lámina ${index + 1}`)];
+      return [t("titlePage"), ...book.pages.map((_, index) => t("sketchnote", index + 1))];
     }
 
     function updatePageControls(announce = false) {
@@ -3185,26 +3186,26 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
       previousPageButton.disabled = previousDisabled;
       nextPageButton.disabled = nextDisabled;
-      pageLabel.textContent = readingOpen ? labels[currentSpread] : "Cerrado";
+      pageLabel.textContent = readingOpen ? labels[currentSpread] : t("closed");
       pageCounter.textContent = readingOpen
         ? (currentSpread === 0 ? book.title : `${currentSpread} / ${spreadCount() - 1}`)
-        : "Haz clic en el libro para abrirlo";
-      toggleBookButton.textContent = readingOpen ? "Cerrar" : "Abrir";
+        : t("clickToOpen");
+      toggleBookButton.textContent = readingOpen ? t("close") : t("open");
       toggleBookButton.setAttribute("aria-pressed", String(readingOpen));
       detailMicrocopy.textContent = readingOpen
-        ? "Arrastra las páginas · Arrastra la tapa para cerrar · Arrastra el fondo para girar"
-        : "Arrastra la tapa o haz clic para abrir · Arrastra el fondo para girar";
+        ? t("hintOpen")
+        : t("hintClosed");
       previousPageButton.setAttribute(
         "aria-label",
         previousDisabled
-          ? "Lámina anterior"
-          : `Lámina anterior: ${labels[currentSpread - 1]}`
+          ? t("previousSketchnote")
+          : t("previousSketchnoteTitle", labels[currentSpread - 1])
       );
       nextPageButton.setAttribute(
         "aria-label",
         nextDisabled
-          ? "Lámina siguiente"
-          : `Lámina siguiente: ${labels[currentSpread + 1]}`
+          ? t("nextSketchnote")
+          : t("nextSketchnoteTitle", labels[currentSpread + 1])
       );
 
       callbacks.onSpreadChange?.({ index: selectedIndex, open: readingOpen, spread: currentSpread });
@@ -3226,21 +3227,21 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
       if (announce && activeBook) {
         liveRegion.textContent = readingOpen
-          ? `${activeBook.data.title} opened to its title page. Drag a page horizontally or use the arrow controls to read.`
-          : `${activeBook.data.title} closed. Drag the cover, click the book, or use Open book to begin reading.`;
+          ? t("opened", activeBook.data.title)
+          : t("closedBook", activeBook.data.title);
       }
       requestFrame();
     }
 
-    // dar la vuelta al libro cerrado para ver la contraportada
+    // turn the closed book over to see the back cover
     function setFlipped(value) {
       if (mode !== "detail" || flipped === value || (value && readingOpen)) return;
       flipped = value;
       callbacks.onFlipChange?.(flipped);
       if (activeBook) {
         liveRegion.textContent = flipped
-          ? `Contraportada de ${activeBook.data.title}.`
-          : `Portada de ${activeBook.data.title}.`;
+          ? t("backCover", activeBook.data.title)
+          : t("frontCover", activeBook.data.title);
       }
       requestFrame();
     }
@@ -3394,7 +3395,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const paginatedLeafCount = rig.leafCount - 1;
       const unturnedAt = (leaf, spread) => -0.008 + Math.min(Math.max(leaf - spread, 0), 4) * 0.002;
       const turnedAt = (leaf, spread) => -Math.PI + 0.06 + Math.max(0, 4 - Math.max(spread - 1 - leaf, 0)) * 0.003;
-      // abierto, el libro se desplaza media tapa para centrar el pliego
+      // open, the book shifts half a board to centre the spread
       rig.motion.position.x = damp(rig.motion.position.x, rig.base.width * 0.5 * amount, speed, delta);
       const inDetail = mode === "detail";
       const followsPointer = inDetail
@@ -3419,7 +3420,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         });
         rig.contactShadow.material.opacity = rig.opacity * 0.24;
       }
-      // grosor de cada lado = hojas que tiene (una hoja = pageDepth / número de hojas)
+      // each side is as thick as its leaves (one leaf = pageDepth / leaf count)
       const sheet = rig.pageDepth / rig.pagePivots.length;
       rig.stackTurned = damp(rig.stackTurned, currentSpread * amount, speed, delta);
       const leftThickness = sheet * rig.stackTurned;
@@ -3430,12 +3431,12 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       rig.leftStack.scale.z = Math.max(leftThickness, 0.0001) / rig.pageDepth;
       rig.leftStack.position.z = -(rig.board * 0.5 + leftThickness * 0.5 + 0.0008);
       const restOffset = rightThickness - rig.pageDepth;
-      // el lomo se dobla: la tapa izquierda acaba a la altura de la contratapa
+      // the spine flexes: the left board ends level with the back board
       const coverOpen = smoothstep(clamp(-rig.frontPivot.rotation.y / Math.PI, 0, 1));
       const coverDrop = (rig.base.depth + rig.board) * coverOpen;
       rig.frontPivot.position.z = rig.frontRestZ - coverDrop;
-      // el pliego queda libre para que las hojas bajen al lomo sin que las tape el bloque
-      // tramo [inner, outer] del bloque -> del fin del pliego al canto de las hojas
+      // the gutter stays clear so the leaves reach the spine without the stack covering them
+      // stack span [inner, outer] -> from the end of the gutter to the leaves' fore-edge
       const blockSpan = rig.rightOuter - rig.blockInner;
       const openHinge = -rig.base.width * 0.5;
       const rightInner = lerp(rig.blockInner, openHinge + 0.16 * rig.leafWidth, coverOpen);
@@ -3443,7 +3444,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       const rightScale = (rightOuter - rightInner) / blockSpan;
       rig.rightStack.scale.x = rightScale;
       rig.rightStack.position.x = rightInner - rightScale * rig.blockInner;
-      // la izquierda va en coordenadas de la tapa: las hojas ocupan [0, leafWidth] desde el lomo
+      // the left stack is in board coordinates: leaves span [0, leafWidth] from the spine
       const leftScale = (0.84 * rig.leafWidth) / blockSpan;
       rig.leftStack.scale.x = leftScale;
       rig.leftStack.position.x = 0.16 * rig.leafWidth - leftScale * (rig.blockInner + rig.leftBlockShift);
@@ -3545,7 +3546,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           0,
           1
         );
-        // caída hasta el lomo, en z local de la hoja (cos(giro) la anula a media vuelta)
+        // drop to the spine, in the leaf's local z (cos(turn) cancels it mid-turn)
         const depthInStack = leafOrder < currentSpread ? currentSpread - 1 - leafOrder : leafOrder - currentSpread;
         const hingeZ = spineZ - depthInStack * 0.0012;
         const halfTurn = pagePivot.rotation.y * 0.5;
@@ -4125,7 +4126,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       activeBook.root.scale.copy(openingBookScale);
       applyDetailViewOffset();
       controls.enabled = false;
-      liveRegion.textContent = `Opening a closed copy of ${activeBook.data.title}. Drag the cover, click the book, or use Open book to begin reading.`;
+      liveRegion.textContent = t("opening", activeBook.data.title);
 
       if (reducedMotion) {
         finishOpening();
@@ -4241,7 +4242,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       experience.classList.remove("mode-detail");
       detailPanel.setAttribute("aria-hidden", "true");
       detailPanel.inert = true;
-      liveRegion.textContent = `Returning ${activeBook.data.title} to the shelf.`;
+      liveRegion.textContent = t("returning", activeBook.data.title);
       if (reducedMotion) {
         finishClosing();
       }
@@ -4311,7 +4312,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       transitionTime = 0;
       callbacks.onModeChange?.("shelf");
       activeBook = null;
-      liveRegion.textContent = `${BOOKS[selectedIndex].title} returned to the shelf.`;
+      liveRegion.textContent = t("returned", BOOKS[selectedIndex].title);
       requestAnimationFrame(() => focusReturnTarget?.focus?.({ preventScroll: true }));
     }
 
@@ -4320,7 +4321,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       camera.position.copy(inspectCameraPosition);
       controls.target.copy(inspectCameraTarget);
       controls.update();
-      liveRegion.textContent = `Inspection view reset for ${BOOKS[selectedIndex].title}.`;
+      liveRegion.textContent = t("viewReset", BOOKS[selectedIndex].title);
       requestFrame();
     }
 
@@ -4638,7 +4639,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       suspended = true;
       if (rafId) cancelAnimationFrame(rafId);
       rafId = 0;
-      showFallback("The 3D view paused after losing its graphics context. The complete static catalog remains available; reload to restore inspection.");
+      showFallback(t("contextLost"));
     }
 
     function disposeExperience() {
@@ -4710,7 +4711,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           powerPreference: "high-performance"
         });
       } catch (error) {
-        showFallback("WebGL is unavailable in this browser. The complete static catalog remains available.");
+        showFallback(t("noWebgl"));
         return;
       }
 
@@ -4814,7 +4815,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
 
   const ready = initialize().catch((error) => {
-    showFallback("No se pudo preparar la estantería 3D.");
+    showFallback(t("loadFailed"));
     throw error;
   });
 
@@ -4843,7 +4844,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       else if (mode === "detail" && !readingOpen) setReadingOpen(true);
       else if (mode === "detail") turnPage(1);
     },
-    // Drawing Talks: abrir un cuaderno (y una lámina) desde la URL
+    // Drawing Talks: open a notebook (and a sketchnote) from the URL
     openBook: (index, spread = null) => {
       if (!renderer) return;
       if (mode === "hero") {

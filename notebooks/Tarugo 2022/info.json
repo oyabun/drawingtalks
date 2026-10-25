@@ -1,70 +1,70 @@
 {
-  "evento": "Tarugo",
-  "edicion": "2022",
-  "fecha": "2022",
-  "lugar": "",
+  "event": "Tarugo",
+  "edition": "2022",
+  "date": "2022",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 8,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 8,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
-      "titulo": "Un framework mental para enfrentarte al mundo real",
-      "ponente": "Recuenco",
+      "sketchnote": 1,
+      "file": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
+      "title": "Un framework mental para enfrentarte al mundo real",
+      "speaker": "Recuenco",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
-      "titulo": "Algoritmos que salvan vidas",
-      "ponente": "",
+      "sketchnote": 2,
+      "file": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
+      "title": "Algoritmos que salvan vidas",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
-      "titulo": "La tecnología necesaria para que te tomes una buena caña",
-      "ponente": "",
+      "sketchnote": 3,
+      "file": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
+      "title": "La tecnología necesaria para que te tomes una buena caña",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
-      "titulo": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
-      "ponente": "",
+      "sketchnote": 4,
+      "file": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
+      "title": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
-      "titulo": "Cómo producir un videojuego",
-      "ponente": "",
+      "sketchnote": 5,
+      "file": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
+      "title": "Cómo producir un videojuego",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
-      "titulo": "Debe un abogado aprender a programar?",
-      "ponente": "",
+      "sketchnote": 6,
+      "file": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
+      "title": "Debe un abogado aprender a programar?",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "Tarugo 22 - 7 - Ventas para ingenieros.png",
-      "titulo": "Ventas para ingenieros",
-      "ponente": "",
+      "sketchnote": 7,
+      "file": "Tarugo 22 - 7 - Ventas para ingenieros.png",
+      "title": "Ventas para ingenieros",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 8,
-      "archivo": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
-      "titulo": "Cómo aplicar la inteligenci artificial para el bien",
-      "ponente": "",
+      "sketchnote": 8,
+      "file": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
+      "title": "Cómo aplicar la inteligenci artificial para el bien",
+      "speaker": "",
       "url": ""
     }
   ]

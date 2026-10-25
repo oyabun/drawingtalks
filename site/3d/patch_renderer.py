@@ -38,7 +38,7 @@ rep(
 rep_between(
     "    const BOOKS = [\n",
     "    const COVER_ATLAS_DATA",
-    "    // Drawing Talks: cada cuaderno de notebooks.json (ver 3d/main.js).\n"
+    "    // Drawing Talks: one book per notebook in notebooks.json (see 3d/main.js).\n"
     "    const BOOKS = callbacks.books;\n\n",
 )
 s = re.sub(r'    const COVER_ATLAS_DATA = "[^"]*";\n', "", s, count=1)
@@ -78,7 +78,7 @@ rep(
     }
 
     function makeFoilTexture(book) {
-      // la portada ya es una ilustración: sin texto estampado encima
+      // the cover is already artwork: no foil text on top
       if (book.coverImage) {
         const blank = document.createElement("canvas");
         blank.width = blank.height = 4;
@@ -122,7 +122,7 @@ rep(
 rep("ctx.fillText(`WORKING VOLUMES  /  ${book.roman}`, 68, 82);", "ctx.fillText(`DRAWING TALKS  /  ${book.roman}`, 68, 82);")
 rep('ctx.fillText("AN IMAGINED EDITION", 700, 1080);', 'ctx.fillText("SKETCHNOTES · @OYABUN", 700, 1080);')
 
-# --- pages: one lámina across each spread, loaded when the book opens --------------
+# --- pages: one sketchnote across each spread, loaded when the book opens --------------
 rep(
     "      const interiorPageTextures = makeInteriorPageTextures(book);\n",
     "      const interiorPageTextures = [];\n",
@@ -139,8 +139,8 @@ rep(
         return material;
       });
 """,
-    """      // Cada lámina (4:3) ocupa un pliego: mitad izquierda y mitad derecha.
-      // Hasta abrir el libro llevan papel en blanco (ver loadPlates).
+    """      // Each sketchnote (4:3) fills one spread: left half and right half.
+      // Until the book opens they show blank paper (see loadPlates).
       const makePlateMaterial = () => {
         const material = createFadeMaterial(shared.pageSheet);
         material.map = paperFaceTexture;
@@ -157,11 +157,11 @@ rep(
         right: makePlateMaterial(),
         textures: null
       }));
-      // primera página: solo el nombre del cuaderno
+      // first page: just the notebook's name
       const titlePageMaterial = makePlateMaterial();
       titlePageMaterial.map = makeTitlePageTexture(book);
       const interiorPageMaterials = [titlePageMaterial, ...plates.flatMap((plate) => [plate.left, plate.right])];
-      // pliegos: portadilla + uno por lámina
+      // spreads: title page + one per sketchnote
       const leafCount = plates.length + 1;
 """,
 )
@@ -176,8 +176,8 @@ rep(
         const backPageMaterial = leafOrder < 4
           ? interiorPageMaterials[leafOrder * 2 + 1]
           : blankPageMaterial;""",
-    """      // Hoja 0: cara = portadilla. Hoja j: dorso = mitad izquierda de la lámina j,
-      // cara de la hoja j+1 = mitad derecha; así cada lámina cruza el pliego entre dos hojas iguales.
+    """      // Leaf 0: front = title page. Leaf j: back = left half of sketchnote j,
+      // front of leaf j+1 = right half; so each sketchnote spans the spread across two leaves.
       const pagePivots = [];
       const pageSurfaces = [];
       const pivotCount = leafCount + 1;
@@ -219,7 +219,7 @@ rep(
 )
 
 
-# Láminas: se cargan al abrir el libro y se liberan al devolverlo a la estantería.
+# Sketchnotes load when the book opens and are released when it goes back on the shelf.
 rep(
     """    function configureResponsiveTargets() {""",
     """    const plateLoader = new THREE.ImageLoader();
@@ -302,7 +302,7 @@ rep(
     """      const paginatedLeafCount = rig.leafCount - 1;
       const unturnedAt = (leaf, spread) => -0.038 + Math.min(Math.max(leaf - spread, 0), 4) * 0.008;
       const turnedAt = (leaf, spread) => -Math.PI + 0.085 + Math.max(0, 4 - Math.max(spread - 1 - leaf, 0)) * 0.014;
-      // abierto, el libro se desplaza media tapa para centrar el pliego
+      // open, the book shifts half a board to centre the spread
       rig.motion.position.x = damp(rig.motion.position.x, rig.base.width * 0.5 * amount, speed, delta);
 
       rig.pagePivots.forEach((pagePivot, pageIndex) => {
@@ -368,7 +368,7 @@ rep(
       snapRigToShelfSlot(activeBook, selectedIndex);""",
 )
 
-# --- Spanish UI copy -------------------------------------------------------------
+# --- Drawing Talks UI copy -------------------------------------------------------------
 rep(
     """    function getSpreadLabels(book) {
       return [
@@ -443,7 +443,7 @@ rep(
 rep(
     """    dispose: disposeExperience,
   };""",
-    """    // Drawing Talks: abrir un cuaderno (y una lámina) desde la URL
+    """    // Drawing Talks: open a notebook (and a sketchnote) from the URL
     openBook: (index, spread = null) => {
       if (!renderer) return;
       if (mode === "hero") {
@@ -481,7 +481,7 @@ rep('showFallback("The interactive Bookshelf collection could not be prepared.")
     'showFallback("No se pudo preparar la estantería 3D.");')
 
 
-# --- portadilla: solo el nombre ---------------------------------------------------
+# --- title page: just the name ---------------------------------------------------
 rep(
     "    function makeEndpaperTexture(book) {",
     """    function makeTitlePageTexture(book) {
@@ -513,7 +513,7 @@ rep(
     function makeEndpaperTexture(book) {""",
 )
 
-# --- barniz UV selectivo: brilla solo la ilustración de la portada ---------------------
+# --- spot UV varnish: only the cover artwork shines ---------------------
 rep(
     """      canvasTexture.width = 768;
       canvasTexture.height = 1152;""",
@@ -531,8 +531,8 @@ rep(
 )
 rep(
     """    function makeFoilTexture(book) {
-      // la portada""",
-    """    // máscara del barniz: lo que se separa del color de fondo de la portada
+      // the cover""",
+    """    // varnish mask: whatever differs from the cover's background colour
     function makeSpotUvMask(image) {
       const width = 512;
       const height = 768;
@@ -578,7 +578,7 @@ rep(
     }
 
     function makeFoilTexture(book) {
-      // la portada""",
+      // the cover""",
 )
 rep(
     """        roughness: 0.92,
@@ -592,13 +592,13 @@ rep(
         clearcoatRoughness: book.spotUv ? 0.06 : 0.72,""",
 )
 
-# --- habitación: papel pintado envejecido, balda de roble con escuadras -------------------
+# --- room: aged wallpaper, oak shelf on iron brackets -------------------
 rep_between(
     "    function addRoom() {",
     "    function addLights() {",
     """    const WALL_Z = -0.62;
 
-    // UVs a escala real (tile = unidades de mundo por repetición) para la veta de la madera
+    // world-scale UVs (tile = world units per repeat) for the wood grain
     function applyBoxUVs(geometry, tile) {
       const position = geometry.getAttribute("position");
       const normal = geometry.getAttribute("normal");
@@ -622,7 +622,7 @@ rep_between(
       return geometry;
     }
 
-    // Paper006 (ambientCG, CC0) envejecido: manchas de té, cercos, puntitos y juntas de papel pintado
+    // aged Paper006 (ambientCG, CC0): tea stains, rings, foxing and wallpaper seams
     function makeAgedWallpaper(image) {
       const size = 2048;
       const canvas = document.createElement("canvas");
@@ -630,7 +630,7 @@ rep_between(
       const ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0, size, size);
       const random = seededRandom(hashSeed("drawing-talks-wallpaper"));
-      // cada marca se dibuja en las 9 posiciones vecinas para que la textura siga siendo continua
+      // each mark is drawn at the 9 neighbouring positions so the texture stays seamless
       const tiled = (draw) => {
         for (let ox = -1; ox <= 1; ox += 1) {
           for (let oy = -1; oy <= 1; oy += 1) {
@@ -749,7 +749,7 @@ rep_between(
     }
 
     function addRoom() {
-      // suelo fuera de cuadro: la balda cuelga de la pared empapelada
+      // floor out of frame: the shelf hangs on the papered wall
       const floor = createMesh(shared.plane, new THREE.MeshStandardMaterial({
         color: 0xd8c8aa,
         roughness: 0.92,
@@ -787,7 +787,7 @@ rep_between(
       shelf.position.set(0, shelfBoardTop - 0.1, WALL_Z + shelfDepth * 0.5);
       shelfStage.add(shelf);
 
-      // escuadras de hierro atornilladas a la pared
+      // iron brackets screwed to the wall
       const iron = new THREE.MeshStandardMaterial({ color: 0x24201d, roughness: 0.42, metalness: 0.75 });
       [-3.1, 3.1].forEach((x, index) => {
         const bracket = new THREE.Group();
@@ -827,16 +827,16 @@ rep_between(
 
 """,
 )
-# la balda baja recta al inspeccionar (ya no hay fondo detrás de ella)
+# the shelf drops straight down on inspection (nothing behind it any more)
 rep("const inspectShelfPosition = new THREE.Vector3(0, -4.2, -3);",
     "const inspectShelfPosition = new THREE.Vector3(0, -6.5, 0);")
 
-# --- luz: foco cálido que baña la pared y sombras más suaves -------------------------------
+# --- light: a warm spotlight washing the wall, softer shadows -------------------------------
 rep("roomLights.hemisphere = new THREE.HemisphereLight(0xfff8e8, 0x5b4030, 0.56);",
     "roomLights.hemisphere = new THREE.HemisphereLight(0xfff8e8, 0x5b4030, 0.3);")
 rep(
     "      const fill = new THREE.DirectionalLight(0xd8e3e7, 0.3);",
-    """      // foco cálido sobre la balda: halo en el papel pintado y sombras de los libros en la pared
+    """      // warm spotlight over the shelf: a pool of light on the wallpaper and book shadows on the wall
       const spot = new THREE.SpotLight(0xffd6a0, 26, 0, 0.58, 0.85, 1.4);
       spot.name = "wall-wash";
       spot.position.set(0.6, 5.8, 3.4);
@@ -853,7 +853,7 @@ rep(
 
       const fill = new THREE.DirectionalLight(0xd8e3e7, 0.3);""",
 )
-# no se puede girar hasta detrás de la pared
+# the camera cannot orbit behind the wall
 rep(
     "      controls.minPolarAngle = Math.PI * 0.24;",
     "      controls.minAzimuthAngle = -0.62;\n      controls.maxAzimuthAngle = 0.62;\n      controls.minPolarAngle = Math.PI * 0.24;",
@@ -868,24 +868,24 @@ rep("controls.maxPolarAngle = Math.PI * 0.76;", "controls.maxPolarAngle = Math.P
 rep("texture.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());\n            texture.repeat.set(0.5, 1);",
     "texture.anisotropy = Math.min(16, renderer.capabilities.getMaxAnisotropy());\n            texture.repeat.set(0.5, 1);")
 
-# --- color fiel a las láminas --------------------------------------------------------
-# ACES satura y quema naranjas/rojos y aplasta blancos; Neutral (Khronos PBR Neutral) conserva el color base
+# --- faithful sketchnote colours --------------------------------------------------------
+# ACES oversaturates oranges/reds and crushes whites; Neutral (Khronos PBR Neutral) keeps the base colour
 rep("renderer.toneMapping = THREE.ACESFilmicToneMapping;\n      renderer.toneMappingExposure = 0.9;",
     "renderer.toneMapping = THREE.NeutralToneMapping;\n      renderer.toneMappingExposure = 0.82;")
-# papel casi blanco: el tono crema teñía las láminas
+# near-white paper: the cream tint was colouring the sketchnotes
 rep("color: 0xeee6d7,", "color: 0xfbf8f2,")
-# el brillo de tela velaba la portada
+# the cloth sheen was washing out the cover
 rep("        sheen: 0.26,\n        sheenRoughness: 0.78,", "        sheen: 0.06,\n        sheenRoughness: 0.78,")
 rep("new THREE.RectAreaLight(0xffe8c2, 5.4, 4.8, 5.6)", "new THREE.RectAreaLight(0xffe8c2, 4.2, 4.8, 5.6)")
 
-# la hoja está cosida: no gira en su plano (eso despegaba el canto del lomo);
-# la torsión queda solo en la curvatura del papel, que vale 0 en el lomo
+# the leaf is sewn in: it does not rotate in its own plane (that pulled its edge off the spine);
+# the twist lives only in the paper's curvature, which is 0 at the spine
 rep("""              pageTwistTarget = pageDrag.direction
                 * dragEnvelope
                 * (0.014 + pageDrag.verticalBias * 0.026);""",
     """              pageTwistTarget = 0;""")
 
-# --- barniz UVI visible y libro que se puede girar ------------------------------------------
+# --- visible spot UV and a book that can be turned over ------------------------------------------
 rep("    let detailBookHovered = false;\n",
     "    let detailBookHovered = false;\n    let flipped = false;\n    const spotUvTime = { value: 0 };\n")
 rep("      readingOpen = false;\n      detailBookHovered = false;",
@@ -907,7 +907,7 @@ rep("""        if (!activeBookAtPointer()) return;
         else setReadingOpen(true);
         return;""")
 rep("    function turnPage(direction) {",
-    """    // dar la vuelta al libro cerrado para ver la contraportada
+    """    // turn the closed book over to see the back cover
     function setFlipped(value) {
       if (mode !== "detail" || flipped === value || (value && readingOpen)) return;
       flipped = value;
@@ -923,7 +923,7 @@ rep("    function turnPage(direction) {",
     function turnPage(direction) {""")
 rep("      const delta = Math.min((time - lastTime) / 1000, 0.05);\n",
     "      const delta = Math.min((time - lastTime) / 1000, 0.05);\n      spotUvTime.value = time / 1000;\n")
-# cerrado en detalle: el libro sigue un poco al puntero (el barniz brilla) y puede girarse
+# closed in detail view: the book follows the pointer a little (the varnish glints) and can be turned over
 rep("      rig.motion.position.x = damp(rig.motion.position.x, rig.base.width * 0.5 * amount, speed, delta);\n",
     """      rig.motion.position.x = damp(rig.motion.position.x, rig.base.width * 0.5 * amount, speed, delta);
       const inDetail = mode === "detail";
@@ -951,7 +951,7 @@ rep("""        sheen: 0.06,
         transparent: true
       });
       if (book.spotUv) {
-        // barniz UVI: un reflejo que recorre las zonas barnizadas al inclinar el libro
+        // spot UV: a reflection that sweeps the varnished areas as the book tilts
         coverArt.onBeforeCompile = (shader) => {
           shader.uniforms.spotUvTime = spotUvTime;
           shader.fragmentShader = shader.fragmentShader
@@ -959,7 +959,7 @@ rep("""        sheen: 0.06,
             .replace("#include <opaque_fragment>", `
 #ifdef USE_CLEARCOATMAP
 {
-  // reflejo de una ventana de luz arriba a la izquierda: se mueve al inclinar el libro
+  // reflection of a window light up and to the left: it moves as the book tilts
   float varnish = texture2D( clearcoatMap, vClearcoatMapUv ).r;
   vec3 reflected = reflect( -normalize( vViewPosition ), normalize( vNormal ) );
   vec2 toLight = reflected.xy - vec2( -0.06 + sin( spotUvTime * 0.4 ) * 0.04, 0.07 );
@@ -979,7 +979,7 @@ rep("""    select: (index) => { if (mode === "hero" && renderer) selectMarker(in
     """    select: (index) => { if (mode === "hero" && renderer) selectMarker(index, canvas); },
     flip: () => setFlipped(!flipped),
     get flipped() { return flipped; },""")
-# contraportada: título, año, número de láminas e índice
+# back cover: title, year, number of sketchnotes and contents
 rep_between("    function makeBackFoilTexture(book) {", "    function createMesh(", r"""    function makeBackFoilTexture(book) {
       const foilCanvas = document.createElement("canvas");
       foilCanvas.width = 1024;
@@ -1061,13 +1061,13 @@ rep("""        bumpScale: 0.016,
         roughness: 0.42,
         metalness: 0.3,
         clearcoat: 0.14,""")
-# --- el grosor del bloque son las hojas reales: al pasar páginas, la derecha adelgaza y la izquierda crece
+# --- the block is as thick as the real leaves: turning pages thins the right stack and grows the left
 rep("""      const pageBlock = createMesh(pageGeometry, pageMaterial, `${book.id}-page-block`);
       pageBlock.position.x = 0.018;
       motion.add(pageBlock);""",
     """      const pageBlock = createMesh(pageGeometry, pageMaterial, `${book.id}-page-block`);
       pageBlock.position.x = 0.018;
-      // hojas sin pasar (derecha, sobre la contratapa); se escala en z según las que quedan
+      // unturned leaves (right, on the back board); scaled in z by how many remain
       const rightStack = new THREE.Group();
       rightStack.name = `${book.id}-right-stack`;
       rightStack.add(pageBlock);
@@ -1078,7 +1078,7 @@ rep("      motion.add(foreEdge);", "      rightStack.add(foreEdge);")
 rep("        motion.add(edge);\n      });", """        rightStack.add(edge);
       });
 
-      // hojas ya pasadas (izquierda): van con la tapa delantera, sobre su cara interior
+      // turned leaves (left): carried by the front board, on its inner face
       const leftStack = new THREE.Group();
       leftStack.name = `${book.id}-left-stack`;
       const leftPageWidth = pageWidth - spineWidth * 0.42;
@@ -1099,7 +1099,7 @@ rep("""        plates,
         leftStack,
         stackTurned: 0,
         root,""")
-# las hojas se apoyan en los bloques: sin abanico exagerado
+# leaves rest on the stacks: no exaggerated fan
 rep("const unturnedAt = (leaf, spread) => -0.038 + Math.min(Math.max(leaf - spread, 0), 4) * 0.008;",
     "const unturnedAt = (leaf, spread) => -0.008 + Math.min(Math.max(leaf - spread, 0), 4) * 0.002;")
 rep("const turnedAt = (leaf, spread) => -Math.PI + 0.085 + Math.max(0, 4 - Math.max(spread - 1 - leaf, 0)) * 0.014;",
@@ -1107,7 +1107,7 @@ rep("const turnedAt = (leaf, spread) => -Math.PI + 0.085 + Math.max(0, 4 - Math.
 rep("""      rig.pagePivots.forEach((pagePivot, pageIndex) => {
         const leafOrder = rig.pagePivots.length - 1 - pageIndex;
         let pageTarget = 0;""",
-    """      // grosor de cada lado = hojas que tiene (una hoja = pageDepth / número de hojas)
+    """      // each side is as thick as its leaves (one leaf = pageDepth / leaf count)
       const sheet = rig.pageDepth / rig.pagePivots.length;
       rig.stackTurned = damp(rig.stackTurned, currentSpread * amount, speed, delta);
       const leftThickness = sheet * rig.stackTurned;
@@ -1133,9 +1133,9 @@ body = body.replace("pagePivot.userData.restZ", "restZ").replace("pagePivot.user
 body = body.replace("@@R@@", "const restZ = pagePivot.userData.restZ + restOffset;").replace("@@T@@", "const turnedZ = pagePivot.userData.turnedZ + leftThickness;")
 s = s[:a] + body + s[b:]
 
-# --- pliegue: todas las hojas bajan al mismo punto del lomo (si no, entre las dos páginas asomaban otras)
+# --- gutter: every leaf bends down to the same point of the spine (otherwise other leaves showed between the pages)
 rep("""        const curveTarget = amount > 0""",
-    """        // caída hasta el lomo, en z local de la hoja (cos(giro) la anula a media vuelta)
+    """        // drop to the spine, in the leaf's local z (cos(turn) cancels it mid-turn)
         pagePivot.userData.flex.gutter = (spineZ - pagePivot.position.z) * Math.cos(pagePivot.rotation.y) * amount;
         const curveTarget = amount > 0""")
 rep("""      const restOffset = rightThickness - rig.pageDepth;
@@ -1167,17 +1167,17 @@ rep("""          const z = (
             + gutter * gutterShape
           ) * direction;""")
 
-# el libro abierto siempre opaco: si venía de un extremo de la estantería seguía medio fundido
-rep("""      // grosor de cada lado = hojas que tiene""", """      if (rig.opacity < 1) {
+# the open book is always opaque: coming from the end of the shelf it stayed half faded
+rep("""      // each side is as thick as its leaves""", """      if (rig.opacity < 1) {
         rig.opacity = reducedMotion ? 1 : Math.min(1, damp(rig.opacity, 1, 14, delta) + 0.002);
         rig.fadeMaterials.forEach((material) => {
           material.opacity = rig.opacity;
         });
         rig.contactShadow.material.opacity = rig.opacity * 0.24;
       }
-      // grosor de cada lado = hojas que tiene""")
+      // each side is as thick as its leaves""")
 
-# --- abierto: la tapa izquierda baja al nivel de la contratapa y los bloques dejan libre el pliego
+# --- open: the left board drops to the back board's level and the stacks clear the gutter
 rep("""        rightStack,
         leftStack,
         stackTurned: 0,""", """        rightStack,
@@ -1191,11 +1191,11 @@ rep("""        rightStack,
 rep("""      const restOffset = rightThickness - rig.pageDepth;
       const spineZ = -rig.pageDepth * 0.5 + rightThickness - 0.004;
 """, """      const restOffset = rightThickness - rig.pageDepth;
-      // el lomo se dobla: la tapa izquierda acaba a la altura de la contratapa
+      // the spine flexes: the left board ends level with the back board
       const coverOpen = smoothstep(clamp(-rig.frontPivot.rotation.y / Math.PI, 0, 1));
       const coverDrop = (rig.base.depth + rig.board) * coverOpen;
       rig.frontPivot.position.z = rig.frontRestZ - coverDrop;
-      // el pliego queda libre para que las hojas bajen al lomo sin que las tape el bloque
+      // the gutter stays clear so the leaves reach the spine without the stack covering them
       const stackScale = 1 - (0.16 * rig.leafWidth * coverOpen) / rig.pageWidth;
       rig.rightStack.scale.x = stackScale;
       rig.rightStack.position.x = rig.rightOuter * (1 - stackScale);
@@ -1205,7 +1205,7 @@ rep("""      const restOffset = rightThickness - rig.pageDepth;
 """)
 rep("const turnedZ = pagePivot.userData.turnedZ + leftThickness;", "const turnedZ = pagePivot.userData.turnedZ + leftThickness - coverDrop;")
 
-# --- abierto, el lomo se aplana bajo el pliego (si no, asomaba entre las páginas)
+# --- open, the spine flattens under the gutter (otherwise it showed between the pages)
 rep("      const spineGeometry = new RoundedBoxGeometry(",
     "      const spineGroup = new THREE.Group();\n      spineGroup.name = `${book.id}-spine-group`;\n      motion.add(spineGroup);\n      const spineGeometry = new RoundedBoxGeometry(")
 rep("      motion.add(spine);", "      spineGroup.add(spine);")
@@ -1222,12 +1222,12 @@ rep("""      const spineZ = -rig.base.depth * 0.5 + 0.003;
       rig.spineGroup.position.z = -spineExtent * 0.5 * (1 - spineScale);
 """)
 
-# en el lomo cada hoja llega un pelo más abajo que la de encima: sin z-fighting entre hojas
+# at the spine each leaf lands a hair below the one above: no z-fighting between leaves
 rep("pagePivot.userData.flex.gutter = (spineZ - pagePivot.position.z) * Math.cos(pagePivot.rotation.y) * amount;",
     """const depthInStack = leafOrder < currentSpread ? currentSpread - 1 - leafOrder : leafOrder - currentSpread;
         pagePivot.userData.flex.gutter = (spineZ - depthInStack * 0.0012 - pagePivot.position.z) * Math.cos(pagePivot.rotation.y) * amount;""")
 
-# --- centro: abierto, las hojas giran en el centro del lomo (antes quedaban a la derecha)
+# --- centre: open, leaves turn about the middle of the spine (they used to sit to its right)
 rep("""        frontRestZ: frontPivot.position.z,
         spineGroup,""", """        frontRestZ: frontPivot.position.z,
         spineGroup,
@@ -1243,7 +1243,7 @@ rep("""        const turnedZ = pagePivot.userData.turnedZ + leftThickness - cove
     """        const turnedZ = pagePivot.userData.turnedZ + leftThickness - coverDrop;
         pagePivot.position.x = rig.hingeX - rig.hingeShift * coverOpen;""")
 
-# --- mural: wallpaper.* de la carpeta del cuaderno, sobre el papel pintado mientras está seleccionado
+# --- mural: the notebook folder's wallpaper.*, over the aged paper while it is selected
 rep("""      back.position.set(0, 4, WALL_Z);
       scene.add(back);
 """, """      back.position.set(0, 4, WALL_Z);
@@ -1262,7 +1262,7 @@ rep("""      back.position.set(0, 4, WALL_Z);
       mural.visible = false;
       scene.add(mural);
 """)
-rep("    function addRoom() {", r"""    // cubre toda la pared; la imagen se repite en espejo (sin costuras) cada MURAL_TILE de ancho
+rep("    function addRoom() {", r"""    // covers the whole wall; the image repeats mirrored (seamless) every MURAL_TILE
     const MURAL_WIDTH = 34;
     const MURAL_HEIGHT = 20;
     const MURAL_TILE = 6.5;
@@ -1278,7 +1278,7 @@ rep("    function addRoom() {", r"""    // cubre toda la pared; la imagen se rep
       const tileHeight = MURAL_TILE * image.naturalHeight / image.naturalWidth;
       texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
       texture.repeat.set(MURAL_WIDTH / MURAL_TILE, MURAL_HEIGHT / tileHeight);
-      // una baldosa entera centrada detrás de la balda
+      // one whole tile centred behind the shelf
       texture.offset.set(0.5 - texture.repeat.x * 0.5, 0.5 - texture.repeat.y * 0.5 - (shelfBoardTop + 1.2 - 4) / tileHeight);
       texture.needsUpdate = true;
       muralTextures.set(book.id, texture);
@@ -1292,7 +1292,7 @@ rep("    function addRoom() {", r"""    // cubre toda la pared; la imagen se rep
       const material = mural.material;
       const speed = reducedMotion ? 1000 : 5;
       if ((mural.userData.book || null) !== wanted) {
-        // fundido de salida antes de cambiar de imagen
+        // fade out before swapping the image
         material.opacity = damp(material.opacity, 0, speed * 1.8, delta);
         if (material.opacity < 0.02) {
           material.opacity = 0;
@@ -1311,7 +1311,7 @@ rep("    function addRoom() {", r"""    // cubre toda la pared; la imagen se rep
     function addRoom() {""")
 rep("const themeIsMoving = updateTheme(delta);", "const themeIsMoving = updateTheme(delta) | updateMural(delta);")
 
-# --- abierto, los bloques miden lo mismo que las hojas (antes asomaban por el canto)
+# --- open, the stacks match the leaves' size (they used to stick out at the fore-edge)
 rep("""        rightOuter: 0.018 + pageWidth * 0.5 + 0.002,""", """        rightOuter: 0.018 + pageWidth * 0.5 + 0.002,
         blockInner: 0.018 - pageWidth * 0.5,
         leftBlockShift: leftPageWidth * 0.5 - spineWidth * 0.65 - 0.018,
@@ -1321,7 +1321,7 @@ rep("""      const stackScale = 1 - (0.16 * rig.leafWidth * coverOpen) / rig.pag
       rig.rightStack.position.x = rig.rightOuter * (1 - stackScale) - rig.hingeShift * coverOpen;
       rig.leftStack.scale.x = stackScale;
       rig.leftStack.position.x = rig.leftOuter * (1 - stackScale) + rig.hingeShift * coverOpen;""",
-"""      // tramo [inner, outer] del bloque -> del fin del pliego al canto de las hojas
+"""      // stack span [inner, outer] -> from the end of the gutter to the leaves' fore-edge
       const blockSpan = rig.rightOuter - rig.blockInner;
       const openHinge = -rig.base.width * 0.5;
       const rightInner = lerp(rig.blockInner, openHinge + 0.16 * rig.leafWidth, coverOpen);
@@ -1329,18 +1329,18 @@ rep("""      const stackScale = 1 - (0.16 * rig.leafWidth * coverOpen) / rig.pag
       const rightScale = (rightOuter - rightInner) / blockSpan;
       rig.rightStack.scale.x = rightScale;
       rig.rightStack.position.x = rightInner - rightScale * rig.blockInner;
-      // la izquierda va en coordenadas de la tapa: las hojas ocupan [0, leafWidth] desde el lomo
+      // the left stack is in board coordinates: leaves span [0, leafWidth] from the spine
       const leftScale = (0.84 * rig.leafWidth) / blockSpan;
       rig.leftStack.scale.x = leftScale;
       rig.leftStack.position.x = 0.16 * rig.leafWidth - leftScale * (rig.blockInner + rig.leftBlockShift);
       const heightScale = lerp(1, (rig.pageHeight - 0.014) / rig.pageHeight, coverOpen);
       rig.rightStack.scale.y = heightScale;
       rig.leftStack.scale.y = heightScale;""")
-# tapas más finas
+# thinner boards
 rep("      const board = 0.032;", "      const board = 0.018;")
 
-# --- el eje de cada hoja queda clavado en el lomo; el cuerpo sube a su bloque según el giro
-#     (antes el eje viajaba entre los dos bloques y a media vuelta la hoja se despegaba)
+# --- each leaf's hinge stays pinned to the spine; its body rises to its stack by turn angle
+#     (the hinge used to travel between the stacks and the leaf came off mid-turn)
 rep("""        pagePivot.userData.flex.gutter = (spineZ - depthInStack * 0.0012 - pagePivot.position.z) * Math.cos(pagePivot.rotation.y) * amount;""",
     """        const hingeZ = spineZ - depthInStack * 0.0012;
         const halfTurn = pagePivot.rotation.y * 0.5;
@@ -1352,9 +1352,9 @@ rep("""            + gutter * gutterShape
           ) * direction;""", """            + gutter * (1 - gutterShape)
           ) * direction;""")
 
-# --- pared por cuaderno: pattern.* en mosaico por toda la pared y wallpaper.* como mural centrado
-rep_between("    // cubre toda la pared; la imagen se repite en espejo", "    function addRoom() {", r"""    // pattern: mosaico en espejo (sin costuras) por toda la pared, baldosas de PATTERN_TILE de ancho
-    // wallpaper: una sola imagen escalada a la pared visible
+# --- per-notebook wall: pattern.* tiled across the wall and wallpaper.* as a mural
+rep_between("    // covers the whole wall; the image repeats mirrored", "    function addRoom() {", r"""    // pattern: mirrored (seamless) tiling across the wall, tiles PATTERN_TILE wide
+    // wallpaper: a single image scaled to the visible wall
     const WALL_WIDTH = 34;
     const WALL_HEIGHT = 20;
     const PATTERN_TILE = 6.5;
@@ -1368,7 +1368,7 @@ rep_between("    // cubre toda la pared; la imagen se repite en espejo", "    fu
         const tileHeight = PATTERN_TILE * image.naturalHeight / image.naturalWidth;
         texture.wrapS = texture.wrapT = THREE.MirroredRepeatWrapping;
         texture.repeat.set(WALL_WIDTH / PATTERN_TILE, WALL_HEIGHT / tileHeight);
-        // una baldosa entera centrada detrás de la balda
+        // one whole tile centred behind the shelf
         texture.offset.set(
           0.5 - texture.repeat.x * 0.5,
           0.5 - texture.repeat.y * 0.5 - (shelfBoardTop + 1.2 - 4) / tileHeight
@@ -1395,14 +1395,14 @@ rep_between("    // cubre toda la pared; la imagen se repite en espejo", "    fu
         mesh.position.set(0, 2, WALL_Z + zOffset);
       }
       mesh.visible = false;
-      // orden fijo: si no, three.js las ordena por distancia y el patrón tapaba el mural
+      // fixed order: otherwise three.js sorts them by distance and the pattern covered the mural
       mesh.renderOrder = renderOrder;
       scene.add(mesh);
       wallLayers.push({ key, tiled, mesh, book: null, textures: new Map() });
     }
 
-    // el wallpaper cubre la pared que ve la cámara de la estantería (con margen para girar),
-    // recortado tipo cover: sin repetir ni deformar
+    // the wallpaper covers the wall seen by the shelf camera (with a margin for orbiting),
+    // cover-cropped: no tiling, no stretching
     function fitWallpaper(mesh, texture) {
       const distance = shelfCameraPosition.z - WALL_Z;
       const height = 2 * distance * Math.tan(THREE.MathUtils.degToRad(camera.fov * 0.5)) * 1.1;
@@ -1428,7 +1428,7 @@ rep_between("    // cubre toda la pared; la imagen se repite en espejo", "    fu
       const material = layer.mesh.material;
       const speed = reducedMotion ? 1000 : 5;
       if (layer.book !== wanted) {
-        // fundido de salida antes de cambiar de imagen
+        // fade out before swapping the image
         material.opacity = damp(material.opacity, 0, speed * 1.8, delta);
         if (material.opacity < 0.02) {
           material.opacity = 0;
@@ -1468,16 +1468,16 @@ rep("""      mural = createMesh(shared.plane, new THREE.MeshStandardMaterial({
       mural.position.set(0, 4, WALL_Z + 0.003);
       mural.visible = false;
       scene.add(mural);
-""", """      // pattern.* queda en el JSON pero de momento no se usa
+""", """      // pattern.* stays in the JSON but is unused for now
       addWallLayer("wallpaperImage", false, 0.006, -1);
 """)
 
-# sin marcapáginas
+# no ribbon bookmark
 rep("      rightStack.add(ribbon);\n", "")
-# --- wallpaper: sin recorte; se oscurece hacia los bordes (luz en el centro) y se funde con su
-#     color medio oscurecido, que pinta el resto de la pared: al girar la cámara no hay corte
+# --- wallpaper: uncropped; darkens towards the edges (light in the centre) and fades into its
+#     darkened average colour, which paints the rest of the wall: no hard edge when orbiting
 rep("""    function layerTexture(image, tiled) {
-      const texture = new THREE.Texture(image);""", """    // color medio oscurecido: el tono de la pared fuera de la imagen
+      const texture = new THREE.Texture(image);""", """    // darkened average colour: the wall tone outside the image
     function wallpaperShade(image) {
       const probe = document.createElement("canvas");
       probe.width = probe.height = 16;
@@ -1502,7 +1502,7 @@ rep("""    function layerTexture(image, tiled) {
       const ctx = canvas.getContext("2d");
       ctx.drawImage(image, 0, 0, width, height);
       const [red, green, blue] = wallpaperShade(image);
-      // viñeta: la luz cae en el centro, los bordes se apagan hacia el tono de la pared
+      // vignette: light falls in the centre, edges fade to the wall tone
       const radius = Math.hypot(width, height) * 0.5;
       const vignette = ctx.createRadialGradient(width * 0.5, height * 0.42, radius * 0.3, width * 0.5, height * 0.42, radius);
       vignette.addColorStop(0, `rgba(${red},${green},${blue},0)`);
@@ -1510,7 +1510,7 @@ rep("""    function layerTexture(image, tiled) {
       vignette.addColorStop(1, `rgba(${red},${green},${blue},0.92)`);
       ctx.fillStyle = vignette;
       ctx.fillRect(0, 0, width, height);
-      // el último tramo funde del todo con el tono de la pared
+      // the last stretch blends fully into the wall tone
       const feather = Math.round(Math.min(width, height) * 0.07);
       const edges = [
         [0, 0, feather, 0, 0, 0, feather, height],
@@ -1534,14 +1534,14 @@ rep("""    function layerTexture(image, tiled) {
     function layerTexture(image, tiled) {
       if (!tiled) return makeWallpaperTexture(image);
       const texture = new THREE.Texture(image);""")
-# fondo: el tono de la pared detrás de la imagen
+# backdrop: the wall tone behind the image
 rep("""      mesh.visible = false;
-      // orden fijo: si no, three.js las ordena por distancia y el patrón tapaba el mural
+      // fixed order: otherwise three.js sorts them by distance and the pattern covered the mural
       mesh.renderOrder = renderOrder;
       scene.add(mesh);
       wallLayers.push({ key, tiled, mesh, book: null, textures: new Map() });""",
 """      mesh.visible = false;
-      // orden fijo: si no, three.js las ordena por distancia y el patrón tapaba el mural
+      // fixed order: otherwise three.js sorts them by distance and the pattern covered the mural
       mesh.renderOrder = renderOrder;
       scene.add(mesh);
       let backdrop = null;
@@ -1569,7 +1569,7 @@ rep("""      if (!layer.tiled && material.map) fitWallpaper(layer.mesh, material
         layer.backdrop.material.opacity = material.opacity;
         layer.backdrop.visible = layer.mesh.visible;
       }""")
-# encajar sin recortar: el plano mantiene la proporción de la imagen y cubre la vista
+# fit without cropping: the plane keeps the image's aspect and covers the view
 rep("""      mesh.scale.set(width, height, 1);
       mesh.position.y = centerY;
       const image = texture.image;
@@ -1581,15 +1581,15 @@ rep("""      mesh.scale.set(width, height, 1);
         texture.repeat.set(1, imageAspect / wallAspect);
       }
       texture.offset.set((1 - texture.repeat.x) * 0.5, (1 - texture.repeat.y) * 0.5);""",
-"""      // sin recortar: el plano conserva la proporción y lo sobrante (con el fundido) cae fuera de la vista
+"""      // uncropped: the plane keeps its aspect and the excess (with the fade) falls outside the view
       const aspect = texture.userData.aspect;
       const planeWidth = Math.max(width, height * aspect) * 1.08;
       mesh.scale.set(planeWidth, planeWidth / aspect, 1);
       mesh.position.y = centerY;""")
 
-# --- pósters satinados pegados a la pared, relieve del wallpaper y luz rasante
+# --- satin posters pasted on the wall, wallpaper relief and a raking light
 rep("""    function layerTexture(image, tiled) {
-      if (!tiled) return makeWallpaperTexture(image);""", r"""    // relieve del yeso: la luminancia de la imagen sin el color de fondo (grietas y desconchones más oscuros)
+      if (!tiled) return makeWallpaperTexture(image);""", r"""    // plaster relief: the image's luminance minus its background colour (cracks and chips are darker)
     function makeWallBumpTexture(image) {
       const width = Math.min(1600, image.naturalWidth);
       const height = Math.round(width * image.naturalHeight / image.naturalWidth);
@@ -1599,14 +1599,14 @@ rep("""    function layerTexture(image, tiled) {
       const ctx = canvas.getContext("2d");
       ctx.filter = "grayscale(1) contrast(1.6)";
       ctx.drawImage(image, 0, 0, width, height);
-      // resta la versión borrosa: queda solo el detalle fino, no las manchas grandes de color
+      // subtract a blurred copy: only fine detail remains, not large colour patches
       ctx.filter = "grayscale(1) contrast(1.6) blur(10px) invert(1)";
       ctx.globalAlpha = 0.5;
       ctx.drawImage(image, 0, 0, width, height);
       return configureCanvasTexture(new THREE.CanvasTexture(canvas), { color: false, anisotropy: 8 });
     }
 
-    // papel encolado: ondulaciones suaves y algo de grano; uno para todos los pósters
+    // pasted paper: soft ripples and a little grain; shared by every poster
     let posterBumpTexture = null;
     function getPosterBumpTexture() {
       if (posterBumpTexture) return posterBumpTexture;
@@ -1635,7 +1635,7 @@ rep("""    function layerTexture(image, tiled) {
       return posterBumpTexture;
     }
 
-    // sombra de contacto: la silueta del póster, borrosa
+    // contact shadow: the poster's blurred silhouette
     function makePosterShadowTexture(image) {
       const canvas = document.createElement("canvas");
       canvas.width = 160;
@@ -1646,7 +1646,7 @@ rep("""    function layerTexture(image, tiled) {
       return configureCanvasTexture(new THREE.CanvasTexture(canvas), { anisotropy: 1 });
     }
 
-    // huecos alrededor de la balda: [x, y, alto, giro en grados]; info.json "posters" puede fijarlos
+    // slots around the shelf: [x, y, height, rotation in degrees]; info.json "posters" can pin them
     const POSTER_SLOTS = [
       [-3.1, 2.75, 2.3, -2.2],
       [3.15, 2.85, 2.2, 1.6],
@@ -1668,14 +1668,14 @@ rep("""    function layerTexture(image, tiled) {
         const lap = Math.floor(index / POSTER_SLOTS.length);
         const x = poster.x ?? slot[0] + lap * 0.4;
         const y = poster.y ?? slot[1] - lap * 0.3;
-        const height = poster.alto ?? slot[2];
-        const turn = THREE.MathUtils.degToRad(poster.giro ?? slot[3]);
+        const height = poster.height ?? slot[2];
+        const turn = THREE.MathUtils.degToRad(poster.rotation ?? slot[3]);
         const width = height * poster.image.naturalWidth / poster.image.naturalHeight;
         const map = new THREE.Texture(poster.image);
         map.colorSpace = THREE.SRGBColorSpace;
         map.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
         map.needsUpdate = true;
-        // satinado: algo de brillo y una capa de barniz que refleja la luz rasante
+        // satin: some gloss and a varnish layer that catches the raking light
         const material = new THREE.MeshPhysicalMaterial({
           map,
           bumpMap: getPosterBumpTexture(),
@@ -1723,7 +1723,7 @@ rep("""    function layerTexture(image, tiled) {
 
     function layerTexture(image, tiled) {
       if (!tiled) return makeWallpaperTexture(image);""")
-# el wallpaper lleva relieve
+# the wallpaper gets relief
 rep("""      const texture = configureCanvasTexture(new THREE.CanvasTexture(canvas), { anisotropy: 8 });
       texture.userData.shade = new THREE.Color(`rgb(${red},${green},${blue})`);""",
 """      const texture = configureCanvasTexture(new THREE.CanvasTexture(canvas), { anisotropy: 8 });
@@ -1749,7 +1749,7 @@ rep("""      layer.mesh.visible = material.opacity > 0.004;
       if (layer.backdrop) {""")
 rep("""    function updateWallLayer(layer, delta) {
       const book = BOOKS[selectedIndex];
-      const wanted = book?.[layer.key] ? book : null;""", """    // los pósters se muestran aunque el cuaderno no tenga wallpaper
+      const wanted = book?.[layer.key] ? book : null;""", """    // posters show even when the notebook has no wallpaper
     function updatePosters(layer, delta) {
       const book = BOOKS[selectedIndex];
       const wanted = book?.posters?.length ? book : null;
@@ -1776,7 +1776,7 @@ rep("""    function updateWallLayer(layer, delta) {
     function updateWallLayer(layer, delta) {
       const book = BOOKS[selectedIndex];
       const wanted = book?.[layer.key] ? book : null;""")
-# luz rasante desde la izquierda: hace visible el relieve y mueve el brillo de los pósters
+# raking light from the left: reveals the relief and moves the posters' gloss
 rep("""      const fill = new THREE.DirectionalLight(0xd8e3e7, 0.3);""", """      const rake = new THREE.SpotLight(0xfff1dc, 32, 0, 0.62, 1, 1.2);
       rake.name = "wall-rake";
       rake.position.set(-9.5, 3.4, WALL_Z + 1.1);
@@ -1785,6 +1785,54 @@ rep("""      const fill = new THREE.DirectionalLight(0xd8e3e7, 0.3);""", """    
       roomLights.rake = rake;
 
       const fill = new THREE.DirectionalLight(0xd8e3e7, 0.3);""")
+
+# --- UI copy through callbacks.t (site/i18n.js: English and Spanish) ------------------------
+rep("""  let destroyed = false;
+""", """  let destroyed = false;
+  const t = callbacks.t || ((key) => key);
+""")
+rep("""      return ["Portadilla", ...book.pages.map((_, index) => `Lámina ${index + 1}`)];""",
+    """      return [t("titlePage"), ...book.pages.map((_, index) => t("sketchnote", index + 1))];""")
+rep('pageLabel.textContent = readingOpen ? labels[currentSpread] : "Cerrado";',
+    'pageLabel.textContent = readingOpen ? labels[currentSpread] : t("closed");')
+rep(': "Haz clic en el libro para abrirlo";', ': t("clickToOpen");')
+rep('toggleBookButton.textContent = readingOpen ? "Cerrar" : "Abrir";',
+    'toggleBookButton.textContent = readingOpen ? t("close") : t("open");')
+rep("""        ? "Arrastra las páginas · Arrastra la tapa para cerrar · Arrastra el fondo para girar"
+        : "Arrastra la tapa o haz clic para abrir · Arrastra el fondo para girar";""",
+    """        ? t("hintOpen")
+        : t("hintClosed");""")
+rep("? \"Lámina anterior\"\n          : `Lámina anterior: ${labels[currentSpread - 1]}`",
+    "? t(\"previousSketchnote\")\n          : t(\"previousSketchnoteTitle\", labels[currentSpread - 1])")
+rep("? \"Lámina siguiente\"\n          : `Lámina siguiente: ${labels[currentSpread + 1]}`",
+    "? t(\"nextSketchnote\")\n          : t(\"nextSketchnoteTitle\", labels[currentSpread + 1])")
+rep('inspectButton.setAttribute("aria-label", `Abrir ${book.title}`);',
+    'inspectButton.setAttribute("aria-label", t("openTitle", book.title));')
+rep('button.setAttribute("aria-label", `Cuaderno ${index + 1}: ${book.title}`);',
+    'button.setAttribute("aria-label", t("notebook", index + 1, book.title));')
+rep("liveRegion.textContent = `Selected volume ${selectedIndex + 1} of ${BOOKS.length}: ${book.title}. ${book.note}`;",
+    'liveRegion.textContent = t("selected", selectedIndex + 1, BOOKS.length, book.title, book.note);')
+rep("""          ? `${activeBook.data.title} opened to its title page. Drag a page horizontally or use the arrow controls to read.`
+          : `${activeBook.data.title} closed. Drag the cover, click the book, or use Open book to begin reading.`;""",
+    """          ? t("opened", activeBook.data.title)
+          : t("closedBook", activeBook.data.title);""")
+rep("""          ? `Contraportada de ${activeBook.data.title}.`
+          : `Portada de ${activeBook.data.title}.`;""",
+    """          ? t("backCover", activeBook.data.title)
+          : t("frontCover", activeBook.data.title);""")
+rep("liveRegion.textContent = `Opening a closed copy of ${activeBook.data.title}. Drag the cover, click the book, or use Open book to begin reading.`;",
+    'liveRegion.textContent = t("opening", activeBook.data.title);')
+rep("liveRegion.textContent = `Returning ${activeBook.data.title} to the shelf.`;",
+    'liveRegion.textContent = t("returning", activeBook.data.title);')
+rep("liveRegion.textContent = `${BOOKS[selectedIndex].title} returned to the shelf.`;",
+    'liveRegion.textContent = t("returned", BOOKS[selectedIndex].title);')
+rep("liveRegion.textContent = `Inspection view reset for ${BOOKS[selectedIndex].title}.`;",
+    'liveRegion.textContent = t("viewReset", BOOKS[selectedIndex].title);')
+rep('showFallback("The 3D view paused after losing its graphics context. The complete static catalog remains available; reload to restore inspection.");',
+    'showFallback(t("contextLost"));')
+rep('showFallback("WebGL is unavailable in this browser. The complete static catalog remains available.");',
+    'showFallback(t("noWebgl"));')
+rep('showFallback("No se pudo preparar la estantería 3D.");', 'showFallback(t("loadFailed"));')
 
 assert "COVER_CROPS" not in s and "coverAtlas" not in s and "SPREAD_COUNT" not in s and "PAGINATED_LEAF_COUNT" not in s
 open(OUT, "w").write(s)

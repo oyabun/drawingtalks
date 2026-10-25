@@ -1,56 +1,56 @@
 {
-  "evento": "Mas Que Startups",
-  "edicion": "",
-  "fecha": "",
-  "lugar": "",
+  "event": "Mas Que Startups",
+  "edition": "",
+  "date": "",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 6,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 6,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "Más Que Startups - 5 1.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 1,
+      "file": "Más Que Startups - 5 1.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "MQS - 7 - Loly Garrido.png",
-      "titulo": "Loly Garrido",
-      "ponente": "",
+      "sketchnote": 2,
+      "file": "MQS - 7 - Loly Garrido.png",
+      "title": "Loly Garrido",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "MQS - 9 - Guillermo Montoya.png",
-      "titulo": "Guillermo Montoya",
-      "ponente": "",
+      "sketchnote": 3,
+      "file": "MQS - 9 - Guillermo Montoya.png",
+      "title": "Guillermo Montoya",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "MQS - 10 - Rated Power.png",
-      "titulo": "Rated Power",
-      "ponente": "",
+      "sketchnote": 4,
+      "file": "MQS - 10 - Rated Power.png",
+      "title": "Rated Power",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "MSQ - 11 - Danie Seijo.png",
-      "titulo": "Danie Seijo",
-      "ponente": "",
+      "sketchnote": 5,
+      "file": "MSQ - 11 - Danie Seijo.png",
+      "title": "Danie Seijo",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "MQS - 12 - Carlos de Otto.png",
-      "titulo": "Carlos de Otto",
-      "ponente": "",
+      "sketchnote": 6,
+      "file": "MQS - 12 - Carlos de Otto.png",
+      "title": "Carlos de Otto",
+      "speaker": "",
       "url": ""
     }
   ]

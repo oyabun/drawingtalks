@@ -1,63 +1,63 @@
 {
-  "evento": "Tarugo",
-  "edicion": "2023",
-  "fecha": "2023",
-  "lugar": "",
+  "event": "Tarugo",
+  "edition": "2023",
+  "date": "2023",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 7,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 7,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
-      "titulo": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
-      "ponente": "",
+      "sketchnote": 1,
+      "file": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
+      "title": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png",
-      "titulo": "Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia",
-      "ponente": "Sandra Hernandez",
+      "sketchnote": 2,
+      "file": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png",
+      "title": "Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia",
+      "speaker": "Sandra Hernandez",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png",
-      "titulo": "Fast Data",
-      "ponente": "Sergio Rodriguez",
+      "sketchnote": 3,
+      "file": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png",
+      "title": "Fast Data",
+      "speaker": "Sergio Rodriguez",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png",
-      "titulo": "Show me the money!",
-      "ponente": "Isabel Garate",
+      "sketchnote": 4,
+      "file": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png",
+      "title": "Show me the money!",
+      "speaker": "Isabel Garate",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png",
-      "titulo": "Software que no se ejecuta en la nube",
-      "ponente": "Débora Franco",
+      "sketchnote": 5,
+      "file": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png",
+      "title": "Software que no se ejecuta en la nube",
+      "speaker": "Débora Franco",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png",
-      "titulo": "Del polvorón al snack de proteína de insecto",
-      "ponente": "Antonio Alcalde",
+      "sketchnote": 6,
+      "file": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png",
+      "title": "Del polvorón al snack de proteína de insecto",
+      "speaker": "Antonio Alcalde",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png",
-      "titulo": "Cómo sobrevivir en la empresa que fundaste y te acaban de comprar",
-      "ponente": "Pablo Santos",
+      "sketchnote": 7,
+      "file": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png",
+      "title": "Cómo sobrevivir en la empresa que fundaste y te acaban de comprar",
+      "speaker": "Pablo Santos",
       "url": ""
     }
   ]

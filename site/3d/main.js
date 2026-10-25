@@ -1,9 +1,10 @@
 import { createBookshelfRenderer } from './bookshelfRenderer.js';
+import { t, localized, translatePage } from '../i18n.js';
 
 const host = document.getElementById('shelf3d');
 const canvas = document.getElementById('shelf3d-canvas');
 const flipButton = document.getElementById('flip-book');
-const label = (n) => `${n} ${n === 1 ? 'lámina' : 'láminas'}`;
+translatePage();
 
 function loadImage(src) {
   return new Promise((resolve) => {
@@ -15,7 +16,7 @@ function loadImage(src) {
   });
 }
 
-// color medio de la portada: tela del lomo, contratapa y tono de la habitación
+// average cover colour: spine cloth, back board and room tint
 function averageColor(img) {
   const c = document.createElement('canvas');
   c.width = 12; c.height = 18;
@@ -29,7 +30,7 @@ function averageColor(img) {
 }
 
 // "5-Lechazoconf 24 - Un gran proyecto (Laura Lacarra).png" → "Un gran proyecto (Laura Lacarra)"
-// nombres genéricos ("sketch_ 1", "Paper.Bloc.2") → "Lámina N"
+// generic names ("sketch_ 1", "Paper.Bloc.2") → "Sketchnote N"
 const plain = (text) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 function talkName(file, title, index) {
   const brand = plain(title.split(/[\s,]+/)[0]);
@@ -41,7 +42,7 @@ function talkName(file, title, index) {
     .map((part) => part.replace(/^\d+\s+(?=[A-ZÁÉÍÓÚ])/, '').trim())
     .filter((part, i, all) => !(all.length > 1 && i === 0 && (plain(part).includes(brand) || /^[A-Z]{2,}\d*$/.test(part))))
     .filter((part) => /[a-záéíóúñ]{3,}/i.test(part) && !/^(sketch|paper|img|scan)\b/i.test(part));
-  return parts.length ? parts.join(' · ') : `Lámina ${index + 1}`;
+  return parts.length ? parts.join(' · ') : t('sketchnote', index + 1);
 }
 
 // "Tarugo 2022" → 2022 · "TRGCON26" → 2026
@@ -67,8 +68,8 @@ function toBook(nb, index, cover, back, wallpaper, pattern, posters) {
     id: nb.slug,
     title: nb.title,
     roman: String(index + 1).padStart(2, '0'),
-    discipline: label(n),
-    note: label(n),
+    discipline: t('sketchnotes', n),
+    note: t('sketchnotes', n),
     deck: '',
     binding: '',
     format: '',
@@ -78,7 +79,7 @@ function toBook(nb, index, cover, back, wallpaper, pattern, posters) {
     paletteLabel: '',
     color: hex(cloth),
     foil: light ? '#2a2622' : '#e9dcc0',
-    // la habitación es la misma para todos: el papel pintado no cambia con el libro
+    // the room is the same for every book: the aged paper doesn't change with the book
     palette: {
       paper: hex(WALL),
       paperDeep: hex(mix(WALL, [0, 0, 0], 0.35)),
@@ -91,21 +92,23 @@ function toBook(nb, index, cover, back, wallpaper, pattern, posters) {
       light: '#ffe4c0',
       fill: '#f6efe2',
     },
-    // tapa 2:3 algo más ancha que la página (las páginas son medias láminas 4:3)
+    // 2:3 board, a little wider than the page (pages are halves of a 4:3 sketchnote)
     width: 1.09,
     height: 1.56,
-    // grosor = tapas (0.026) + una hoja por lámina, más portadilla y guarda (~0.7 mm cada una)
+    // thickness = boards (0.026) + one leaf per sketchnote, plus title page and endpaper (~0.7 mm each)
     depth: 0.026 + (n + 2) * 0.0038,
     seed: 11 * (index + 1),
     pages: nb.pages,
-    // info.json del cuaderno manda; si falta algo, se deduce del nombre de archivo
-    year: nb.info?.fecha || yearOf(nb.title),
-    place: nb.info?.lugar || '',
-    url: (nb.info?.url || '').replace(/^https?:\/\//, '').replace(/\/$/, ''),
+    // the notebook's info.json wins; anything missing is derived from the file name
+    // text fields can be a string or { "en": …, "es": … }
+    year: localized(nb.info?.date) || yearOf(nb.title),
+    place: localized(nb.info?.venue),
+    url: localized(nb.info?.url).replace(/^https?:\/\//, '').replace(/\/$/, ''),
     talks: nb.pages.map((page, i) => {
-      const talk = nb.info?.charlas?.[i];
-      if (!talk?.titulo) return talkName(page.name, nb.title, i);
-      return talk.ponente ? `${talk.titulo} — ${talk.ponente}` : talk.titulo;
+      const talk = nb.info?.talks?.[i];
+      const title = localized(talk?.title);
+      if (!title) return talkName(page.name, nb.title, i);
+      return talk.speaker ? `${title} — ${talk.speaker}` : title;
     }),
     coverImage: cover,
     backImage: back,
@@ -115,7 +118,7 @@ function toBook(nb, index, cover, back, wallpaper, pattern, posters) {
   };
 }
 
-/* ---------- URL: #/slug (cerrado) · #/slug/0 (portadilla) · #/slug/3 (lámina 3) ---------- */
+/* ---------- URL: #/slug (closed) · #/slug/0 (title page) · #/slug/3 (sketchnote 3) ---------- */
 let books = [];
 let api = null;
 let writing = false;
@@ -136,7 +139,7 @@ function route() {
     return;
   }
   const total = books[index].pages.length;
-  const spread = n === 'fin' ? total : n ? Math.max(0, Math.min(total, parseInt(n, 10) || 0)) : null;
+  const spread = n === 'end' || n === 'fin' ? total : n ? Math.max(0, Math.min(total, parseInt(n, 10) || 0)) : null;
   api.openBook(index, spread);
 }
 
@@ -149,10 +152,11 @@ const images = await Promise.all(data.map((nb) => Promise.all([
   Promise.all((nb.posters || []).map(async (poster) => ({ ...poster, image: await loadImage(poster.src) }))),
 ])));
 books = data.map((nb, i) => toBook(nb, i, ...images[i]));
-document.getElementById('shelf-count').textContent = `${books.length} cuadernos`;
+document.getElementById('shelf-count').textContent = t('notebooks', books.length);
 
 api = createBookshelfRenderer(host, canvas, {
   books,
+  t,
   assets: {
     paperColor: '3d/tex/paper-color.webp',
     paperRoughness: '3d/tex/paper-roughness.webp',
@@ -176,7 +180,7 @@ api = createBookshelfRenderer(host, canvas, {
     if (mode === 'shelf') { setHash('#/'); document.title = 'Drawing Talks'; }
   },
   onFlipChange: (flipped) => {
-    flipButton.textContent = flipped ? 'Ver portada' : 'Dar la vuelta';
+    flipButton.textContent = t(flipped ? 'showCover' : 'turnOver');
   },
   onSpreadChange: ({ index, open, spread }) => {
     const b = books[index];

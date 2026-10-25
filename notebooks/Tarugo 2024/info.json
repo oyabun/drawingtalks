@@ -1,63 +1,63 @@
 {
-  "evento": "Tarugo",
-  "edicion": "2024",
-  "fecha": "2024",
-  "lugar": "La Nave (Madrid)",
+  "event": "Tarugo",
+  "edition": "2024",
+  "date": "2024",
+  "venue": "La Nave (Madrid)",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "wallpaper.png",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 7,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 7,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png",
-      "titulo": "Hardware abierto en tiempo de modelos cerrados",
-      "ponente": "David Cuartielles",
+      "sketchnote": 1,
+      "file": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png",
+      "title": "Hardware abierto en tiempo de modelos cerrados",
+      "speaker": "David Cuartielles",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png",
-      "titulo": "La tecnología para luchar contra la desinformación",
-      "ponente": "Clara Jiménez Cruz",
+      "sketchnote": 2,
+      "file": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png",
+      "title": "La tecnología para luchar contra la desinformación",
+      "speaker": "Clara Jiménez Cruz",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png",
-      "titulo": "Curar con Algoritmos",
-      "ponente": "Aurelia Bustos",
+      "sketchnote": 3,
+      "file": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png",
+      "title": "Curar con Algoritmos",
+      "speaker": "Aurelia Bustos",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png",
-      "titulo": "Evangelismo ténnico, qué, cómo y por qué",
-      "ponente": "Trisha Gee",
+      "sketchnote": 4,
+      "file": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png",
+      "title": "Evangelismo ténnico, qué, cómo y por qué",
+      "speaker": "Trisha Gee",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png",
-      "titulo": "No montes un estudio de videojuegos",
-      "ponente": "Daniel Sánchez-Crespo",
+      "sketchnote": 5,
+      "file": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png",
+      "title": "No montes un estudio de videojuegos",
+      "speaker": "Daniel Sánchez-Crespo",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png",
-      "titulo": "Effective Data",
-      "ponente": "Giuseppe Sollazzo",
+      "sketchnote": 6,
+      "file": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png",
+      "title": "Effective Data",
+      "speaker": "Giuseppe Sollazzo",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png",
-      "titulo": "Cómo crear una App de pago único, y no morir en el intento",
-      "ponente": "Rafael Pons",
+      "sketchnote": 7,
+      "file": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png",
+      "title": "Cómo crear una App de pago único, y no morir en el intento",
+      "speaker": "Rafael Pons",
       "url": ""
     }
   ]

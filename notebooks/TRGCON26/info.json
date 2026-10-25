@@ -1,63 +1,63 @@
 {
-  "evento": "TRGCON26",
-  "edicion": "2026",
-  "fecha": "2026",
-  "lugar": "",
+  "event": "TRGCON26",
+  "edition": "2026",
+  "date": "2026",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "wallpaper.png",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 7,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 7,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "Paper.Bloc.2.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 1,
+      "file": "Paper.Bloc.2.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "Paper.Bloc.3.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 2,
+      "file": "Paper.Bloc.3.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "Paper.Bloc.4.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 3,
+      "file": "Paper.Bloc.4.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "Paper.Bloc.5.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 4,
+      "file": "Paper.Bloc.5.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "Paper.Bloc.6.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 5,
+      "file": "Paper.Bloc.6.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "Paper.Bloc.7.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 6,
+      "file": "Paper.Bloc.7.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "Paper.Bloc.8.png",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 7,
+      "file": "Paper.Bloc.8.png",
+      "title": "",
+      "speaker": "",
       "url": ""
     }
   ]

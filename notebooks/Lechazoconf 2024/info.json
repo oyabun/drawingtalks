@@ -1,91 +1,91 @@
 {
-  "evento": "Lechazoconf",
-  "edicion": "2024",
-  "fecha": "2024",
-  "lugar": "",
+  "event": "Lechazoconf",
+  "edition": "2024",
+  "date": "2024",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 11,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 11,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png",
-      "titulo": "Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia",
-      "ponente": "Bárbara Román",
+      "sketchnote": 1,
+      "file": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png",
+      "title": "Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia",
+      "speaker": "Bárbara Román",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png",
-      "titulo": "Juego de tronos, fantasias de poder en la cultura de producto",
-      "ponente": "Henar Vega",
+      "sketchnote": 2,
+      "file": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png",
+      "title": "Juego de tronos, fantasias de poder en la cultura de producto",
+      "speaker": "Henar Vega",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png",
-      "titulo": "Aprendizajes después de invertir en más de 100 startups",
-      "ponente": "Miguel Arias",
+      "sketchnote": 3,
+      "file": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png",
+      "title": "Aprendizajes después de invertir en más de 100 startups",
+      "speaker": "Miguel Arias",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png",
-      "titulo": "Devengo, buscando oro entre las cenizas",
-      "ponente": "Aitor García Rey",
+      "sketchnote": 4,
+      "file": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png",
+      "title": "Devengo, buscando oro entre las cenizas",
+      "speaker": "Aitor García Rey",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png",
-      "titulo": "Un gran proyecto multi-telco y mundial para devs",
-      "ponente": "Laura Lacarra",
+      "sketchnote": 5,
+      "file": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png",
+      "title": "Un gran proyecto multi-telco y mundial para devs",
+      "speaker": "Laura Lacarra",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png",
-      "titulo": "No es IA generativa todo lo que reluce",
-      "ponente": "Bea Hernández",
+      "sketchnote": 6,
+      "file": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png",
+      "title": "No es IA generativa todo lo que reluce",
+      "speaker": "Bea Hernández",
       "url": ""
     },
     {
-      "lamina": 7,
-      "archivo": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png",
-      "titulo": "Estos son mis principios de product management",
-      "ponente": "Diego Mariño",
+      "sketchnote": 7,
+      "file": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png",
+      "title": "Estos son mis principios de product management",
+      "speaker": "Diego Mariño",
       "url": ""
     },
     {
-      "lamina": 8,
-      "archivo": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png",
-      "titulo": "Sorteando la desesperación en innovación",
-      "ponente": "Sara de Pablos",
+      "sketchnote": 8,
+      "file": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png",
+      "title": "Sorteando la desesperación en innovación",
+      "speaker": "Sara de Pablos",
       "url": ""
     },
     {
-      "lamina": 9,
-      "archivo": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png",
-      "titulo": "De cal y de arena, caminos hacia equipos orientados a producto",
-      "ponente": "Abdul Martínez Castro",
+      "sketchnote": 9,
+      "file": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png",
+      "title": "De cal y de arena, caminos hacia equipos orientados a producto",
+      "speaker": "Abdul Martínez Castro",
       "url": ""
     },
     {
-      "lamina": 10,
-      "archivo": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png",
-      "titulo": "What software can learn from deforestation",
-      "ponente": "Chris Wetherell",
+      "sketchnote": 10,
+      "file": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png",
+      "title": "What software can learn from deforestation",
+      "speaker": "Chris Wetherell",
       "url": ""
     },
     {
-      "lamina": 11,
-      "archivo": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
-      "titulo": "10 años de Plantonic Games, 10 lecciones aprendidas",
-      "ponente": "",
+      "sketchnote": 11,
+      "file": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
+      "title": "10 años de Plantonic Games, 10 lecciones aprendidas",
+      "speaker": "",
       "url": ""
     }
   ]

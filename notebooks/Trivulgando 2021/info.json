@@ -1,56 +1,56 @@
 {
-  "evento": "Trivulgando",
-  "edicion": "2021",
-  "fecha": "2021",
-  "lugar": "",
+  "event": "Trivulgando",
+  "edition": "2021",
+  "date": "2021",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 6,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 6,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "1-Trivulgando 2020 - La psicología del negacionismo.png",
-      "titulo": "La psicología del negacionismo",
-      "ponente": "",
+      "sketchnote": 1,
+      "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
+      "title": "La psicología del negacionismo",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "2-Trivulgando 2020 - Let's play.png",
-      "titulo": "Let's play",
-      "ponente": "",
+      "sketchnote": 2,
+      "file": "2-Trivulgando 2020 - Let's play.png",
+      "title": "Let's play",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
-      "titulo": "Datos, la materia prima de la epidemiologia",
-      "ponente": "",
+      "sketchnote": 3,
+      "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
+      "title": "Datos, la materia prima de la epidemiologia",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 4,
-      "archivo": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
-      "titulo": "Trucos para sobrevivir informedia, la pandemia de información",
-      "ponente": "",
+      "sketchnote": 4,
+      "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
+      "title": "Trucos para sobrevivir informedia, la pandemia de información",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 5,
-      "archivo": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
-      "titulo": "Divulgación Científica contra los bulos",
-      "ponente": "",
+      "sketchnote": 5,
+      "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
+      "title": "Divulgación Científica contra los bulos",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 6,
-      "archivo": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
-      "titulo": "Divulgar para niños en redes",
-      "ponente": "",
+      "sketchnote": 6,
+      "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
+      "title": "Divulgar para niños en redes",
+      "speaker": "",
       "url": ""
     }
   ]

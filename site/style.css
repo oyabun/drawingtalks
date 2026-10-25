@@ -19,10 +19,16 @@ body {
 
 /* ---------- Shelf ---------- */
 .shelf-head { text-align: center; padding: 48px 16px 8px; }
+.corner { position: absolute; top: 16px; right: 16px; display: flex; gap: 14px; z-index: 2; }
+.corner a, .corner button {
+  color: rgba(255,255,255,.75); font: inherit; font-size: 12px; text-decoration: none;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.corner a:hover, .corner button:hover { color: #fff; }
 .shelf-head h1 { margin: 0; font-size: 34px; letter-spacing: .5px; text-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .shelf-head p, .reader-head p { margin: 4px 0 0; color: var(--accent); font-size: 13px; font-weight: 600; }
 
-/* Estantería: una balda de madera por fila */
+/* Shelf: one wooden board per row */
 .grid {
   --book-slot: 180px;
   --book-w: 124px;
@@ -70,7 +76,7 @@ body {
 .card h3 { margin: 0 0 2px; font-size: 15px; line-height: 1.25; text-shadow: 0 1px 6px rgba(0,0,0,.3); }
 .card p { margin: 0; color: var(--accent); font-size: 12px; font-weight: 600; }
 
-/* Libreta cerrada en 3D: tapa con la portada, canto de hojas y contratapa */
+/* Closed notebook in 3D: front board with the cover, page edge and back board */
 .nb {
   position: relative;
   width: var(--book-w);
@@ -162,7 +168,7 @@ body {
   transform-style: preserve-3d;
   transition: transform .75s cubic-bezier(.45,.05,.25,1);
 }
-/* cada hoja es una cadena de tiras; girar cada tira respecto a la anterior la curva */
+/* each leaf is a chain of strips; rotating each strip against the previous one bends it */
 .strip {
   position: absolute; top: 0; left: 0; height: 100%;
   width: calc(var(--sw) + 1px);
@@ -190,13 +196,13 @@ body {
 }
 .strip.last > .front { border-radius: 0 8px 8px 0; }
 .strip.last > .back { border-radius: 8px 0 0 8px; }
-/* hoja en reposo: una sola cara a ancho completo (sin juntas entre tiras) */
+/* leaf at rest: a single full-width face (no seams between strips) */
 .leaf.flat .strip .strip > .face { display: none; }
 .leaf.flat > .strip > .face { width: var(--pw); }
 .leaf.flat > .strip > .front { border-radius: 0 8px 8px 0; }
 .leaf.flat > .strip > .back { border-radius: 8px 0 0 8px; background-position: 0 0; }
 .leaf.flat > .strip > .back::after { background-position: 0 0; }
-/* tapas de cartón: más grandes que las hojas y con grosor; sus caras de papel quedan tapadas */
+/* card boards: larger than the leaves and with thickness; their paper faces stay hidden */
 .cover-leaf .face.front, .back-leaf .face.back { display: none; }
 .board {
   --bt: 3px;
@@ -224,7 +230,7 @@ body {
 .back-leaf .b-out::after { transform: scaleX(-1); }
 .back-leaf .b-in { transform: translateZ(-.5px); border-radius: 2px 10px 10px 2px; }
 .back-leaf .b-side { transform: rotateY(90deg); }
-/* bloque de hojas con el libro cerrado: canto y cabeza rayados */
+/* page block when closed: striped fore-edge and head */
 .block { position: absolute; inset: 0; transform-style: preserve-3d; pointer-events: none; visibility: hidden; }
 .book.closed-front .block, .book.closed-back .block { visibility: visible; transition: visibility 0s .7s; }
 .book.instant .block { transition: none; }
@@ -242,7 +248,7 @@ body {
 }
 .book.closed-back .block .fore { left: 0; }
 .book.closed-back .block .head { left: 0; }
-/* sombreado del lomo + sombreado por curvatura (--shade) */
+/* spine shading + bend shading (--shade) */
 .face::before, .face::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; }
 .face::before { background: rgba(0,0,0,var(--shade, 0)); }
 .face.front::after {

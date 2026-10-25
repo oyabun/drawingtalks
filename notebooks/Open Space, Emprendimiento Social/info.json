@@ -1,35 +1,35 @@
 {
-  "evento": "Open Space, Emprendimiento Social",
-  "edicion": "",
-  "fecha": "",
-  "lugar": "",
+  "event": "Open Space, Emprendimiento Social",
+  "edition": "",
+  "date": "",
+  "venue": "",
   "url": "",
   "hashtag": "",
-  "descripcion": "",
+  "description": "",
   "wallpaper": "",
   "pattern": "",
-  "autor": "@oyabun",
-  "laminas": 3,
-  "charlas": [
+  "author": "@oyabun",
+  "sketchnotes": 3,
+  "talks": [
     {
-      "lamina": 1,
-      "archivo": "sketch_0.jpeg",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 1,
+      "file": "sketch_0.jpeg",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 2,
-      "archivo": "sketch_ 1.jpeg",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 2,
+      "file": "sketch_ 1.jpeg",
+      "title": "",
+      "speaker": "",
       "url": ""
     },
     {
-      "lamina": 3,
-      "archivo": "sketch_ 2.jpeg",
-      "titulo": "",
-      "ponente": "",
+      "sketchnote": 3,
+      "file": "sketch_ 2.jpeg",
+      "title": "",
+      "speaker": "",
       "url": ""
     }
   ]

@@ -5,6 +5,8 @@
 - `site/index.html`: 3D bookshelf (three.js)
 - `site/classic.html`: classic CSS 3D view
 
+The interface is in English and Spanish (`site/i18n.js`). It follows the browser language; the toggle in the top-right corner or `?lang=en` / `?lang=es` switches it.
+
 ## Links
 
 | URL | Opens |
@@ -12,7 +14,7 @@
 | `#/tarugo-2024` | the notebook, closed |
 | `#/tarugo-2024/0` | the title page |
 | `#/tarugo-2024/3` | sketchnote 3 |
-| `#/tarugo-2024/fin` | the last sketchnote |
+| `#/tarugo-2024/end` | the last sketchnote |
 
 ## Structure
 
@@ -31,30 +33,32 @@ tools/                      build, watcher and local server
 
 ### info.json
 
-`node tools/make-info.js` creates it for notebooks that don't have one; existing files are never touched. The field names are in Spanish.
+`node tools/make-info.js` creates it for notebooks that don't have one; existing files are never touched.
 
 ```json
 {
-  "evento": "Tarugo",
-  "edicion": "2024",
-  "fecha": "2024",
-  "lugar": "La Nave (Madrid)",
+  "event": "Tarugo",
+  "edition": "2024",
+  "date": "2024",
+  "venue": "La Nave (Madrid)",
   "url": "",
+  "description": { "en": "…", "es": "…" },
   "wallpaper": "wallpaper.png",
-  "autor": "@oyabun",
-  "laminas": 7,
-  "charlas": [
-    { "lamina": 1, "archivo": "…png", "titulo": "…", "ponente": "…", "url": "" }
+  "author": "@oyabun",
+  "sketchnotes": 7,
+  "talks": [
+    { "sketchnote": 1, "file": "…png", "title": "…", "speaker": "…", "url": "" }
   ],
   "posters": {
-    "poster-movie.png": { "x": -3, "y": 2.8, "alto": 2.4, "giro": -3 }
+    "poster-movie.png": { "x": -3, "y": 2.8, "height": 2.4, "rotation": -3 }
   }
 }
 ```
 
-- `evento`, `edicion`, `fecha`, `lugar`: event, edition, date, venue. `charlas` lists the talks (`lamina` sketchnote number, `archivo` file, `titulo` title, `ponente` speaker).
+- Text fields (`date`, `venue`, `url`, `description`, a talk's `title`) can be a plain string or `{ "en": "…", "es": "…" }` to show a different text in each language.
+- `talks` follows the sketchnotes in order; the back cover lists them as "title — speaker".
 - `wallpaper`: looked up in the notebook folder and in `assets/`; `""` keeps the aged paper.
-- `posters` is optional. Without it, posters are laid out around the shelf automatically. Units are wall units: the shelf sits at `y = 0.47` and a book is 1.09 × 1.56. `alto` is the height and `giro` the rotation in degrees.
+- `posters` is optional. Without it, posters are laid out around the shelf automatically. Units are wall units: the shelf sits at `y = 0.47` and a book is 1.09 × 1.56; `rotation` is in degrees.
 - Use wallpapers 3000–4000 px wide; the build caps them at 3840 px.
 
 ## Development

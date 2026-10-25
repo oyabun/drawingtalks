@@ -19,13 +19,13 @@
   touch-action: none;
 }
 .bookshelf__canvas.is-ready { opacity: 1; transition: opacity .4s ease-out; }
-/* viñeta suave, como una foto de estudio */
+/* soft vignette, like a studio photo */
 .bookshelf::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 55%, rgba(30, 20, 10, .38) 100%);
 }
 
-/* ---------- Drawing Talks: interfaz encima del canvas ---------- */
+/* ---------- Drawing Talks: UI over the canvas ---------- */
 :root {
   --ink: #fff;
   --accent: #f5a623;
@@ -104,7 +104,7 @@ body { height: 100vh; height: 100dvh; color: var(--ink); }
   font-size: 11px; color: rgba(255,255,255,.6); text-align: center; white-space: nowrap;
 }
 
-/* modos: estantería / libro */
+/* modes: shelf / book */
 .bookshelf .dt-detail { opacity: 0; visibility: hidden; transition: opacity .35s, visibility 0s .35s; }
 .bookshelf.mode-detail .dt-detail { opacity: 1; visibility: visible; transition: opacity .35s .25s; }
 .bookshelf.mode-detail .dt-browse { opacity: 0; transform: translate(-50%, 20px); pointer-events: none; }
@@ -122,11 +122,15 @@ body { height: 100vh; height: 100dvh; color: var(--ink); }
 #pointer-label-index { color: var(--accent); font-weight: 600; font-size: 11px; }
 #pointer-label-title { font-weight: 600; }
 
-.dt-classic {
+.dt-corner {
   position: absolute; right: 16px; top: 16px; z-index: 2;
-  color: rgba(255,255,255,.7); font-size: 12px; text-decoration: none;
+  display: flex; align-items: center; gap: 14px;
 }
-.dt-classic:hover { color: #fff; }
+.dt-classic, .dt-lang {
+  color: rgba(255,255,255,.7); font: inherit; font-size: 12px; text-decoration: none;
+  background: none; border: 0; padding: 0; cursor: pointer;
+}
+.dt-classic:hover, .dt-lang:hover { color: #fff; }
 .bookshelf.mode-detail .dt-classic { display: none; }
 
 .dt-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -139,4 +143,5 @@ body { height: 100vh; height: 100dvh; color: var(--ink); }
   .dt-pager { width: calc(100% - 24px); border-radius: 22px; flex-wrap: wrap; }
   .dt-pager .microcopy { display: none; }
   .dt-classic { display: none; }
+  .dt-corner { top: 12px; right: 12px; }
 }
