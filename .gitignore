@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+# originales de los cuadernos: muy pesados; solo se versiona info.json
+notebooks/**/*.png
+notebooks/**/*.jpg
+notebooks/**/*.jpeg
+notebooks/**/*.webp
+notebooks/**/*.psd
+# marcadores del build incremental
+site/img/**/*.src
+# capturas de referencia de terceros
+ref/

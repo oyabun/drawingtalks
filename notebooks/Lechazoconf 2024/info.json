@@ -1,0 +1,92 @@
+{
+  "evento": "Lechazoconf",
+  "edicion": "2024",
+  "fecha": "2024",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 11,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png",
+      "titulo": "Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia",
+      "ponente": "Bárbara Román",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png",
+      "titulo": "Juego de tronos, fantasias de poder en la cultura de producto",
+      "ponente": "Henar Vega",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png",
+      "titulo": "Aprendizajes después de invertir en más de 100 startups",
+      "ponente": "Miguel Arias",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png",
+      "titulo": "Devengo, buscando oro entre las cenizas",
+      "ponente": "Aitor García Rey",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png",
+      "titulo": "Un gran proyecto multi-telco y mundial para devs",
+      "ponente": "Laura Lacarra",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png",
+      "titulo": "No es IA generativa todo lo que reluce",
+      "ponente": "Bea Hernández",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png",
+      "titulo": "Estos son mis principios de product management",
+      "ponente": "Diego Mariño",
+      "url": ""
+    },
+    {
+      "lamina": 8,
+      "archivo": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png",
+      "titulo": "Sorteando la desesperación en innovación",
+      "ponente": "Sara de Pablos",
+      "url": ""
+    },
+    {
+      "lamina": 9,
+      "archivo": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png",
+      "titulo": "De cal y de arena, caminos hacia equipos orientados a producto",
+      "ponente": "Abdul Martínez Castro",
+      "url": ""
+    },
+    {
+      "lamina": 10,
+      "archivo": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png",
+      "titulo": "What software can learn from deforestation",
+      "ponente": "Chris Wetherell",
+      "url": ""
+    },
+    {
+      "lamina": 11,
+      "archivo": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
+      "titulo": "10 años de Plantonic Games, 10 lecciones aprendidas",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

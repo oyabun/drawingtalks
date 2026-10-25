@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drawing Talks</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+<main id="shelf" class="view">
+  <header class="shelf-head">
+    <h1>Drawing Talks</h1>
+    <p id="shelf-count"></p>
+  </header>
+  <section id="grid" class="grid"></section>
+</main>
+
+<main id="reader" class="view" hidden>
+  <header class="reader-head">
+    <h2 id="r-title"></h2>
+    <p id="r-count"></p>
+  </header>
+  <div class="stage" id="stage">
+    <div class="floor-shadow"></div>
+    <div class="book" id="book"></div>
+  </div>
+  <footer class="toolbar">
+    <button id="btn-back" aria-label="Volver a los cuadernos" title="Cuadernos">
+      <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+    </button>
+    <button id="btn-prev" aria-label="Lámina anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <span id="r-pos" class="pos"></span>
+    <button id="btn-next" aria-label="Lámina siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button id="btn-full" aria-label="Pantalla completa" title="Pantalla completa">
+      <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+    </button>
+  </footer>
+</main>
+
+<script src="app.js?v=9"></script>
+</body>
+</html>

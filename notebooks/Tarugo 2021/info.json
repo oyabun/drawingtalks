@@ -1,0 +1,64 @@
+{
+  "evento": "Tarugo",
+  "edicion": "2021",
+  "fecha": "2021",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 7,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png",
+      "titulo": "Aportando Transparencia a la Administración Pública",
+      "ponente": "Jaime Gómez-Obregón",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png",
+      "titulo": "Palabras Mágicas",
+      "ponente": "Eva Janeiro",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png",
+      "titulo": "Cómo construir tu propio páncreas",
+      "ponente": "Antonio Santos",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png",
+      "titulo": "Cómo hacer las américas en 2021",
+      "ponente": "Diego Ballesteros y Evaristo Babé",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png",
+      "titulo": "La historia de la primera programadora de España",
+      "ponente": "Paz Gimeno",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png",
+      "titulo": "Menores y redes sociales · La realidad que no conoces",
+      "ponente": "Pablo Duchement",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "Tarugo 21 - 7 - Ousman Umar.png",
+      "titulo": "Ousman Umar",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

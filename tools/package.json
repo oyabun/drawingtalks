@@ -1,0 +1,14 @@
+{
+  "name": "drawingtalks-tools",
+  "private": true,
+  "description": "Genera site/img y site/notebooks.json desde notebooks/",
+  "scripts": {
+    "build": "node build.js",
+    "watch": "node watch.js",
+    "info": "node make-info.js",
+    "serve": "python3 serve.py ../site"
+  },
+  "dependencies": {
+    "sharp": "^0.35.5"
+  }
+}

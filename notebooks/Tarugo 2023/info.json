@@ -1,0 +1,64 @@
+{
+  "evento": "Tarugo",
+  "edicion": "2023",
+  "fecha": "2023",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 7,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
+      "titulo": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png",
+      "titulo": "Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia",
+      "ponente": "Sandra Hernandez",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png",
+      "titulo": "Fast Data",
+      "ponente": "Sergio Rodriguez",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png",
+      "titulo": "Show me the money!",
+      "ponente": "Isabel Garate",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png",
+      "titulo": "Software que no se ejecuta en la nube",
+      "ponente": "Débora Franco",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png",
+      "titulo": "Del polvorón al snack de proteína de insecto",
+      "ponente": "Antonio Alcalde",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png",
+      "titulo": "Cómo sobrevivir en la empresa que fundaste y te acaban de comprar",
+      "ponente": "Pablo Santos",
+      "url": ""
+    }
+  ]
+}

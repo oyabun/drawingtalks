@@ -1,0 +1,71 @@
+{
+  "evento": "Tarugo",
+  "edicion": "2022",
+  "fecha": "2022",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 8,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
+      "titulo": "Un framework mental para enfrentarte al mundo real",
+      "ponente": "Recuenco",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
+      "titulo": "Algoritmos que salvan vidas",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
+      "titulo": "La tecnología necesaria para que te tomes una buena caña",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
+      "titulo": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
+      "titulo": "Cómo producir un videojuego",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
+      "titulo": "Debe un abogado aprender a programar?",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "Tarugo 22 - 7 - Ventas para ingenieros.png",
+      "titulo": "Ventas para ingenieros",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 8,
+      "archivo": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
+      "titulo": "Cómo aplicar la inteligenci artificial para el bien",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

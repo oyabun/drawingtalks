@@ -1,0 +1,43 @@
+{
+  "evento": "T3chFest",
+  "edicion": "2020",
+  "fecha": "2020",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 4,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Paper.Techfest.32.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "Paper.Techfest.33.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "Paper.Techfest.34.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "t3chfest - Carlos Villuendas - A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019.png",
+      "titulo": "Carlos Villuendas · A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

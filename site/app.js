@@ -1,0 +1,406 @@
+const $ = (id) => document.getElementById(id);
+const shelf = $('shelf'), reader = $('reader'), stage = $('stage'), bookEl = $('book');
+
+// Modelo de libro: cada lámina (4:3) ocupa el libro abierto entero.
+// Hoja -1 = tapa: cara = portada, dorso = mitad izquierda de la lámina 0.
+// Hoja j: cara = mitad derecha de la lámina j, dorso = mitad izquierda de la j+1.
+// Hoja N-1 = contratapa: su dorso es la contraportada.
+// page: -1 = cerrado por delante, 0..N-1 = lámina abierta, N = cerrado por detrás.
+const OPEN = 24;      // grados que se levanta cada mitad hacia el espectador
+const FAN = 0.7;      // grados extra por hoja apilada; el canto del bloque asoma sin abanico
+const FAN_Z = 1.5;    // profundidad entre hojas apiladas
+const STACK = 6;      // hojas visibles a cada lado (las tapas siempre se ven, debajo)
+const STRIPS = 12;    // tiras por hoja para poder curvarla
+const BEND = 70;      // curvatura máxima al pasar página (grados entre lomo y borde)
+const PRELOAD = 3;
+
+let notebooks = [];
+let current = null;
+let page = -1;
+let leaves = [];      // índice j+1 -> hoja j
+let anim = null;      // animación de giro en curso
+let pw = 0;           // ancho de media página en px
+
+const label = (n) => `${n} ${n === 1 ? 'lámina' : 'láminas'}`;
+const rad = (d) => (d * Math.PI) / 180;
+
+function hashFor(nb, p) {
+  if (p < 0) return `#/${nb.slug}`;
+  if (p >= nb.pages.length) return `#/${nb.slug}/fin`;
+  return `#/${nb.slug}/${p + 1}`;
+}
+
+/* ---------- Estantería: libretas cerradas ---------- */
+let shelfCols = 0;
+function renderShelf() {
+  $('shelf-count').textContent = `${notebooks.length} cuadernos`;
+  const grid = $('grid');
+  const cs = getComputedStyle(grid);
+  const bw = parseFloat(cs.getPropertyValue('--book-slot')), gap = parseFloat(cs.columnGap) || 0;
+  const cols = Math.max(1, Math.floor((grid.clientWidth - parseFloat(cs.paddingLeft) * 2 + gap) / (bw + gap)));
+  if (cols === shelfCols) return;
+  shelfCols = cols;
+  const cards = notebooks.map(card);
+  // una balda por fila de libretas
+  const rows = [];
+  for (let i = 0; i < cards.length; i += cols) {
+    const row = document.createElement('div');
+    row.className = 'shelf-row';
+    const books = document.createElement('div');
+    books.className = 'shelf-books';
+    books.append(...cards.slice(i, i + cols));
+    const plank = document.createElement('div');
+    plank.className = 'plank';
+    plank.innerHTML = '<div class="plank-top"></div><div class="plank-front"></div>';
+    row.append(books, plank);
+    rows.push(row);
+  }
+  grid.replaceChildren(...rows);
+}
+
+function card(nb) {
+  const a = document.createElement('a');
+  a.className = 'card';
+  a.href = hashFor(nb, -1);
+  const d = Math.min(26, 8 + nb.pages.length * 1.1);
+  a.innerHTML = `
+    <div class="nb" style="--d:${d}px">
+      <div class="ground"></div>
+      <div class="box">
+        <div class="b-back"></div>
+        <div class="b-edge-r"></div>
+        <div class="b-edge-t"></div>
+        <div class="b-inside" style="background-image:url('${nb.thumb}')"></div>
+        <div class="b-hinge">
+          <div class="b-cover" style="background-image:url('${nb.cover}')"></div>
+          <div class="b-cover-in" style="background-image:url('${nb.thumb}')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tag"><h3></h3><p>${label(nb.pages.length)}</p></div>`;
+  a.querySelector('h3').textContent = nb.title;
+  return a;
+}
+
+/* ---------- Libro ---------- */
+function layout() {
+  if (!current) return;
+  const w = stage.clientWidth * 0.72, h = stage.clientHeight * 0.8;
+  const W = Math.min(w, h / 0.75, 1500);
+  pw = W / 2;
+  for (const el of [bookEl, stage]) {
+    el.style.setProperty('--pw', `${pw}px`);
+    el.style.setProperty('--ph', `${W * 0.75}px`);
+    el.style.setProperty('--sw', `${pw / STRIPS}px`);
+  }
+  placeBook(page);
+}
+
+function makeLeaf(j, n) {
+  const leaf = document.createElement('div');
+  leaf.className = 'leaf flat';
+  if (j === -1) leaf.classList.add('cover-leaf');
+  if (j === n - 1) leaf.classList.add('back-leaf');
+  leaf.strips = [];
+  // tapas: cartón rígido algo más grande que las hojas
+  leaf.rigid = j === -1 || j === n - 1;
+  if (leaf.rigid) leaf.insertAdjacentHTML('beforeend', '<div class="board"><div class="b-out"></div><div class="b-in"></div><div class="b-side"></div></div>');
+  let parent = leaf;
+  for (let i = 0; i < STRIPS; i++) {
+    const s = document.createElement('div');
+    s.className = i === STRIPS - 1 ? 'strip last' : 'strip';
+    s.style.setProperty('--i', i);
+    s.innerHTML = '<div class="face front"></div><div class="face back"></div>';
+    parent.appendChild(s);
+    leaf.strips.push(s);
+    parent = s;
+  }
+  return leaf;
+}
+
+function buildBook(nb) {
+  const n = nb.pages.length;
+  // bloque de hojas: canto y cabeza visibles con el libro cerrado
+  bookEl.innerHTML = '<div class="block"><div class="fore"></div><div class="head"></div></div>';
+  bookEl.style.setProperty('--t', `${thickness(n)}px`);
+  leaves = [];
+  for (let j = -1; j < n; j++) {
+    const leaf = makeLeaf(j, n);
+    bookEl.appendChild(leaf);
+    leaves.push(leaf);
+  }
+  leafAt(-1).style.setProperty('--front', `url('${nb.cover}')`);
+  if (nb.back) leafAt(n - 1).style.setProperty('--back', `url('${nb.back}')`);
+}
+
+const leafAt = (j) => leaves[j + 1];
+
+function loadImages(p) {
+  const n = current.pages.length;
+  const c = Math.max(0, Math.min(n - 1, p));
+  for (let i = c - PRELOAD; i <= c + PRELOAD; i++) {
+    if (i < 0 || i >= n) continue;
+    const front = leafAt(i);
+    if (front.dataset.loaded) continue;
+    front.dataset.loaded = '1';
+    const url = `url('${current.pages[i].src}')`;
+    front.style.setProperty('--front', url);
+    leafAt(i - 1).style.setProperty('--back', url);
+  }
+}
+
+const thickness = (n) => Math.min(24, 6 + n);
+
+// Posición en reposo de la hoja j cuando la vista está en p.
+// Cerrado: todas planas y apretadas en un bloque. Abierto: dos pilas en V.
+function rest(j, p) {
+  const n = current.pages.length;
+  const right = j >= p;
+  const k = right ? j - p : p - 1 - j;
+  const board = j === -1 || j === n - 1;
+  if (p < 0 || p >= n) return { a: right ? 0 : -180, z: (-k * thickness(n)) / n, hidden: false };
+  const kk = board ? Math.min(k, STACK + 1) : Math.min(k, STACK);
+  return { a: right ? -OPEN + kk * FAN : -180 + OPEN - kk * FAN, z: -kk * FAN_Z, hidden: !board && k > STACK };
+}
+
+const rootTransform = (a, z) => `translateZ(${z}px) rotateY(${a}deg)`;
+
+function flatten(leaf) {
+  if (!leaf.curled) return;
+  leaf.curled = false;
+  leaf.classList.add('flat');
+  leaf.strips.forEach((s) => {
+    s.style.transform = '';
+    s.style.setProperty('--shade', 0);
+  });
+}
+
+// Coloca todas las hojas (menos `skip`) en reposo para la vista p.
+function placeLeaves(p, skip) {
+  const n = current.pages.length;
+  for (let j = -1; j < n; j++) {
+    if (j === skip) continue;
+    const leaf = leafAt(j);
+    const { a, z, hidden } = rest(j, p);
+    leaf.style.transform = rootTransform(a, z);
+    leaf.style.visibility = hidden ? 'hidden' : '';
+    flatten(leaf);
+  }
+}
+
+// Libro cerrado: se centra la tapa desplazando el libro media página.
+function placeBook(p) {
+  const n = current.pages.length;
+  const shift = p < 0 ? -pw / 2 : p >= n ? pw / 2 : 0;
+  // cerrado, se gira un poco para que se vea el canto de las hojas
+  const turn = p < 0 ? -16 : p >= n ? 16 : 0;
+  bookEl.style.transform = `rotateX(12deg) rotateY(${turn}deg) translateX(${shift}px)`;
+  bookEl.classList.toggle('closed-front', p < 0);
+  bookEl.classList.toggle('closed-back', p >= n);
+}
+
+// Hoja j girando en dirección dir (1 = adelante) con progreso t en [0, 1].
+function curl(j, dir, t) {
+  const leaf = leafAt(j);
+  const from = rest(j, page).a;
+  // se detiene 1° antes de la pila de destino para quedar siempre por delante
+  const to = rest(j, page + dir).a + dir;
+  const a = from + (to - from) * t;
+  let bend = leaf.rigid ? 0 : BEND * Math.sin(Math.PI * t);
+  // el borde no puede atravesar la pila de destino
+  bend = Math.max(0, Math.min(bend, dir > 0 ? a - to : to - a));
+  const step = (dir > 0 ? -bend : bend) / (STRIPS - 1);
+  leaf.style.visibility = '';
+  leaf.style.transform = rootTransform(a, 0);
+  if (leaf.rigid) return;
+  leaf.curled = true;
+  leaf.classList.remove('flat');
+  const rest0 = Math.abs(Math.cos(rad(OPEN)));
+  leaf.strips.forEach((s, i) => {
+    s.style.transform = i ? `rotateY(${step}deg)` : '';
+    const ai = a + step * i;
+    s.style.setProperty('--shade', Math.max(0, 0.45 * (rest0 - Math.abs(Math.cos(rad(ai))))).toFixed(3));
+  });
+}
+
+function updateUI() {
+  const n = current.pages.length;
+  $('r-pos').textContent = page < 0 ? 'Portada' : page >= n ? 'Contraportada' : `${page + 1} / ${n}`;
+  $('btn-prev').disabled = page <= -1;
+  $('btn-next').disabled = page >= n;
+  const h = hashFor(current, page);
+  if (location.hash !== h) history.replaceState(null, '', h);
+  document.title = `${current.title} · Drawing Talks`;
+}
+
+function render() {
+  placeLeaves(page);
+  placeBook(page);
+  loadImages(page);
+  updateUI();
+}
+
+const ease = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+
+// Anima el giro de la hoja de t0 a t1; si llega a 1, la página cambia.
+function animateFlip(dir, t0, t1, done) {
+  finishAnim();
+  const j = dir > 0 ? page : page - 1;
+  const target = page + dir;
+  const ms = 250 + 650 * Math.abs(t1 - t0);
+  const start = performance.now();
+  const leaf = leafAt(j);
+  leaf.classList.add('instant');
+  anim = { finish: null };
+  const end = () => {
+    cancelAnimationFrame(anim.raf);
+    anim = null;
+    leaf.classList.remove('instant');
+    if (t1 === 1) page = target;
+    render();
+    done && done();
+  };
+  anim.finish = end;
+  const tick = (now) => {
+    const x = Math.min(1, (now - start) / ms);
+    curl(j, dir, t0 + (t1 - t0) * ease(x));
+    if (x < 1) anim.raf = requestAnimationFrame(tick);
+    else end();
+  };
+  anim.raf = requestAnimationFrame(tick);
+}
+
+function finishAnim() { if (anim) anim.finish(); }
+
+function flip(dir) {
+  if (!current) return;
+  finishAnim();
+  const n = current.pages.length;
+  const target = page + dir;
+  if (target < -1 || target > n) return;
+  loadImages(target);
+  placeLeaves(target, dir > 0 ? page : page - 1);
+  placeBook(target);
+  animateFlip(dir, 0, 1);
+}
+
+function jump(p) {
+  finishAnim();
+  page = p;
+  render();
+}
+
+function openNotebook(nb, p, autoOpen) {
+  finishAnim();
+  current = nb;
+  shelf.hidden = true;
+  reader.hidden = false;
+  $('r-title').textContent = nb.title;
+  $('r-count').textContent = label(nb.pages.length);
+  buildBook(nb);
+  page = p;
+  layout();
+  bookEl.classList.add('instant');
+  leaves.forEach((l) => l.classList.add('instant'));
+  render();
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    bookEl.classList.remove('instant');
+    leaves.forEach((l) => l.classList.remove('instant'));
+    if (autoOpen) setTimeout(() => { if (current === nb && page === -1) flip(1); }, 350);
+  }));
+}
+
+function closeNotebook() {
+  finishAnim();
+  current = null;
+  bookEl.replaceChildren();
+  reader.hidden = true;
+  shelf.hidden = false;
+  renderShelf();
+  document.title = 'Drawing Talks';
+}
+
+/* ---------- Arrastre y clic ---------- */
+let drag = null;
+stage.addEventListener('pointerdown', (e) => {
+  if (!current || e.button) return;
+  finishAnim();
+  const n = current.pages.length;
+  const r = bookEl.getBoundingClientRect();
+  let dir;
+  if (page < 0) dir = 1;
+  else if (page >= n) dir = -1;
+  else dir = e.clientX > r.left + r.width / 2 ? 1 : -1;
+  drag = { x: e.clientX, dir, t: 0, t0: performance.now(), moving: false };
+  stage.setPointerCapture(e.pointerId);
+});
+stage.addEventListener('pointermove', (e) => {
+  if (!drag) return;
+  const dx = e.clientX - drag.x;
+  if (!drag.moving) {
+    if (Math.abs(dx) < 8) return;
+    drag.moving = true;
+    stage.classList.add('dragging');
+    const j = drag.dir > 0 ? page : page - 1;
+    leafAt(j).classList.add('instant');
+    loadImages(page + drag.dir);
+    placeLeaves(page + drag.dir, j);
+    placeBook(page + drag.dir);
+  }
+  drag.t = Math.max(0, Math.min(1, (drag.dir > 0 ? -dx : dx) / (pw * 1.4)));
+  curl(drag.dir > 0 ? page : page - 1, drag.dir, drag.t);
+});
+const endDrag = (e) => {
+  if (!drag) return;
+  const d = drag;
+  drag = null;
+  stage.classList.remove('dragging');
+  if (!d.moving) {
+    if (e.type === 'pointerup') {
+      const r = bookEl.getBoundingClientRect();
+      if (e.clientX >= r.left - 40 && e.clientX <= r.right + 40) flip(d.dir);
+    }
+    return;
+  }
+  const fast = performance.now() - d.t0 < 300 && d.t > 0.05;
+  const commit = d.t > 0.3 || fast;
+  if (!commit) { placeBook(page); }
+  animateFlip(d.dir, d.t, commit ? 1 : 0);
+};
+stage.addEventListener('pointerup', endDrag);
+stage.addEventListener('pointercancel', endDrag);
+
+/* ---------- Rutas ---------- */
+function route() {
+  const [slug, n] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
+  const nb = notebooks.find((x) => x.slug === slug);
+  if (!nb) { if (current) closeNotebook(); return; }
+  const total = nb.pages.length;
+  const p = n === 'fin' ? total : n ? Math.max(0, Math.min(total - 1, (parseInt(n, 10) || 1) - 1)) : -1;
+  if (current !== nb) openNotebook(nb, p, p === -1);
+  else if (p !== page) jump(p);
+}
+
+$('btn-back').onclick = () => { location.hash = ''; };
+$('btn-prev').onclick = () => flip(-1);
+$('btn-next').onclick = () => flip(1);
+$('btn-full').onclick = () => {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen?.();
+};
+addEventListener('keydown', (e) => {
+  if (!current) return;
+  if (e.key === 'ArrowRight') flip(1);
+  else if (e.key === 'ArrowLeft') flip(-1);
+  else if (e.key === 'Home') jump(0);
+  else if (e.key === 'End') jump(current.pages.length - 1);
+  else if (e.key === 'Escape' && !document.fullscreenElement) location.hash = '';
+});
+addEventListener('hashchange', route);
+addEventListener('resize', () => { layout(); if (!shelf.hidden) renderShelf(); });
+
+fetch('notebooks.json', { cache: 'no-cache' }).then((r) => r.json()).then((data) => {
+  notebooks = data;
+  renderShelf();
+  route();
+});

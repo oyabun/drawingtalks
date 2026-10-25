@@ -1,0 +1,57 @@
+{
+  "evento": "Mas Que Startups",
+  "edicion": "",
+  "fecha": "",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 6,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Más Que Startups - 5 1.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "MQS - 7 - Loly Garrido.png",
+      "titulo": "Loly Garrido",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "MQS - 9 - Guillermo Montoya.png",
+      "titulo": "Guillermo Montoya",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "MQS - 10 - Rated Power.png",
+      "titulo": "Rated Power",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "MSQ - 11 - Danie Seijo.png",
+      "titulo": "Danie Seijo",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "MQS - 12 - Carlos de Otto.png",
+      "titulo": "Carlos de Otto",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

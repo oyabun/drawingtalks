@@ -1,0 +1,36 @@
+{
+  "evento": "Open Space, Emprendimiento Social",
+  "edicion": "",
+  "fecha": "",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 3,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "sketch_0.jpeg",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "sketch_ 1.jpeg",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "sketch_ 2.jpeg",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

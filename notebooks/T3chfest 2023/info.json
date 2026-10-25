@@ -1,0 +1,141 @@
+{
+  "evento": "T3chfest",
+  "edicion": "2023",
+  "fecha": "2023",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 18,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "t3chfest - Dia 1 - Lamina 1.png",
+      "titulo": "Dia 1 · Lamina 1",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "t3chfest - Dia 1 - Lamina 2.png",
+      "titulo": "Dia 1 · Lamina 2",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "t3chfest - Dia 1 - Lamina 3.png",
+      "titulo": "Dia 1 · Lamina 3",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "t3chfest - Dia 1 - Lamina 4.png",
+      "titulo": "Dia 1 · Lamina 4",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "t3chfest - Dia 1 - Lamina 5.png",
+      "titulo": "Dia 1 · Lamina 5",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "t3chfest - Dia 1 - Lamina 6.png",
+      "titulo": "Dia 1 · Lamina 6",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "t3chfest - Dia 1 - Lamina 7.png",
+      "titulo": "Dia 1 · Lamina 7",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 8,
+      "archivo": "t3chfest - Dia 1 - Lamina 8.png",
+      "titulo": "Dia 1 · Lamina 8",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 9,
+      "archivo": "t3chfest - Dia 1 - Lamina 9.png",
+      "titulo": "Dia 1 · Lamina 9",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 10,
+      "archivo": "t3chfest - Dia 2 - Lamina 10.png",
+      "titulo": "Dia 2 · Lamina 10",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 11,
+      "archivo": "t3chfest - Dia 2 - Lamina 11.png",
+      "titulo": "Dia 2 · Lamina 11",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 12,
+      "archivo": "t3chfest - Dia 2 - Lamina 12.png",
+      "titulo": "Dia 2 · Lamina 12",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 13,
+      "archivo": "t3chfest - Dia 2 - Lamina 13.png",
+      "titulo": "Dia 2 · Lamina 13",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 14,
+      "archivo": "t3chfest - Dia 2 - Lamina 14.png",
+      "titulo": "Dia 2 · Lamina 14",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 15,
+      "archivo": "t3chfest - Dia 2 - Lamina 15.png",
+      "titulo": "Dia 2 · Lamina 15",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 16,
+      "archivo": "t3chfest - Dia 2 - Lamina 16.png",
+      "titulo": "Dia 2 · Lamina 16",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 17,
+      "archivo": "t3chfest - Dia 2 - Lamina 17.png",
+      "titulo": "Dia 2 · Lamina 17",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 18,
+      "archivo": "t3chfest - Dia 2 - Lamina 18.png",
+      "titulo": "Dia 2 · Lamina 18",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

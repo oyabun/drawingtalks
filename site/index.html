@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drawing Talks</title>
+<meta http-equiv="Cache-Control" content="no-cache">
+<link rel="stylesheet" href="3d/style.css?v=3">
+<script type="importmap">
+{ "imports": { "three165": "./vendor/three-0.165.0.module.min.js" } }
+</script>
+</head>
+<body>
+<div class="bookshelf" id="shelf3d" tabindex="0" data-state="loading">
+  <canvas id="shelf3d-canvas" class="bookshelf__canvas" aria-label="Estantería de cuadernos Drawing Talks"></canvas>
+
+  <header class="dt-head">
+    <h1>Drawing Talks</h1>
+    <p id="shelf-count"></p>
+  </header>
+
+  <div id="loading" class="dt-loading">Preparando la estantería…</div>
+  <p id="fallback-status" class="dt-fallback" role="status"></p>
+
+  <!-- estantería -->
+  <section id="browse-ui" class="dt-browse">
+    <button id="previous" class="dt-round" type="button" aria-label="Cuaderno anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="dt-selection">
+      <strong id="selection-title"></strong>
+      <span><span id="selection-note"></span> · <span id="counter"></span></span>
+    </div>
+    <button id="next" class="dt-round" type="button" aria-label="Cuaderno siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button id="inspect" class="dt-pill" type="button">Abrir</button>
+    <span id="palette-label" hidden></span>
+    <div id="markers" class="dt-markers" role="tablist" aria-label="Cuadernos"></div>
+  </section>
+
+  <!-- libro abierto -->
+  <div class="dt-detail">
+    <button id="close-detail" class="dt-pill dt-close" type="button" aria-label="Volver a la estantería">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg> Estantería
+    </button>
+    <div class="dt-pager detail-controls">
+      <button id="previous-page" class="dt-round" type="button"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <div class="dt-page"><strong id="page-label"></strong><span id="page-counter"></span></div>
+      <button id="next-page" class="dt-round" type="button"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button id="toggle-book" class="dt-pill" type="button" aria-pressed="false">Abrir</button>
+      <button id="flip-book" class="dt-pill dt-ghost" type="button">Dar la vuelta</button>
+      <button id="reset-view" class="dt-pill dt-ghost" type="button">Recentrar</button>
+      <p class="microcopy"></p>
+    </div>
+  </div>
+
+  <!-- datos que el renderer rellena pero no mostramos -->
+  <aside id="detail-panel" hidden aria-hidden="true">
+    <span id="detail-eyebrow"></span><span id="detail-title"></span><span id="detail-deck"></span>
+    <span id="detail-binding"></span><span id="detail-format"></span><span id="detail-theme"></span><span id="detail-motif"></span>
+  </aside>
+  <span id="live-region" class="dt-sr" aria-live="polite"></span>
+  <span id="pointer-label" class="dt-pointer" aria-hidden="true"><span id="pointer-label-index"></span><span id="pointer-label-title"></span></span>
+
+  <a class="dt-classic" href="classic.html">Vista clásica</a>
+</div>
+<script type="module" src="3d/main.js?v=8"></script>
+</body>
+</html>

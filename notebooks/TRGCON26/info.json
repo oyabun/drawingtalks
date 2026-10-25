@@ -1,0 +1,64 @@
+{
+  "evento": "TRGCON26",
+  "edicion": "2026",
+  "fecha": "2026",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "wallpaper.png",
+  "pattern": "pattern.png",
+  "autor": "@oyabun",
+  "laminas": 7,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Paper.Bloc.2.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "Paper.Bloc.3.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "Paper.Bloc.4.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "Paper.Bloc.5.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "Paper.Bloc.6.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "Paper.Bloc.7.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "Paper.Bloc.8.png",
+      "titulo": "",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

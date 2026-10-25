@@ -1,0 +1,64 @@
+{
+  "evento": "Tarugo",
+  "edicion": "2020",
+  "fecha": "2020",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 7,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "Tarugo 20 - 1 - 20 años haciendo Software.png",
+      "titulo": "20 años haciendo Software",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "Tarugo 20 - 2 - Cripto Covid.png",
+      "titulo": "Cripto Covid",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "Tarugo 20 - 3 - La bárbara historia de Conan.png",
+      "titulo": "La bárbara historia de Conan",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "Tarugo 20 - 4 - Lo veo todo negro.png",
+      "titulo": "Lo veo todo negro",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png",
+      "titulo": "La tecnología detrás de un empaste",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png",
+      "titulo": "Videoyayadas  y hackandemias en tiempo del cocinamiento",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "Tarugo 20 - 7 - Covidgedon.png",
+      "titulo": "Covidgedon",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

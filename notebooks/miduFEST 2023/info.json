@@ -1,0 +1,106 @@
+{
+  "evento": "miduFEST",
+  "edicion": "2023",
+  "fecha": "2023",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 13,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "1.Back to the future, CSS Edition.png",
+      "titulo": "Back to the future, CSS Edition",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "2.Este codigo es una ruina.png",
+      "titulo": "Este codigo es una ruina",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "3.De JS a React.png",
+      "titulo": "De JS a React",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "4.Rendimiento Web .png",
+      "titulo": "Rendimiento Web",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "5.React server components.png",
+      "titulo": "React server components",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "7.Una saga de infortunios.png",
+      "titulo": "Una saga de infortunios",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 7,
+      "archivo": "8.Del front al back.png",
+      "titulo": "Del front al back",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 8,
+      "archivo": "9.De SPA a micro-frontends.png",
+      "titulo": "De SPA a micro-frontends",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 9,
+      "archivo": "10.Encontrar trabajo DEV en timepos loquísimos.png",
+      "titulo": "Encontrar trabajo DEV en timepos loquísimos",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 10,
+      "archivo": "11.Nuevas features de nodejs.png",
+      "titulo": "Nuevas features de nodejs",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 11,
+      "archivo": "12.Conectado programacion con IA.png",
+      "titulo": "Conectado programacion con IA",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 12,
+      "archivo": "13.Patrones de diseno y cervezas.png",
+      "titulo": "Patrones de diseno y cervezas",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 13,
+      "archivo": "14.Ni estatico ni dinamico, ambos.png",
+      "titulo": "Ni estatico ni dinamico, ambos",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}

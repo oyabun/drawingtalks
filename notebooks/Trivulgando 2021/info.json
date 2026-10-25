@@ -1,0 +1,57 @@
+{
+  "evento": "Trivulgando",
+  "edicion": "2021",
+  "fecha": "2021",
+  "lugar": "",
+  "url": "",
+  "hashtag": "",
+  "descripcion": "",
+  "wallpaper": "",
+  "pattern": "",
+  "autor": "@oyabun",
+  "laminas": 6,
+  "charlas": [
+    {
+      "lamina": 1,
+      "archivo": "1-Trivulgando 2020 - La psicología del negacionismo.png",
+      "titulo": "La psicología del negacionismo",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 2,
+      "archivo": "2-Trivulgando 2020 - Let's play.png",
+      "titulo": "Let's play",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 3,
+      "archivo": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
+      "titulo": "Datos, la materia prima de la epidemiologia",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 4,
+      "archivo": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
+      "titulo": "Trucos para sobrevivir informedia, la pandemia de información",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 5,
+      "archivo": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
+      "titulo": "Divulgación Científica contra los bulos",
+      "ponente": "",
+      "url": ""
+    },
+    {
+      "lamina": 6,
+      "archivo": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
+      "titulo": "Divulgar para niños en redes",
+      "ponente": "",
+      "url": ""
+    }
+  ]
+}
