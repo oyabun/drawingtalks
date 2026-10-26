@@ -147,8 +147,8 @@ body {
 /* paper grain */
 .nb .b-cover::before {
   content: ""; position: absolute; inset: 0;
-  background: url('3d/tex/paper-color.webp') 0 0 / 260px auto;
-  mix-blend-mode: multiply; opacity: .32;
+  background: url('3d/tex/paper-grain.webp') 0 0 / 200px auto;
+  mix-blend-mode: soft-light; opacity: .7;
 }
 /* hinge groove, light from the top left, darker lower corner and edges */
 .nb .b-cover::after {
@@ -179,6 +179,22 @@ body {
 }
 .card:hover .box, .card:focus-visible .box { transform: rotateX(4deg) rotateY(-36deg) translateY(-10px); }
 .card:hover .b-hinge, .card:focus-visible .b-hinge { transform: translateZ(calc(var(--d) / 2)) rotateY(-34deg); }
+/* varnish: a soft highlight plus a spot-UV streak on the light parts of the cover; both follow the pointer */
+.gloss {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(60% 45% at var(--gx, 26%) var(--gy, 16%), rgba(255,255,255,.34), rgba(255,255,255,.08) 45%, transparent 70%);
+  mix-blend-mode: screen; opacity: .5;
+  transition: opacity .4s;
+}
+.gloss::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(112deg, transparent calc(var(--gx, 26%) - 16%), rgba(255,255,255,.8) var(--gx, 26%), transparent calc(var(--gx, 26%) + 16%));
+  mask-image: var(--cover); mask-mode: luminance; mask-size: cover; mask-position: center;
+  opacity: .32;
+}
+.card:hover .gloss, .card:focus-visible .gloss, .book .gloss { opacity: 1; }
+.cover-leaf .gloss { --cover: var(--front); }
+.back-leaf .gloss::after { display: none; }
 .card:hover .ground, .card:focus-visible .ground { transform: scale(.85); opacity: .6; }
 .card:hover .wall-shadow, .card:focus-visible .wall-shadow { transform: skewX(-8deg) translate(4px, -10px); opacity: .8; }
 
@@ -225,15 +241,18 @@ html.reading { overflow: hidden; }
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+.face { background-blend-mode: soft-light, normal; }
 .face.front {
-  background-image: var(--front);
-  background-size: calc(var(--pw) * 2) var(--ph);
-  background-position: calc(-1 * var(--pw) - var(--i) * var(--sw)) 0;
+  background-image: url('3d/tex/paper-grain.webp'), var(--front, none);
+  background-size: 240px auto, calc(var(--pw) * 2) var(--ph);
+  background-repeat: repeat, no-repeat;
+  background-position: calc(-1 * var(--i) * var(--sw)) 0, calc(-1 * var(--pw) - var(--i) * var(--sw)) 0;
 }
 .face.back {
-  background-image: var(--back);
-  background-size: calc(var(--pw) * 2) var(--ph);
-  background-position: calc(-1 * var(--pw) + (var(--i) + 1) * var(--sw)) 0;
+  background-image: url('3d/tex/paper-grain.webp'), var(--back, none);
+  background-size: 240px auto, calc(var(--pw) * 2) var(--ph);
+  background-repeat: repeat, no-repeat;
+  background-position: calc((var(--i) + 1) * var(--sw)) 0, calc(-1 * var(--pw) + (var(--i) + 1) * var(--sw)) 0;
   transform: rotateY(180deg);
 }
 .strip.last > .front { border-radius: 0 8px 8px 0; }
@@ -265,10 +284,15 @@ html.reading { overflow: hidden; }
 }
 .b-in { background: #2a2c2e; border-radius: 10px 2px 2px 10px; }
 .board > .b-side { left: 100%; right: auto; width: var(--bt); background: #1d1f20; transform-origin: 0 50%; backface-visibility: visible; }
-.cover-leaf .b-out { background-image: var(--front); transform: translateZ(var(--bt)); }
+.cover-leaf .b-out, .back-leaf .b-out {
+  background-image: url('3d/tex/paper-grain.webp'), var(--front);
+  background-size: 220px auto, cover; background-repeat: repeat, no-repeat; background-position: 0 0, center;
+  background-blend-mode: soft-light, normal;
+}
+.cover-leaf .b-out { transform: translateZ(var(--bt)); }
 .cover-leaf .b-in { transform: translateZ(.5px) rotateY(180deg); }
 .cover-leaf .b-side { transform: translateZ(var(--bt)) rotateY(90deg); }
-.back-leaf .b-out { background-image: var(--back); transform: translateZ(calc(-1 * var(--bt))) rotateY(180deg); border-radius: 10px 2px 2px 10px; }
+.back-leaf .b-out { background-image: url('3d/tex/paper-grain.webp'), var(--back, linear-gradient(#2d3032, #2d3032)); transform: translateZ(calc(-1 * var(--bt))) rotateY(180deg); border-radius: 10px 2px 2px 10px; }
 .back-leaf .b-out::after { transform: scaleX(-1); }
 /* back cover text (when there's no back.png); sizes follow the board width like the 3D canvas */
 .back-leaf .b-out { container-type: size; }
@@ -283,8 +307,10 @@ html.reading { overflow: hidden; }
 .bt-meta { margin-top: 2.4cqh !important; letter-spacing: .34cqw; text-transform: uppercase; font-size: 2.6cqw; padding-bottom: 3cqh; border-bottom: 1px solid rgba(255,255,255,.5); }
 .bt-talks {
   flex: 1; margin: 4cqh 0 0; padding: 0; list-style: none; counter-reset: talk;
-  display: grid; grid-template-rows: repeat(var(--rows), minmax(0, 4.9cqh)); align-content: start;
-  font: 400 clamp(2.1cqw, calc(30cqh / var(--rows)), 3.5cqw)/1.2 "Iowan Old Style", Baskerville, Georgia, serif;
+  --row: min(4.9cqh, 52cqh / var(--rows));
+  min-height: 0; overflow: hidden;
+  display: grid; grid-template-rows: repeat(var(--rows), var(--row)); align-content: start;
+  font: 400 min(3.5cqw, calc(var(--row) * .62))/1.2 "Iowan Old Style", Baskerville, Georgia, serif;
 }
 .bt-talks li { counter-increment: talk; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 6.5cqw; position: relative; align-self: center; }
 .bt-talks li::before {
@@ -318,13 +344,20 @@ html.reading { overflow: hidden; }
 /* spine shading + bend shading (--shade) */
 .face::before, .face::after { content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit; }
 .face::before { background: rgba(0,0,0,var(--shade, 0)); }
+/* the light rakes in from the left: the left page's outer edge is brighter, the right page's darker */
 .face.front::after {
-  background: linear-gradient(to right, rgba(0,0,0,.22), rgba(0,0,0,.06) 6%, transparent 18%) no-repeat;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.22), rgba(0,0,0,.06) 6%, transparent 18%),
+    linear-gradient(to right, transparent 40%, rgba(40,30,20,.09));
+  background-repeat: no-repeat;
   background-size: var(--pw) 100%;
   background-position: calc(-1 * var(--i) * var(--sw)) 0;
 }
 .face.back::after {
-  background: linear-gradient(to left, rgba(0,0,0,.22), rgba(0,0,0,.06) 6%, transparent 18%) no-repeat;
+  background:
+    linear-gradient(to left, rgba(0,0,0,.22), rgba(0,0,0,.06) 6%, transparent 18%),
+    linear-gradient(to right, rgba(255,248,236,.16), transparent 55%);
+  background-repeat: no-repeat;
   background-size: var(--pw) 100%;
   background-position: calc(-1 * (11 - var(--i)) * var(--sw)) 0;
 }

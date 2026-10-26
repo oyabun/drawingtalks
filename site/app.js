@@ -78,7 +78,7 @@ function card(nb) {
         <div class="b-edge-t"></div>
         <div class="b-inside" style="background-image:url('${nb.thumb}')"></div>
         <div class="b-hinge">
-          <div class="b-cover"></div>
+          <div class="b-cover"><i class="gloss"></i></div>
           <div class="b-cover-edge"></div>
           <div class="b-cover-top"></div>
           <div class="b-cover-in" style="background-image:url('${nb.thumb}')"></div>
@@ -112,7 +112,7 @@ function makeLeaf(j, n) {
   leaf.strips = [];
   // boards: rigid card slightly larger than the leaves
   leaf.rigid = j === -1 || j === n - 1;
-  if (leaf.rigid) leaf.insertAdjacentHTML('beforeend', '<div class="board"><div class="b-out"></div><div class="b-in"></div><div class="b-side"></div></div>');
+  if (leaf.rigid) leaf.insertAdjacentHTML('beforeend', '<div class="board"><div class="b-out"><i class="gloss"></i></div><div class="b-in"></div><div class="b-side"></div></div>');
   let parent = leaf;
   for (let i = 0; i < STRIPS; i++) {
     const s = document.createElement('div');
@@ -167,7 +167,7 @@ function backCover(nb) {
   add(el, 'h2', 'bt-title', nb.title).style.setProperty('--len', nb.title.length);
   add(el, 'p', 'bt-meta', [localized(info.date) || yearOf(nb.title), localized(info.venue), label(nb.pages.length)].filter(Boolean).join('  ·  '));
   const list = add(el, 'ol', 'bt-talks');
-  list.style.setProperty('--rows', Math.max(nb.pages.length, 6));
+  list.style.setProperty('--rows', nb.pages.length);
   nb.pages.forEach((_, i) => {
     const talk = info.talks?.[i];
     const title = localized(talk?.title);
@@ -430,7 +430,27 @@ function closeNotebook() {
   setTimeout(() => fly(card, false, done), wasOpen ? 820 : 0);
 }
 
-/* ---------- Arrastre y clic ---------- */
+/* ---------- Varnish highlight that follows the pointer ---------- */
+function aimGloss(el, face, e) {
+  const r = face.getBoundingClientRect();
+  if (!r.width) return;
+  el.style.setProperty('--gx', `${(((e.clientX - r.left) / r.width) * 100).toFixed(1)}%`);
+  el.style.setProperty('--gy', `${(((e.clientY - r.top) / r.height) * 100).toFixed(1)}%`);
+}
+$('grid').addEventListener('pointermove', (e) => {
+  const card = e.target.closest('.card');
+  if (card) aimGloss(card, card.querySelector('.b-cover'), e);
+});
+$('grid').addEventListener('pointerout', (e) => {
+  const card = e.target.closest('.card');
+  if (card && !card.contains(e.relatedTarget)) card.style.removeProperty('--gx'), card.style.removeProperty('--gy');
+});
+stage.addEventListener('pointermove', (e) => {
+  if (!current || (page >= 0 && page < current.pages.length)) return;
+  aimGloss(bookEl, leafAt(page < 0 ? -1 : current.pages.length - 1).querySelector('.b-out'), e);
+});
+
+/* ---------- Drag and click ---------- */
 let drag = null;
 stage.addEventListener('pointerdown', (e) => {
   if (busy() || e.button) return;
@@ -480,7 +500,7 @@ const endDrag = (e) => {
 stage.addEventListener('pointerup', endDrag);
 stage.addEventListener('pointercancel', endDrag);
 
-/* ---------- Rutas ---------- */
+/* ---------- Routes ---------- */
 function route() {
   const [slug, n] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
   const nb = notebooks.find((x) => x.slug === slug);
