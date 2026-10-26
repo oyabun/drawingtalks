@@ -292,7 +292,7 @@ function jump(p) {
   render();
 }
 
-function openNotebook(nb, p, autoOpen) {
+function openNotebook(nb, p) {
   finishAnim();
   current = nb;
   shelf.hidden = true;
@@ -308,7 +308,6 @@ function openNotebook(nb, p, autoOpen) {
   requestAnimationFrame(() => requestAnimationFrame(() => {
     bookEl.classList.remove('instant');
     leaves.forEach((l) => l.classList.remove('instant'));
-    if (autoOpen) setTimeout(() => { if (current === nb && page === -1) flip(1); }, 350);
   }));
 }
 
@@ -379,7 +378,7 @@ function route() {
   if (!nb) { if (current) closeNotebook(); return; }
   const total = nb.pages.length;
   const p = n === 'end' || n === 'fin' ? total : n ? Math.max(0, Math.min(total - 1, (parseInt(n, 10) || 1) - 1)) : -1;
-  if (current !== nb) openNotebook(nb, p, p === -1);
+  if (current !== nb) openNotebook(nb, p);
   else if (p !== page) jump(p);
 }
 
