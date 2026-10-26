@@ -1834,6 +1834,19 @@ rep('showFallback("WebGL is unavailable in this browser. The complete static cat
     'showFallback(t("noWebgl"));')
 rep('showFallback("No se pudo preparar la estantería 3D.");', 'showFallback(t("loadFailed"));')
 
+# --- white paper: the original stock is cream and the endpaper carries a grid and a compass emblem
+rep('      ctx.fillStyle = "#e8e1d3";', '      ctx.fillStyle = "#f7f5f0";')
+rep('rgba(103,87,64,0.08)', 'rgba(103,87,64,0.035)')
+rep('rgba(92,76,55,', 'rgba(120,110,95,')
+rep('ctx.fillStyle = "#dcd5c7";', 'ctx.fillStyle = "#efede8";')
+rep('color: 0xe7dfcf,', 'color: 0xf4f2ed,')
+a = s.index("      drawPaperSurface(ctx, canvas.width, canvas.height, random);\n\n      ctx.save();\n      ctx.fillStyle = book.color;")
+b = s.index("      ctx.restore();\n", a) + len("      ctx.restore();\n")
+s = s[:a] + "      // plain endpaper: no grid or emblem\n      drawPaperSurface(ctx, canvas.width, canvas.height, random);\n" + s[b:]
+rep("color: new THREE.Color(book.palette.paperPale).lerp(new THREE.Color(0xf2ead8), 0.5),", "color: 0xffffff,")
+# more neutral light, so white paper reads as white
+rep("SpotLight(0xffd6a0, 26, 0, 0.58, 0.85, 1.4)", "SpotLight(0xffeedd, 26, 0, 0.58, 0.85, 1.4)")
+
 assert "COVER_CROPS" not in s and "coverAtlas" not in s and "SPREAD_COUNT" not in s and "PAGINATED_LEAF_COUNT" not in s
 open(OUT, "w").write(s)
 print("ok", len(s))

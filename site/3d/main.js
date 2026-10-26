@@ -89,7 +89,7 @@ function toBook(nb, index, cover, back, wallpaper, pattern, posters) {
       wall: hex(WALL),
       shelf: '#f4ebe1',
       shelfDark: '#1c0f09',
-      light: '#ffe4c0',
+      light: '#fff4e8',
       fill: '#f6efe2',
     },
     // 2:3 board, a little wider than the page (pages are halves of a 4:3 sketchnote)

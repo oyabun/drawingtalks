@@ -224,7 +224,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       box: new THREE.BoxGeometry(1, 1, 1),
       plane: new THREE.PlaneGeometry(1, 1),
       page: new THREE.MeshPhysicalMaterial({
-        color: 0xe7dfcf,
+        color: 0xf4f2ed,
         roughness: 0.95,
         metalness: 0,
         sheen: 0.025,
@@ -724,13 +724,13 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
     }
 
     function drawPaperSurface(ctx, width, height, random) {
-      ctx.fillStyle = "#e8e1d3";
+      ctx.fillStyle = "#f7f5f0";
       ctx.fillRect(0, 0, width, height);
 
       const paperWash = ctx.createLinearGradient(0, 0, width, height);
       paperWash.addColorStop(0, "rgba(255,255,255,0.22)");
       paperWash.addColorStop(0.42, "rgba(255,255,255,0.035)");
-      paperWash.addColorStop(1, "rgba(103,87,64,0.08)");
+      paperWash.addColorStop(1, "rgba(103,87,64,0.035)");
       ctx.fillStyle = paperWash;
       ctx.fillRect(0, 0, width, height);
 
@@ -741,7 +741,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         const lightFiber = random() > 0.44;
         ctx.strokeStyle = lightFiber
           ? `rgba(255,255,255,${0.025 + random() * 0.045})`
-          : `rgba(92,76,55,${0.018 + random() * 0.035})`;
+          : `rgba(120,110,95,${0.018 + random() * 0.035})`;
         ctx.lineWidth = 0.45 + random() * 0.65;
         ctx.beginPath();
         ctx.moveTo(x, y);
@@ -864,30 +864,8 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       canvas.height = 768;
       const ctx = canvas.getContext("2d");
       const random = seededRandom(hashSeed(`${book.id}-endpaper`) + book.seed);
+      // plain endpaper: no grid or emblem
       drawPaperSurface(ctx, canvas.width, canvas.height, random);
-
-      ctx.save();
-      ctx.fillStyle = book.color;
-      ctx.globalAlpha = 0.14;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = 0.18;
-      ctx.strokeStyle = book.foil;
-      ctx.lineWidth = 1;
-      for (let x = 28; x < canvas.width; x += 48) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      for (let y = 24; y < canvas.height; y += 48) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 0.42;
-      drawMotif(ctx, { ...book, foil: book.palette.inkSoft }, canvas.width, canvas.height);
-      ctx.restore();
 
       const texture = configureCanvasTexture(new THREE.CanvasTexture(canvas), {
         anisotropy: 16
@@ -1085,7 +1063,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           hashSeed(`${book.id}-${suffix}`) + book.seed
         );
 
-        ctx.fillStyle = "#dcd5c7";
+        ctx.fillStyle = "#efede8";
         ctx.fillRect(0, 0, width, height);
 
         const pageStep = suffix === "fore-edge" ? 2 : 1.35;
@@ -1595,7 +1573,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         side: THREE.DoubleSide
       });
       const endpaperMaterial = new THREE.MeshPhysicalMaterial({
-        color: new THREE.Color(book.palette.paperPale).lerp(new THREE.Color(0xf2ead8), 0.5),
+        color: 0xffffff,
         map: endpaperTexture,
         bumpMap: paperFaceTexture,
         bumpScale: 0.0018,
@@ -2952,7 +2930,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       roomLights.softKey = softKey;
 
       // warm spotlight over the shelf: a pool of light on the wallpaper and book shadows on the wall
-      const spot = new THREE.SpotLight(0xffd6a0, 26, 0, 0.58, 0.85, 1.4);
+      const spot = new THREE.SpotLight(0xffeedd, 26, 0, 0.58, 0.85, 1.4);
       spot.name = "wall-wash";
       spot.position.set(0.6, 5.8, 3.4);
       spot.target.position.set(0, 1.2, WALL_Z);
