@@ -1,379 +1,5 @@
 [
  {
-  "slug": "lechazoconf-2024",
-  "title": "Lechazoconf 2024",
-  "info": {
-   "event": "Lechazoconf",
-   "edition": "2024",
-   "date": "2024",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "wallpaper.png",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 11,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png",
-     "title": "Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia",
-     "speaker": "Bárbara Román",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png",
-     "title": "Juego de tronos, fantasias de poder en la cultura de producto",
-     "speaker": "Henar Vega",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png",
-     "title": "Aprendizajes después de invertir en más de 100 startups",
-     "speaker": "Miguel Arias",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png",
-     "title": "Devengo, buscando oro entre las cenizas",
-     "speaker": "Aitor García Rey",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png",
-     "title": "Un gran proyecto multi-telco y mundial para devs",
-     "speaker": "Laura Lacarra",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png",
-     "title": "No es IA generativa todo lo que reluce",
-     "speaker": "Bea Hernández",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png",
-     "title": "Estos son mis principios de product management",
-     "speaker": "Diego Mariño",
-     "url": ""
-    },
-    {
-     "sketchnote": 8,
-     "file": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png",
-     "title": "Sorteando la desesperación en innovación",
-     "speaker": "Sara de Pablos",
-     "url": ""
-    },
-    {
-     "sketchnote": 9,
-     "file": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png",
-     "title": "De cal y de arena, caminos hacia equipos orientados a producto",
-     "speaker": "Abdul Martínez Castro",
-     "url": ""
-    },
-    {
-     "sketchnote": 10,
-     "file": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png",
-     "title": "What software can learn from deforestation",
-     "speaker": "Chris Wetherell",
-     "url": ""
-    },
-    {
-     "sketchnote": 11,
-     "file": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
-     "title": "10 años de Plantonic Games, 10 lecciones aprendidas",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/lechazoconf-2024/cover.webp",
-  "back": null,
-  "wallpaper": "img/lechazoconf-2024/wallpaper.webp",
-  "pattern": null,
-  "posters": [
-   {
-    "src": "img/lechazoconf-2024/poster-lechazo1.png.lol.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-lechazo1.png.lol.png"
-   },
-   {
-    "src": "img/lechazoconf-2024/poster-oficial.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-oficial.png"
-   }
-  ],
-  "thumb": "img/lechazoconf-2024/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/lechazoconf-2024/00.webp",
-    "hd": "img/lechazoconf-2024/00-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/01.webp",
-    "hd": "img/lechazoconf-2024/01-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/02.webp",
-    "hd": "img/lechazoconf-2024/02-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/03.webp",
-    "hd": "img/lechazoconf-2024/03-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/04.webp",
-    "hd": "img/lechazoconf-2024/04-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/05.webp",
-    "hd": "img/lechazoconf-2024/05-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/06.webp",
-    "hd": "img/lechazoconf-2024/06-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/07.webp",
-    "hd": "img/lechazoconf-2024/07-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/08.webp",
-    "hd": "img/lechazoconf-2024/08-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/09.webp",
-    "hd": "img/lechazoconf-2024/09-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png"
-   },
-   {
-    "src": "img/lechazoconf-2024/10.webp",
-    "hd": "img/lechazoconf-2024/10-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png"
-   }
-  ]
- },
- {
-  "slug": "mas-que-startups",
-  "title": "Mas Que Startups",
-  "info": {
-   "event": "Mas Que Startups",
-   "edition": "",
-   "date": "",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 6,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "Más Que Startups - 5 1.png",
-     "title": "",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "MQS - 7 - Loly Garrido.png",
-     "title": "Loly Garrido",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "MQS - 9 - Guillermo Montoya.png",
-     "title": "Guillermo Montoya",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "MQS - 10 - Rated Power.png",
-     "title": "Rated Power",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "MSQ - 11 - Danie Seijo.png",
-     "title": "Danie Seijo",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "MQS - 12 - Carlos de Otto.png",
-     "title": "Carlos de Otto",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/mas-que-startups/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/mas-que-startups/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/mas-que-startups/00.webp",
-    "hd": "img/mas-que-startups/00-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Más Que Startups - 5 1.png"
-   },
-   {
-    "src": "img/mas-que-startups/01.webp",
-    "hd": "img/mas-que-startups/01-hd.webp",
-    "w": 2732,
-    "h": 2203,
-    "name": "MQS - 7 - Loly Garrido.png"
-   },
-   {
-    "src": "img/mas-que-startups/02.webp",
-    "hd": "img/mas-que-startups/02-hd.webp",
-    "w": 2732,
-    "h": 2203,
-    "name": "MQS - 9 - Guillermo Montoya.png"
-   },
-   {
-    "src": "img/mas-que-startups/03.webp",
-    "hd": "img/mas-que-startups/03-hd.webp",
-    "w": 2732,
-    "h": 2203,
-    "name": "MQS - 10 - Rated Power.png"
-   },
-   {
-    "src": "img/mas-que-startups/04.webp",
-    "hd": "img/mas-que-startups/04-hd.webp",
-    "w": 2732,
-    "h": 2203,
-    "name": "MSQ - 11 - Danie Seijo.png"
-   },
-   {
-    "src": "img/mas-que-startups/05.webp",
-    "hd": "img/mas-que-startups/05-hd.webp",
-    "w": 2732,
-    "h": 2203,
-    "name": "MQS - 12 - Carlos de Otto.png"
-   }
-  ]
- },
- {
-  "slug": "open-space-emprendimiento-social",
-  "title": "Open Space, Emprendimiento Social",
-  "info": {
-   "event": "Open Space, Emprendimiento Social",
-   "edition": "",
-   "date": "",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 3,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "sketch_0.jpeg",
-     "title": "",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "sketch_ 1.jpeg",
-     "title": "",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "sketch_ 2.jpeg",
-     "title": "",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/open-space-emprendimiento-social/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/open-space-emprendimiento-social/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/open-space-emprendimiento-social/00.webp",
-    "hd": "img/open-space-emprendimiento-social/00-hd.webp",
-    "w": 2337,
-    "h": 1652,
-    "name": "sketch_0.jpeg"
-   },
-   {
-    "src": "img/open-space-emprendimiento-social/01.webp",
-    "hd": "img/open-space-emprendimiento-social/01-hd.webp",
-    "w": 2337,
-    "h": 1652,
-    "name": "sketch_ 1.jpeg"
-   },
-   {
-    "src": "img/open-space-emprendimiento-social/02.webp",
-    "hd": "img/open-space-emprendimiento-social/02-hd.webp",
-    "w": 2337,
-    "h": 1652,
-    "name": "sketch_ 2.jpeg"
-   }
-  ]
- },
- {
   "slug": "t3chfest-2020",
   "title": "T3chFest 2020",
   "info": {
@@ -453,6 +79,728 @@
     "w": 7558,
     "h": 6319,
     "name": "t3chfest - Carlos Villuendas - A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019.png"
+   }
+  ]
+ },
+ {
+  "slug": "tarugo-2020",
+  "title": "Tarugo 2020",
+  "info": {
+   "event": "Tarugo",
+   "edition": "2020",
+   "date": "2020",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "wallpaper.png",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 7,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "Tarugo 20 - 1 - 20 años haciendo Software.png",
+     "title": "20 años haciendo Software",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "Tarugo 20 - 2 - Cripto Covid.png",
+     "title": "Cripto Covid",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "Tarugo 20 - 3 - La bárbara historia de Conan.png",
+     "title": "La bárbara historia de Conan",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "Tarugo 20 - 4 - Lo veo todo negro.png",
+     "title": "Lo veo todo negro",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png",
+     "title": "La tecnología detrás de un empaste",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png",
+     "title": "Videoyayadas  y hackandemias en tiempo del cocinamiento",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "Tarugo 20 - 7 - Covidgedon.png",
+     "title": "Covidgedon",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/tarugo-2020/cover.webp",
+  "back": null,
+  "wallpaper": "img/tarugo-2020/wallpaper.webp",
+  "pattern": null,
+  "posters": [
+   {
+    "src": "img/tarugo-2020/poster-pandemi.webp",
+    "w": 581,
+    "h": 839,
+    "name": "poster-pandemi.png"
+   },
+   {
+    "src": "img/tarugo-2020/poster-sofaedition.webp",
+    "w": 587,
+    "h": 839,
+    "name": "poster-sofaedition.png"
+   }
+  ],
+  "thumb": "img/tarugo-2020/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/tarugo-2020/00.webp",
+    "hd": "img/tarugo-2020/00-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 1 - 20 años haciendo Software.png"
+   },
+   {
+    "src": "img/tarugo-2020/01.webp",
+    "hd": "img/tarugo-2020/01-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 2 - Cripto Covid.png"
+   },
+   {
+    "src": "img/tarugo-2020/02.webp",
+    "hd": "img/tarugo-2020/02-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 3 - La bárbara historia de Conan.png"
+   },
+   {
+    "src": "img/tarugo-2020/03.webp",
+    "hd": "img/tarugo-2020/03-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 4 - Lo veo todo negro.png"
+   },
+   {
+    "src": "img/tarugo-2020/04.webp",
+    "hd": "img/tarugo-2020/04-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png"
+   },
+   {
+    "src": "img/tarugo-2020/05.webp",
+    "hd": "img/tarugo-2020/05-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png"
+   },
+   {
+    "src": "img/tarugo-2020/06.webp",
+    "hd": "img/tarugo-2020/06-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 20 - 7 - Covidgedon.png"
+   }
+  ]
+ },
+ {
+  "slug": "tarugo-2021",
+  "title": "Tarugo 2021",
+  "info": {
+   "event": "Tarugo",
+   "edition": "2021",
+   "date": "2021",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 7,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png",
+     "title": "Aportando Transparencia a la Administración Pública",
+     "speaker": "Jaime Gómez-Obregón",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png",
+     "title": "Palabras Mágicas",
+     "speaker": "Eva Janeiro",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png",
+     "title": "Cómo construir tu propio páncreas",
+     "speaker": "Antonio Santos",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png",
+     "title": "Cómo hacer las américas en 2021",
+     "speaker": "Diego Ballesteros y Evaristo Babé",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png",
+     "title": "La historia de la primera programadora de España",
+     "speaker": "Paz Gimeno",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png",
+     "title": "Menores y redes sociales · La realidad que no conoces",
+     "speaker": "Pablo Duchement",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "Tarugo 21 - 7 - Ousman Umar.png",
+     "title": "Ousman Umar",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/tarugo-2021/cover.webp",
+  "back": null,
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/tarugo-2021/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/tarugo-2021/00.webp",
+    "hd": "img/tarugo-2021/00-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png"
+   },
+   {
+    "src": "img/tarugo-2021/01.webp",
+    "hd": "img/tarugo-2021/01-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png"
+   },
+   {
+    "src": "img/tarugo-2021/02.webp",
+    "hd": "img/tarugo-2021/02-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png"
+   },
+   {
+    "src": "img/tarugo-2021/03.webp",
+    "hd": "img/tarugo-2021/03-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png"
+   },
+   {
+    "src": "img/tarugo-2021/04.webp",
+    "hd": "img/tarugo-2021/04-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png"
+   },
+   {
+    "src": "img/tarugo-2021/05.webp",
+    "hd": "img/tarugo-2021/05-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png"
+   },
+   {
+    "src": "img/tarugo-2021/06.webp",
+    "hd": "img/tarugo-2021/06-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 21 - 7 - Ousman Umar.png"
+   }
+  ]
+ },
+ {
+  "slug": "trivulgando-2021",
+  "title": "Trivulgando 2021",
+  "info": {
+   "event": "Trivulgando",
+   "edition": "2021",
+   "date": "2021",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 6,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
+     "title": "La psicología del negacionismo",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "2-Trivulgando 2020 - Let's play.png",
+     "title": "Let's play",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
+     "title": "Datos, la materia prima de la epidemiologia",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
+     "title": "Trucos para sobrevivir informedia, la pandemia de información",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
+     "title": "Divulgación Científica contra los bulos",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
+     "title": "Divulgar para niños en redes",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/trivulgando-2021/cover.webp",
+  "back": null,
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/trivulgando-2021/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/trivulgando-2021/00.webp",
+    "hd": "img/trivulgando-2021/00-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "1-Trivulgando 2020 - La psicología del negacionismo.png"
+   },
+   {
+    "src": "img/trivulgando-2021/01.webp",
+    "hd": "img/trivulgando-2021/01-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "2-Trivulgando 2020 - Let's play.png"
+   },
+   {
+    "src": "img/trivulgando-2021/02.webp",
+    "hd": "img/trivulgando-2021/02-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png"
+   },
+   {
+    "src": "img/trivulgando-2021/03.webp",
+    "hd": "img/trivulgando-2021/03-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png"
+   },
+   {
+    "src": "img/trivulgando-2021/04.webp",
+    "hd": "img/trivulgando-2021/04-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png"
+   },
+   {
+    "src": "img/trivulgando-2021/05.webp",
+    "hd": "img/trivulgando-2021/05-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "6-Trivulgando 2020 - Divulgar para niños en redes.png"
+   }
+  ]
+ },
+ {
+  "slug": "tarugo-2022",
+  "title": "Tarugo 2022",
+  "info": {
+   "event": "Tarugo",
+   "edition": "2022",
+   "date": "2022",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 8,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
+     "title": "Un framework mental para enfrentarte al mundo real",
+     "speaker": "Recuenco",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
+     "title": "Algoritmos que salvan vidas",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
+     "title": "La tecnología necesaria para que te tomes una buena caña",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
+     "title": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
+     "title": "Cómo producir un videojuego",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
+     "title": "Debe un abogado aprender a programar?",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "Tarugo 22 - 7 - Ventas para ingenieros.png",
+     "title": "Ventas para ingenieros",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 8,
+     "file": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
+     "title": "Cómo aplicar la inteligenci artificial para el bien",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/tarugo-2022/cover.webp",
+  "back": null,
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/tarugo-2022/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/tarugo-2022/00.webp",
+    "hd": "img/tarugo-2022/00-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png"
+   },
+   {
+    "src": "img/tarugo-2022/01.webp",
+    "hd": "img/tarugo-2022/01-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png"
+   },
+   {
+    "src": "img/tarugo-2022/02.webp",
+    "hd": "img/tarugo-2022/02-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png"
+   },
+   {
+    "src": "img/tarugo-2022/03.webp",
+    "hd": "img/tarugo-2022/03-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png"
+   },
+   {
+    "src": "img/tarugo-2022/04.webp",
+    "hd": "img/tarugo-2022/04-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 5 - Cómo producir un videojuego.png"
+   },
+   {
+    "src": "img/tarugo-2022/05.webp",
+    "hd": "img/tarugo-2022/05-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png"
+   },
+   {
+    "src": "img/tarugo-2022/06.webp",
+    "hd": "img/tarugo-2022/06-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 7 - Ventas para ingenieros.png"
+   },
+   {
+    "src": "img/tarugo-2022/07.webp",
+    "hd": "img/tarugo-2022/07-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png"
+   }
+  ]
+ },
+ {
+  "slug": "midufest-2023",
+  "title": "miduFEST 2023",
+  "info": {
+   "event": "miduFEST",
+   "edition": "2023",
+   "date": "2023",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 13,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "1.Back to the future, CSS Edition.png",
+     "title": "Back to the future, CSS Edition",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "2.Este codigo es una ruina.png",
+     "title": "Este codigo es una ruina",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "3.De JS a React.png",
+     "title": "De JS a React",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "4.Rendimiento Web .png",
+     "title": "Rendimiento Web",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "5.React server components.png",
+     "title": "React server components",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "7.Una saga de infortunios.png",
+     "title": "Una saga de infortunios",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "8.Del front al back.png",
+     "title": "Del front al back",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 8,
+     "file": "9.De SPA a micro-frontends.png",
+     "title": "De SPA a micro-frontends",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 9,
+     "file": "10.Encontrar trabajo DEV en timepos loquísimos.png",
+     "title": "Encontrar trabajo DEV en timepos loquísimos",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 10,
+     "file": "11.Nuevas features de nodejs.png",
+     "title": "Nuevas features de nodejs",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 11,
+     "file": "12.Conectado programacion con IA.png",
+     "title": "Conectado programacion con IA",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 12,
+     "file": "13.Patrones de diseno y cervezas.png",
+     "title": "Patrones de diseno y cervezas",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 13,
+     "file": "14.Ni estatico ni dinamico, ambos.png",
+     "title": "Ni estatico ni dinamico, ambos",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/midufest-2023/cover.webp",
+  "back": "img/midufest-2023/back.webp",
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/midufest-2023/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/midufest-2023/00.webp",
+    "hd": "img/midufest-2023/00-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "1.Back to the future, CSS Edition.png"
+   },
+   {
+    "src": "img/midufest-2023/01.webp",
+    "hd": "img/midufest-2023/01-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "2.Este codigo es una ruina.png"
+   },
+   {
+    "src": "img/midufest-2023/02.webp",
+    "hd": "img/midufest-2023/02-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "3.De JS a React.png"
+   },
+   {
+    "src": "img/midufest-2023/03.webp",
+    "hd": "img/midufest-2023/03-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "4.Rendimiento Web .png"
+   },
+   {
+    "src": "img/midufest-2023/04.webp",
+    "hd": "img/midufest-2023/04-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "5.React server components.png"
+   },
+   {
+    "src": "img/midufest-2023/05.webp",
+    "hd": "img/midufest-2023/05-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "7.Una saga de infortunios.png"
+   },
+   {
+    "src": "img/midufest-2023/06.webp",
+    "hd": "img/midufest-2023/06-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "8.Del front al back.png"
+   },
+   {
+    "src": "img/midufest-2023/07.webp",
+    "hd": "img/midufest-2023/07-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "9.De SPA a micro-frontends.png"
+   },
+   {
+    "src": "img/midufest-2023/08.webp",
+    "hd": "img/midufest-2023/08-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "10.Encontrar trabajo DEV en timepos loquísimos.png"
+   },
+   {
+    "src": "img/midufest-2023/09.webp",
+    "hd": "img/midufest-2023/09-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "11.Nuevas features de nodejs.png"
+   },
+   {
+    "src": "img/midufest-2023/10.webp",
+    "hd": "img/midufest-2023/10-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "12.Conectado programacion con IA.png"
+   },
+   {
+    "src": "img/midufest-2023/11.webp",
+    "hd": "img/midufest-2023/11-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "13.Patrones de diseno y cervezas.png"
+   },
+   {
+    "src": "img/midufest-2023/12.webp",
+    "hd": "img/midufest-2023/12-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "14.Ni estatico ni dinamico, ambos.png"
    }
   ]
  },
@@ -736,6 +1084,469 @@
   ]
  },
  {
+  "slug": "tarugo-2023",
+  "title": "Tarugo 2023",
+  "info": {
+   "event": "Tarugo",
+   "edition": "2023",
+   "date": "2023",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 7,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
+     "title": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
+     "speaker": "",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png",
+     "title": "Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia",
+     "speaker": "Sandra Hernandez",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png",
+     "title": "Fast Data",
+     "speaker": "Sergio Rodriguez",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png",
+     "title": "Show me the money!",
+     "speaker": "Isabel Garate",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png",
+     "title": "Software que no se ejecuta en la nube",
+     "speaker": "Débora Franco",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png",
+     "title": "Del polvorón al snack de proteína de insecto",
+     "speaker": "Antonio Alcalde",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png",
+     "title": "Cómo sobrevivir en la empresa que fundaste y te acaban de comprar",
+     "speaker": "Pablo Santos",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/tarugo-2023/cover.webp",
+  "back": null,
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/tarugo-2023/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/tarugo-2023/00.webp",
+    "hd": "img/tarugo-2023/00-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png"
+   },
+   {
+    "src": "img/tarugo-2023/01.webp",
+    "hd": "img/tarugo-2023/01-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png"
+   },
+   {
+    "src": "img/tarugo-2023/02.webp",
+    "hd": "img/tarugo-2023/02-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png"
+   },
+   {
+    "src": "img/tarugo-2023/03.webp",
+    "hd": "img/tarugo-2023/03-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png"
+   },
+   {
+    "src": "img/tarugo-2023/04.webp",
+    "hd": "img/tarugo-2023/04-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png"
+   },
+   {
+    "src": "img/tarugo-2023/05.webp",
+    "hd": "img/tarugo-2023/05-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png"
+   },
+   {
+    "src": "img/tarugo-2023/06.webp",
+    "hd": "img/tarugo-2023/06-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png"
+   }
+  ]
+ },
+ {
+  "slug": "lechazoconf-2024",
+  "title": "Lechazoconf 2024",
+  "info": {
+   "event": "Lechazoconf",
+   "edition": "2024",
+   "date": "2024",
+   "venue": "",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "wallpaper.png",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 11,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png",
+     "title": "Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia",
+     "speaker": "Bárbara Román",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png",
+     "title": "Juego de tronos, fantasias de poder en la cultura de producto",
+     "speaker": "Henar Vega",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png",
+     "title": "Aprendizajes después de invertir en más de 100 startups",
+     "speaker": "Miguel Arias",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png",
+     "title": "Devengo, buscando oro entre las cenizas",
+     "speaker": "Aitor García Rey",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png",
+     "title": "Un gran proyecto multi-telco y mundial para devs",
+     "speaker": "Laura Lacarra",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png",
+     "title": "No es IA generativa todo lo que reluce",
+     "speaker": "Bea Hernández",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png",
+     "title": "Estos son mis principios de product management",
+     "speaker": "Diego Mariño",
+     "url": ""
+    },
+    {
+     "sketchnote": 8,
+     "file": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png",
+     "title": "Sorteando la desesperación en innovación",
+     "speaker": "Sara de Pablos",
+     "url": ""
+    },
+    {
+     "sketchnote": 9,
+     "file": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png",
+     "title": "De cal y de arena, caminos hacia equipos orientados a producto",
+     "speaker": "Abdul Martínez Castro",
+     "url": ""
+    },
+    {
+     "sketchnote": 10,
+     "file": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png",
+     "title": "What software can learn from deforestation",
+     "speaker": "Chris Wetherell",
+     "url": ""
+    },
+    {
+     "sketchnote": 11,
+     "file": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
+     "title": "10 años de Plantonic Games, 10 lecciones aprendidas",
+     "speaker": "",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/lechazoconf-2024/cover.webp",
+  "back": null,
+  "wallpaper": "img/lechazoconf-2024/wallpaper.webp",
+  "pattern": null,
+  "posters": [
+   {
+    "src": "img/lechazoconf-2024/poster-lechazo1.png.lol.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-lechazo1.png.lol.png"
+   },
+   {
+    "src": "img/lechazoconf-2024/poster-oficial.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-oficial.png"
+   }
+  ],
+  "thumb": "img/lechazoconf-2024/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/lechazoconf-2024/00.webp",
+    "hd": "img/lechazoconf-2024/00-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "1-Lechazoconf 24 - Jurassic Flow, Sobrevivir a la incertidumbre a lo bestia (Bárbara Román).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/01.webp",
+    "hd": "img/lechazoconf-2024/01-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "2-Lechazoconf 24 - Juego de tronos, fantasias de poder en la cultura de producto (Henar Vega).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/02.webp",
+    "hd": "img/lechazoconf-2024/02-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "3-Lechazoconf 24 - Aprendizajes después de invertir en más de 100 startups (Miguel Arias).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/03.webp",
+    "hd": "img/lechazoconf-2024/03-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "4-Lechazoconf 24 - Devengo, buscando oro entre las cenizas (Aitor García Rey).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/04.webp",
+    "hd": "img/lechazoconf-2024/04-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "5-Lechazoconf 24 - Un gran proyecto multi-telco y mundial para devs (Laura Lacarra).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/05.webp",
+    "hd": "img/lechazoconf-2024/05-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "6-Lechazoconf 24 - No es IA generativa todo lo que reluce (Bea Hernández).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/06.webp",
+    "hd": "img/lechazoconf-2024/06-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "7-Lechazoconf 24 - Estos son mis principios de product management (Diego Mariño).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/07.webp",
+    "hd": "img/lechazoconf-2024/07-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "8-Lechazoconf 24 - Sorteando la desesperación en innovación (Sara de Pablos).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/08.webp",
+    "hd": "img/lechazoconf-2024/08-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "9-Lechazoconf 24 - De cal y de arena, caminos hacia equipos orientados a producto (Abdul Martínez Castro).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/09.webp",
+    "hd": "img/lechazoconf-2024/09-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "10-Lechazoconf 24 - What software can learn from deforestation (Chris Wetherell).png"
+   },
+   {
+    "src": "img/lechazoconf-2024/10.webp",
+    "hd": "img/lechazoconf-2024/10-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png"
+   }
+  ]
+ },
+ {
+  "slug": "tarugo-2024",
+  "title": "Tarugo 2024",
+  "info": {
+   "event": "Tarugo",
+   "edition": "2024",
+   "date": "2024",
+   "venue": "La Nave (Madrid)",
+   "url": "",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "wallpaper.png",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 7,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png",
+     "title": "Hardware abierto en tiempo de modelos cerrados",
+     "speaker": "David Cuartielles",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png",
+     "title": "La tecnología para luchar contra la desinformación",
+     "speaker": "Clara Jiménez Cruz",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png",
+     "title": "Curar con Algoritmos",
+     "speaker": "Aurelia Bustos",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png",
+     "title": "Evangelismo ténnico, qué, cómo y por qué",
+     "speaker": "Trisha Gee",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png",
+     "title": "No montes un estudio de videojuegos",
+     "speaker": "Daniel Sánchez-Crespo",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png",
+     "title": "Effective Data",
+     "speaker": "Giuseppe Sollazzo",
+     "url": ""
+    },
+    {
+     "sketchnote": 7,
+     "file": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png",
+     "title": "Cómo crear una App de pago único, y no morir en el intento",
+     "speaker": "Rafael Pons",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/tarugo-2024/cover.webp",
+  "back": null,
+  "wallpaper": "img/tarugo-2024/wallpaper.webp",
+  "pattern": null,
+  "posters": [
+   {
+    "src": "img/tarugo-2024/poster-enchanment.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-enchanment.png"
+   },
+   {
+    "src": "img/tarugo-2024/poster-movie.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-movie.png"
+   },
+   {
+    "src": "img/tarugo-2024/poster-tower.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-tower.png"
+   }
+  ],
+  "thumb": "img/tarugo-2024/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/tarugo-2024/00.webp",
+    "hd": "img/tarugo-2024/00-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png"
+   },
+   {
+    "src": "img/tarugo-2024/01.webp",
+    "hd": "img/tarugo-2024/01-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png"
+   },
+   {
+    "src": "img/tarugo-2024/02.webp",
+    "hd": "img/tarugo-2024/02-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png"
+   },
+   {
+    "src": "img/tarugo-2024/03.webp",
+    "hd": "img/tarugo-2024/03-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png"
+   },
+   {
+    "src": "img/tarugo-2024/04.webp",
+    "hd": "img/tarugo-2024/04-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png"
+   },
+   {
+    "src": "img/tarugo-2024/05.webp",
+    "hd": "img/tarugo-2024/05-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png"
+   },
+   {
+    "src": "img/tarugo-2024/06.webp",
+    "hd": "img/tarugo-2024/06-hd.webp",
+    "w": 2224,
+    "h": 1668,
+    "name": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png"
+   }
+  ]
+ },
+ {
   "slug": "trgcon26",
   "title": "TRGCON26",
   "info": {
@@ -886,683 +1697,12 @@
   ]
  },
  {
-  "slug": "tarugo-2020",
-  "title": "Tarugo 2020",
+  "slug": "mas-que-startups",
+  "title": "Mas Que Startups",
   "info": {
-   "event": "Tarugo",
-   "edition": "2020",
-   "date": "2020",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "wallpaper.png",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 7,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "Tarugo 20 - 1 - 20 años haciendo Software.png",
-     "title": "20 años haciendo Software",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "Tarugo 20 - 2 - Cripto Covid.png",
-     "title": "Cripto Covid",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "Tarugo 20 - 3 - La bárbara historia de Conan.png",
-     "title": "La bárbara historia de Conan",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "Tarugo 20 - 4 - Lo veo todo negro.png",
-     "title": "Lo veo todo negro",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png",
-     "title": "La tecnología detrás de un empaste",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png",
-     "title": "Videoyayadas  y hackandemias en tiempo del cocinamiento",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "Tarugo 20 - 7 - Covidgedon.png",
-     "title": "Covidgedon",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/tarugo-2020/cover.webp",
-  "back": null,
-  "wallpaper": "img/tarugo-2020/wallpaper.webp",
-  "pattern": null,
-  "posters": [
-   {
-    "src": "img/tarugo-2020/poster-pandemi.webp",
-    "w": 581,
-    "h": 839,
-    "name": "poster-pandemi.png"
-   },
-   {
-    "src": "img/tarugo-2020/poster-sofaedition.webp",
-    "w": 587,
-    "h": 839,
-    "name": "poster-sofaedition.png"
-   }
-  ],
-  "thumb": "img/tarugo-2020/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/tarugo-2020/00.webp",
-    "hd": "img/tarugo-2020/00-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 1 - 20 años haciendo Software.png"
-   },
-   {
-    "src": "img/tarugo-2020/01.webp",
-    "hd": "img/tarugo-2020/01-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 2 - Cripto Covid.png"
-   },
-   {
-    "src": "img/tarugo-2020/02.webp",
-    "hd": "img/tarugo-2020/02-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 3 - La bárbara historia de Conan.png"
-   },
-   {
-    "src": "img/tarugo-2020/03.webp",
-    "hd": "img/tarugo-2020/03-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 4 - Lo veo todo negro.png"
-   },
-   {
-    "src": "img/tarugo-2020/04.webp",
-    "hd": "img/tarugo-2020/04-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png"
-   },
-   {
-    "src": "img/tarugo-2020/05.webp",
-    "hd": "img/tarugo-2020/05-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png"
-   },
-   {
-    "src": "img/tarugo-2020/06.webp",
-    "hd": "img/tarugo-2020/06-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 20 - 7 - Covidgedon.png"
-   }
-  ]
- },
- {
-  "slug": "tarugo-2021",
-  "title": "Tarugo 2021",
-  "info": {
-   "event": "Tarugo",
-   "edition": "2021",
-   "date": "2021",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 7,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png",
-     "title": "Aportando Transparencia a la Administración Pública",
-     "speaker": "Jaime Gómez-Obregón",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png",
-     "title": "Palabras Mágicas",
-     "speaker": "Eva Janeiro",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png",
-     "title": "Cómo construir tu propio páncreas",
-     "speaker": "Antonio Santos",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png",
-     "title": "Cómo hacer las américas en 2021",
-     "speaker": "Diego Ballesteros y Evaristo Babé",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png",
-     "title": "La historia de la primera programadora de España",
-     "speaker": "Paz Gimeno",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png",
-     "title": "Menores y redes sociales · La realidad que no conoces",
-     "speaker": "Pablo Duchement",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "Tarugo 21 - 7 - Ousman Umar.png",
-     "title": "Ousman Umar",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/tarugo-2021/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/tarugo-2021/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/tarugo-2021/00.webp",
-    "hd": "img/tarugo-2021/00-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 1 - Aportando Transparencia a la Administración Pública (Jaime Gómez-Obregón).png"
-   },
-   {
-    "src": "img/tarugo-2021/01.webp",
-    "hd": "img/tarugo-2021/01-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 2 - Palabras Mágicas (Eva Janeiro).png"
-   },
-   {
-    "src": "img/tarugo-2021/02.webp",
-    "hd": "img/tarugo-2021/02-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 3 - Cómo construir tu propio páncreas (Antonio Santos).png"
-   },
-   {
-    "src": "img/tarugo-2021/03.webp",
-    "hd": "img/tarugo-2021/03-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 4 - Cómo hacer las américas en 2021 (Diego Ballesteros y Evaristo Babé).png"
-   },
-   {
-    "src": "img/tarugo-2021/04.webp",
-    "hd": "img/tarugo-2021/04-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 5 - La historia de la primera programadora de España (Paz Gimeno).png"
-   },
-   {
-    "src": "img/tarugo-2021/05.webp",
-    "hd": "img/tarugo-2021/05-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "Tarugo 21 - 6 - Menores y redes sociales - La realidad que no conoces (Pablo Duchement).png"
-   },
-   {
-    "src": "img/tarugo-2021/06.webp",
-    "hd": "img/tarugo-2021/06-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 21 - 7 - Ousman Umar.png"
-   }
-  ]
- },
- {
-  "slug": "tarugo-2022",
-  "title": "Tarugo 2022",
-  "info": {
-   "event": "Tarugo",
-   "edition": "2022",
-   "date": "2022",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 8,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
-     "title": "Un framework mental para enfrentarte al mundo real",
-     "speaker": "Recuenco",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
-     "title": "Algoritmos que salvan vidas",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
-     "title": "La tecnología necesaria para que te tomes una buena caña",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
-     "title": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
-     "title": "Cómo producir un videojuego",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
-     "title": "Debe un abogado aprender a programar?",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "Tarugo 22 - 7 - Ventas para ingenieros.png",
-     "title": "Ventas para ingenieros",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 8,
-     "file": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
-     "title": "Cómo aplicar la inteligenci artificial para el bien",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/tarugo-2022/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/tarugo-2022/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/tarugo-2022/00.webp",
-    "hd": "img/tarugo-2022/00-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png"
-   },
-   {
-    "src": "img/tarugo-2022/01.webp",
-    "hd": "img/tarugo-2022/01-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png"
-   },
-   {
-    "src": "img/tarugo-2022/02.webp",
-    "hd": "img/tarugo-2022/02-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png"
-   },
-   {
-    "src": "img/tarugo-2022/03.webp",
-    "hd": "img/tarugo-2022/03-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png"
-   },
-   {
-    "src": "img/tarugo-2022/04.webp",
-    "hd": "img/tarugo-2022/04-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 5 - Cómo producir un videojuego.png"
-   },
-   {
-    "src": "img/tarugo-2022/05.webp",
-    "hd": "img/tarugo-2022/05-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png"
-   },
-   {
-    "src": "img/tarugo-2022/06.webp",
-    "hd": "img/tarugo-2022/06-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 7 - Ventas para ingenieros.png"
-   },
-   {
-    "src": "img/tarugo-2022/07.webp",
-    "hd": "img/tarugo-2022/07-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png"
-   }
-  ]
- },
- {
-  "slug": "tarugo-2023",
-  "title": "Tarugo 2023",
-  "info": {
-   "event": "Tarugo",
-   "edition": "2023",
-   "date": "2023",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 7,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
-     "title": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png",
-     "title": "Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia",
-     "speaker": "Sandra Hernandez",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png",
-     "title": "Fast Data",
-     "speaker": "Sergio Rodriguez",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png",
-     "title": "Show me the money!",
-     "speaker": "Isabel Garate",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png",
-     "title": "Software que no se ejecuta en la nube",
-     "speaker": "Débora Franco",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png",
-     "title": "Del polvorón al snack de proteína de insecto",
-     "speaker": "Antonio Alcalde",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png",
-     "title": "Cómo sobrevivir en la empresa que fundaste y te acaban de comprar",
-     "speaker": "Pablo Santos",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/tarugo-2023/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/tarugo-2023/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/tarugo-2023/00.webp",
-    "hd": "img/tarugo-2023/00-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png"
-   },
-   {
-    "src": "img/tarugo-2023/01.webp",
-    "hd": "img/tarugo-2023/01-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 2 - Cómo hacer testing cuando tu código se ejecuta a 600 millones de kilómetros de distancia (Sandra Hernandez).png"
-   },
-   {
-    "src": "img/tarugo-2023/02.webp",
-    "hd": "img/tarugo-2023/02-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 3 - Fast Data (Sergio Rodriguez).png"
-   },
-   {
-    "src": "img/tarugo-2023/03.webp",
-    "hd": "img/tarugo-2023/03-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 4 - Show me the money! (Isabel Garate).png"
-   },
-   {
-    "src": "img/tarugo-2023/04.webp",
-    "hd": "img/tarugo-2023/04-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 5 - Software que no se ejecuta en la nube (Débora Franco).png"
-   },
-   {
-    "src": "img/tarugo-2023/05.webp",
-    "hd": "img/tarugo-2023/05-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 6 - Del polvorón al snack de proteína de insecto (Antonio Alcalde).png"
-   },
-   {
-    "src": "img/tarugo-2023/06.webp",
-    "hd": "img/tarugo-2023/06-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON23 - 7 - Cómo sobrevivir en la empresa que fundaste y te acaban de comprar (Pablo Santos).png"
-   }
-  ]
- },
- {
-  "slug": "tarugo-2024",
-  "title": "Tarugo 2024",
-  "info": {
-   "event": "Tarugo",
-   "edition": "2024",
-   "date": "2024",
-   "venue": "La Nave (Madrid)",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "wallpaper.png",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 7,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png",
-     "title": "Hardware abierto en tiempo de modelos cerrados",
-     "speaker": "David Cuartielles",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png",
-     "title": "La tecnología para luchar contra la desinformación",
-     "speaker": "Clara Jiménez Cruz",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png",
-     "title": "Curar con Algoritmos",
-     "speaker": "Aurelia Bustos",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png",
-     "title": "Evangelismo ténnico, qué, cómo y por qué",
-     "speaker": "Trisha Gee",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png",
-     "title": "No montes un estudio de videojuegos",
-     "speaker": "Daniel Sánchez-Crespo",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png",
-     "title": "Effective Data",
-     "speaker": "Giuseppe Sollazzo",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png",
-     "title": "Cómo crear una App de pago único, y no morir en el intento",
-     "speaker": "Rafael Pons",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/tarugo-2024/cover.webp",
-  "back": null,
-  "wallpaper": "img/tarugo-2024/wallpaper.webp",
-  "pattern": null,
-  "posters": [
-   {
-    "src": "img/tarugo-2024/poster-enchanment.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-enchanment.png"
-   },
-   {
-    "src": "img/tarugo-2024/poster-movie.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-movie.png"
-   },
-   {
-    "src": "img/tarugo-2024/poster-tower.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-tower.png"
-   }
-  ],
-  "thumb": "img/tarugo-2024/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/tarugo-2024/00.webp",
-    "hd": "img/tarugo-2024/00-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 1 - Hardware abierto en tiempo de modelos cerrados (David Cuartielles).png"
-   },
-   {
-    "src": "img/tarugo-2024/01.webp",
-    "hd": "img/tarugo-2024/01-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 2 - La tecnología para luchar contra la desinformación (Clara Jiménez Cruz).png"
-   },
-   {
-    "src": "img/tarugo-2024/02.webp",
-    "hd": "img/tarugo-2024/02-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 3 - Curar con Algoritmos (Aurelia Bustos).png"
-   },
-   {
-    "src": "img/tarugo-2024/03.webp",
-    "hd": "img/tarugo-2024/03-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png"
-   },
-   {
-    "src": "img/tarugo-2024/04.webp",
-    "hd": "img/tarugo-2024/04-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 5 - No montes un estudio de videojuegos (Daniel Sánchez-Crespo).png"
-   },
-   {
-    "src": "img/tarugo-2024/05.webp",
-    "hd": "img/tarugo-2024/05-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 6 - Effective Data (Giuseppe Sollazzo).png"
-   },
-   {
-    "src": "img/tarugo-2024/06.webp",
-    "hd": "img/tarugo-2024/06-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "TRGCON24 - 7 - Cómo crear una App de pago único, y no morir en el intento (Rafael Pons).png"
-   }
-  ]
- },
- {
-  "slug": "trivulgando-2021",
-  "title": "Trivulgando 2021",
-  "info": {
-   "event": "Trivulgando",
-   "edition": "2021",
-   "date": "2021",
+   "event": "Mas Que Startups",
+   "edition": "",
+   "date": "",
    "venue": "",
    "url": "",
    "hashtag": "",
@@ -1574,106 +1714,106 @@
    "talks": [
     {
      "sketchnote": 1,
-     "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
-     "title": "La psicología del negacionismo",
+     "file": "Más Que Startups - 5 1.png",
+     "title": "",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 2,
-     "file": "2-Trivulgando 2020 - Let's play.png",
-     "title": "Let's play",
+     "file": "MQS - 7 - Loly Garrido.png",
+     "title": "Loly Garrido",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 3,
-     "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
-     "title": "Datos, la materia prima de la epidemiologia",
+     "file": "MQS - 9 - Guillermo Montoya.png",
+     "title": "Guillermo Montoya",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 4,
-     "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
-     "title": "Trucos para sobrevivir informedia, la pandemia de información",
+     "file": "MQS - 10 - Rated Power.png",
+     "title": "Rated Power",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 5,
-     "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
-     "title": "Divulgación Científica contra los bulos",
+     "file": "MSQ - 11 - Danie Seijo.png",
+     "title": "Danie Seijo",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 6,
-     "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
-     "title": "Divulgar para niños en redes",
+     "file": "MQS - 12 - Carlos de Otto.png",
+     "title": "Carlos de Otto",
      "speaker": "",
      "url": ""
     }
    ]
   },
-  "cover": "img/trivulgando-2021/cover.webp",
+  "cover": "img/mas-que-startups/cover.webp",
   "back": null,
   "wallpaper": null,
   "pattern": null,
   "posters": [],
-  "thumb": "img/trivulgando-2021/00-thumb.webp",
+  "thumb": "img/mas-que-startups/00-thumb.webp",
   "pages": [
    {
-    "src": "img/trivulgando-2021/00.webp",
-    "hd": "img/trivulgando-2021/00-hd.webp",
+    "src": "img/mas-que-startups/00.webp",
+    "hd": "img/mas-que-startups/00-hd.webp",
     "w": 2732,
     "h": 2048,
-    "name": "1-Trivulgando 2020 - La psicología del negacionismo.png"
+    "name": "Más Que Startups - 5 1.png"
    },
    {
-    "src": "img/trivulgando-2021/01.webp",
-    "hd": "img/trivulgando-2021/01-hd.webp",
+    "src": "img/mas-que-startups/01.webp",
+    "hd": "img/mas-que-startups/01-hd.webp",
     "w": 2732,
-    "h": 2048,
-    "name": "2-Trivulgando 2020 - Let's play.png"
+    "h": 2203,
+    "name": "MQS - 7 - Loly Garrido.png"
    },
    {
-    "src": "img/trivulgando-2021/02.webp",
-    "hd": "img/trivulgando-2021/02-hd.webp",
+    "src": "img/mas-que-startups/02.webp",
+    "hd": "img/mas-que-startups/02-hd.webp",
     "w": 2732,
-    "h": 2048,
-    "name": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png"
+    "h": 2203,
+    "name": "MQS - 9 - Guillermo Montoya.png"
    },
    {
-    "src": "img/trivulgando-2021/03.webp",
-    "hd": "img/trivulgando-2021/03-hd.webp",
+    "src": "img/mas-que-startups/03.webp",
+    "hd": "img/mas-que-startups/03-hd.webp",
     "w": 2732,
-    "h": 2048,
-    "name": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png"
+    "h": 2203,
+    "name": "MQS - 10 - Rated Power.png"
    },
    {
-    "src": "img/trivulgando-2021/04.webp",
-    "hd": "img/trivulgando-2021/04-hd.webp",
+    "src": "img/mas-que-startups/04.webp",
+    "hd": "img/mas-que-startups/04-hd.webp",
     "w": 2732,
-    "h": 2048,
-    "name": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png"
+    "h": 2203,
+    "name": "MSQ - 11 - Danie Seijo.png"
    },
    {
-    "src": "img/trivulgando-2021/05.webp",
-    "hd": "img/trivulgando-2021/05-hd.webp",
+    "src": "img/mas-que-startups/05.webp",
+    "hd": "img/mas-que-startups/05-hd.webp",
     "w": 2732,
-    "h": 2048,
-    "name": "6-Trivulgando 2020 - Divulgar para niños en redes.png"
+    "h": 2203,
+    "name": "MQS - 12 - Carlos de Otto.png"
    }
   ]
  },
  {
-  "slug": "midufest-2023",
-  "title": "miduFEST 2023",
+  "slug": "open-space-emprendimiento-social",
+  "title": "Open Space, Emprendimiento Social",
   "info": {
-   "event": "miduFEST",
-   "edition": "2023",
-   "date": "2023",
+   "event": "Open Space, Emprendimiento Social",
+   "edition": "",
+   "date": "",
    "venue": "",
    "url": "",
    "hashtag": "",
@@ -1681,198 +1821,58 @@
    "wallpaper": "",
    "pattern": "",
    "author": "@oyabun",
-   "sketchnotes": 13,
+   "sketchnotes": 3,
    "talks": [
     {
      "sketchnote": 1,
-     "file": "1.Back to the future, CSS Edition.png",
-     "title": "Back to the future, CSS Edition",
+     "file": "sketch_0.jpeg",
+     "title": "",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 2,
-     "file": "2.Este codigo es una ruina.png",
-     "title": "Este codigo es una ruina",
+     "file": "sketch_ 1.jpeg",
+     "title": "",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 3,
-     "file": "3.De JS a React.png",
-     "title": "De JS a React",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "4.Rendimiento Web .png",
-     "title": "Rendimiento Web",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "5.React server components.png",
-     "title": "React server components",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "7.Una saga de infortunios.png",
-     "title": "Una saga de infortunios",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 7,
-     "file": "8.Del front al back.png",
-     "title": "Del front al back",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 8,
-     "file": "9.De SPA a micro-frontends.png",
-     "title": "De SPA a micro-frontends",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 9,
-     "file": "10.Encontrar trabajo DEV en timepos loquísimos.png",
-     "title": "Encontrar trabajo DEV en timepos loquísimos",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 10,
-     "file": "11.Nuevas features de nodejs.png",
-     "title": "Nuevas features de nodejs",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 11,
-     "file": "12.Conectado programacion con IA.png",
-     "title": "Conectado programacion con IA",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 12,
-     "file": "13.Patrones de diseno y cervezas.png",
-     "title": "Patrones de diseno y cervezas",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 13,
-     "file": "14.Ni estatico ni dinamico, ambos.png",
-     "title": "Ni estatico ni dinamico, ambos",
+     "file": "sketch_ 2.jpeg",
+     "title": "",
      "speaker": "",
      "url": ""
     }
    ]
   },
-  "cover": "img/midufest-2023/cover.webp",
-  "back": "img/midufest-2023/back.webp",
+  "cover": "img/open-space-emprendimiento-social/cover.webp",
+  "back": null,
   "wallpaper": null,
   "pattern": null,
   "posters": [],
-  "thumb": "img/midufest-2023/00-thumb.webp",
+  "thumb": "img/open-space-emprendimiento-social/00-thumb.webp",
   "pages": [
    {
-    "src": "img/midufest-2023/00.webp",
-    "hd": "img/midufest-2023/00-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "1.Back to the future, CSS Edition.png"
+    "src": "img/open-space-emprendimiento-social/00.webp",
+    "hd": "img/open-space-emprendimiento-social/00-hd.webp",
+    "w": 2337,
+    "h": 1652,
+    "name": "sketch_0.jpeg"
    },
    {
-    "src": "img/midufest-2023/01.webp",
-    "hd": "img/midufest-2023/01-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "2.Este codigo es una ruina.png"
+    "src": "img/open-space-emprendimiento-social/01.webp",
+    "hd": "img/open-space-emprendimiento-social/01-hd.webp",
+    "w": 2337,
+    "h": 1652,
+    "name": "sketch_ 1.jpeg"
    },
    {
-    "src": "img/midufest-2023/02.webp",
-    "hd": "img/midufest-2023/02-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "3.De JS a React.png"
-   },
-   {
-    "src": "img/midufest-2023/03.webp",
-    "hd": "img/midufest-2023/03-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "4.Rendimiento Web .png"
-   },
-   {
-    "src": "img/midufest-2023/04.webp",
-    "hd": "img/midufest-2023/04-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "5.React server components.png"
-   },
-   {
-    "src": "img/midufest-2023/05.webp",
-    "hd": "img/midufest-2023/05-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "7.Una saga de infortunios.png"
-   },
-   {
-    "src": "img/midufest-2023/06.webp",
-    "hd": "img/midufest-2023/06-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "8.Del front al back.png"
-   },
-   {
-    "src": "img/midufest-2023/07.webp",
-    "hd": "img/midufest-2023/07-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "9.De SPA a micro-frontends.png"
-   },
-   {
-    "src": "img/midufest-2023/08.webp",
-    "hd": "img/midufest-2023/08-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "10.Encontrar trabajo DEV en timepos loquísimos.png"
-   },
-   {
-    "src": "img/midufest-2023/09.webp",
-    "hd": "img/midufest-2023/09-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "11.Nuevas features de nodejs.png"
-   },
-   {
-    "src": "img/midufest-2023/10.webp",
-    "hd": "img/midufest-2023/10-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "12.Conectado programacion con IA.png"
-   },
-   {
-    "src": "img/midufest-2023/11.webp",
-    "hd": "img/midufest-2023/11-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "13.Patrones de diseno y cervezas.png"
-   },
-   {
-    "src": "img/midufest-2023/12.webp",
-    "hd": "img/midufest-2023/12-hd.webp",
-    "w": 2224,
-    "h": 1668,
-    "name": "14.Ni estatico ni dinamico, ambos.png"
+    "src": "img/open-space-emprendimiento-social/02.webp",
+    "hd": "img/open-space-emprendimiento-social/02-hd.webp",
+    "w": 2337,
+    "h": 1652,
+    "name": "sketch_ 2.jpeg"
    }
   ]
  }

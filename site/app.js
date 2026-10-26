@@ -21,6 +21,7 @@ let current = null;
 let page = -1;
 let leaves = [];      // index j+1 -> leaf j
 let anim = null;      // turn animation in progress
+let booted = false;   // a notebook opened from the first URL appears without flying off the shelf
 let pw = 0;           // half-page width in px
 
 const label = (n) => t('sketchnotes', n);
@@ -62,19 +63,24 @@ function renderShelf() {
 
 function card(nb) {
   const a = document.createElement('a');
-  a.className = 'card';
+  a.className = nb === current ? 'card away' : 'card';
   a.href = hashFor(nb, -1);
+  a.dataset.slug = nb.slug;
   const d = Math.min(26, 8 + nb.pages.length * 1.1);
   a.innerHTML = `
-    <div class="nb" style="--d:${d}px">
+    <div class="nb" style="--d:${d}px; --cover:url('${nb.cover}')">
+      <div class="wall-shadow"></div>
       <div class="ground"></div>
       <div class="box">
         <div class="b-back"></div>
+        <div class="b-back-edge"></div>
         <div class="b-edge-r"></div>
         <div class="b-edge-t"></div>
         <div class="b-inside" style="background-image:url('${nb.thumb}')"></div>
         <div class="b-hinge">
-          <div class="b-cover" style="background-image:url('${nb.cover}')"></div>
+          <div class="b-cover"></div>
+          <div class="b-cover-edge"></div>
+          <div class="b-cover-top"></div>
           <div class="b-cover-in" style="background-image:url('${nb.thumb}')"></div>
         </div>
       </div>
@@ -330,10 +336,57 @@ function jump(p) {
   render();
 }
 
-function openNotebook(nb, p) {
+/* ---------- Taking a notebook off the shelf and putting it back ---------- */
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let flight = null;    // { finish } while the book flies between the shelf and the reader
+let leaving = false;  // closing on its way back to the shelf: input is ignored
+const busy = () => !current || leaving || flight;
+
+const cardFor = (nb) => $('grid').querySelector(`.card[data-slug="${CSS.escape(nb.slug)}"]`);
+const center = (r) => ({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+function onScreen(el) {
+  const r = el.getBoundingClientRect();
+  return r.bottom > 0 && r.top < innerHeight && r.width > 0;
+}
+
+// Moves the whole stage so the closed book in the reader sits exactly over its shelf copy,
+// then animates to (inward) or from (outward) its place in the reader.
+function fly(card, inward, done) {
+  const from = card.querySelector('.b-back').getBoundingClientRect();
+  const to = leafAt(-1).querySelector('.b-out').getBoundingClientRect();
+  const sr = stage.getBoundingClientRect();
+  const a = center(from), b = center(to);
+  const s = from.height / to.height;
+  stage.style.transformOrigin = `${b.x - sr.left}px ${b.y - sr.top}px`;
+  const shelfPose = { transform: `translate(${a.x - b.x}px, ${a.y - b.y}px) scale(${s})` };
+  const readerPose = { transform: 'none' };
+  const timing = { duration: inward ? 760 : 680, easing: 'cubic-bezier(.3,.6,.15,1)', fill: 'both' };
+  const fade = (el, delay = 0) => el.animate(
+    inward ? [{ opacity: 0 }, { opacity: 1 }] : [{ opacity: 1 }, { opacity: 0 }],
+    { ...timing, delay, duration: timing.duration - delay });
+  const anims = [
+    stage.animate(inward ? [shelfPose, readerPose] : [readerPose, shelfPose], timing),
+    fade(reader.querySelector('.reader-bg')),
+    fade(reader.querySelector('.reader-head'), inward ? 250 : 0),
+    fade(reader.querySelector('.toolbar'), inward ? 250 : 0),
+    fade(stage.querySelector('.floor-shadow'), inward ? 300 : 0),
+  ];
+  const finish = () => {
+    if (!flight) return;
+    flight = null;
+    anims.forEach((x) => x.cancel());
+    stage.style.transformOrigin = '';
+    done && done();
+  };
+  flight = { finish };
+  anims[0].finished.then(finish, () => {});
+}
+
+function openNotebook(nb, p, animate = false) {
   finishAnim();
+  if (flight) flight.finish();
   current = nb;
-  shelf.hidden = true;
+  document.documentElement.classList.add('reading');
   reader.hidden = false;
   $('r-title').textContent = nb.title;
   $('r-count').textContent = label(nb.pages.length);
@@ -343,26 +396,44 @@ function openNotebook(nb, p) {
   bookEl.classList.add('instant');
   leaves.forEach((l) => l.classList.add('instant'));
   render();
+  const card = cardFor(nb);
+  card?.classList.add('away');
+  if (animate && p === -1 && card && onScreen(card) && !reducedMotion.matches) fly(card, true);
   requestAnimationFrame(() => requestAnimationFrame(() => {
     bookEl.classList.remove('instant');
     leaves.forEach((l) => l.classList.remove('instant'));
   }));
 }
 
+// Closes the book (if it is open), flies it back to its gap on the shelf and drops the reader.
 function closeNotebook() {
+  if (!current || leaving) return;
   finishAnim();
-  current = null;
-  bookEl.replaceChildren();
-  reader.hidden = true;
-  shelf.hidden = false;
-  renderShelf();
-  document.title = 'Drawing Talks';
+  if (flight) flight.finish();
+  const nb = current;
+  const card = cardFor(nb);
+  const done = () => {
+    leaving = false;
+    current = null;
+    cardFor(nb)?.classList.remove('away');
+    bookEl.replaceChildren();
+    reader.hidden = true;
+    document.documentElement.classList.remove('reading');
+    document.title = 'Drawing Talks';
+  };
+  if (!card || reducedMotion.matches) return done();
+  leaving = true;
+  card.scrollIntoView({ block: 'nearest' });
+  const wasOpen = page !== -1;
+  if (wasOpen) { page = -1; render(); }
+  history.replaceState(null, '', '#/');
+  setTimeout(() => fly(card, false, done), wasOpen ? 820 : 0);
 }
 
 /* ---------- Arrastre y clic ---------- */
 let drag = null;
 stage.addEventListener('pointerdown', (e) => {
-  if (!current || e.button) return;
+  if (busy() || e.button) return;
   finishAnim();
   const n = current.pages.length;
   const r = bookEl.getBoundingClientRect();
@@ -414,21 +485,22 @@ function route() {
   const [slug, n] = decodeURIComponent(location.hash.replace(/^#\/?/, '')).split('/');
   const nb = notebooks.find((x) => x.slug === slug);
   if (!nb) { if (current) closeNotebook(); return; }
+  if (leaving) return;
   const total = nb.pages.length;
   const p = n === 'end' || n === 'fin' ? total : n ? Math.max(0, Math.min(total - 1, (parseInt(n, 10) || 1) - 1)) : -1;
-  if (current !== nb) openNotebook(nb, p);
+  if (current !== nb) openNotebook(nb, p, booted);
   else if (p !== page) jump(p);
 }
 
 $('btn-back').onclick = () => { location.hash = ''; };
-$('btn-prev').onclick = () => flip(-1);
-$('btn-next').onclick = () => flip(1);
+$('btn-prev').onclick = () => { if (!busy()) flip(-1); };
+$('btn-next').onclick = () => { if (!busy()) flip(1); };
 $('btn-full').onclick = () => {
   if (document.fullscreenElement) document.exitFullscreen();
   else document.documentElement.requestFullscreen?.();
 };
 addEventListener('keydown', (e) => {
-  if (!current) return;
+  if (busy()) return;
   if (e.key === 'ArrowRight') flip(1);
   else if (e.key === 'ArrowLeft') flip(-1);
   else if (e.key === 'Home') jump(0);
@@ -436,11 +508,12 @@ addEventListener('keydown', (e) => {
   else if (e.key === 'Escape' && !document.fullscreenElement) location.hash = '';
 });
 addEventListener('hashchange', route);
-addEventListener('resize', () => { layout(); if (!shelf.hidden) renderShelf(); });
+addEventListener('resize', () => { layout(); renderShelf(); });
 
 translatePage();
 fetch('notebooks.json', { cache: 'no-cache' }).then((r) => r.json()).then((data) => {
   notebooks = data;
   renderShelf();
   route();
+  booted = true;
 });

@@ -28,12 +28,12 @@ body {
 .shelf-head h1 { margin: 0; font-size: 34px; letter-spacing: .5px; text-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .shelf-head p, .reader-head p { margin: 4px 0 0; color: var(--accent); font-size: 13px; font-weight: 600; }
 
-/* Shelf: one wooden board per row */
+/* Shelf: one wooden board per row, drawn flat (top surface + front edge) with the wood texture */
 .grid {
   --book-slot: 180px;
   --book-w: 124px;
-  --plank-top: 22px;
-  --plank-front: 18px;
+  --plank-top: 14px;
+  --plank-front: 20px;
   column-gap: 28px;
   max-width: 1240px;
   margin: 0 auto;
@@ -45,69 +45,94 @@ body {
   display: flex; justify-content: center; align-items: flex-start; gap: 0 28px;
   padding: 0 24px;
 }
-.plank {
-  position: absolute; left: 0; right: 0;
-  top: calc(var(--book-w) * 1.5 + 26px);
-  perspective: 900px; perspective-origin: 50% -200%;
+/* books stand on the back half of the top surface */
+.plank { position: absolute; left: 0; right: 0; top: calc(26px + var(--book-w) * 1.5 - var(--plank-top) * 0.55); }
+.plank::before {
+  /* shadow the shelf casts on the wall */
+  content: ""; position: absolute; left: 3%; right: 3%; top: 60%; height: 46px;
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+  filter: blur(10px); border-radius: 50%;
 }
+.plank-top, .plank-front { position: relative; margin: 0 4px; background-image: url('3d/tex/wood-color.webp'); background-size: 520px auto; }
 .plank-top {
   height: var(--plank-top);
-  margin: 0 10px;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.28), rgba(0,0,0,0) 55%),
-    repeating-linear-gradient(92deg, rgba(255,255,255,.05) 0 3px, transparent 3px 11px, rgba(0,0,0,.04) 11px 13px, transparent 13px 29px),
-    linear-gradient(to right, #b98a5c, #c99b6b 30%, #c09060 60%, #b4865a);
-  transform-origin: 50% 100%;
-  transform: rotateX(58deg);
-  border-radius: 3px 3px 0 0;
+  /* seen from slightly above: the back edge is a little shorter than the front one */
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  background-image:
+    linear-gradient(to bottom, rgba(40,22,10,.55), rgba(40,22,10,.18) 55%, rgba(255,235,200,.12)),
+    url('3d/tex/wood-color.webp');
+  background-size: 100% 100%, 520px auto;
+  background-position: 0 0, 0 30%;
 }
 .plank-front {
   height: var(--plank-front);
-  margin-top: -6px;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,.22), rgba(255,255,255,0) 18%, rgba(0,0,0,0) 70%, rgba(0,0,0,.25)),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 2px, transparent 2px 17px, rgba(255,255,255,.04) 17px 19px, transparent 19px 41px),
-    linear-gradient(to right, #8f6340, #a87850 30%, #9d6f48 65%, #8a5f3d);
-  border-radius: 2px;
-  box-shadow: 0 14px 22px -6px rgba(0,0,0,.55), 0 4px 6px rgba(0,0,0,.25);
+  background-image:
+    linear-gradient(to bottom, rgba(255,240,215,.55), rgba(255,240,215,.12) 2px, rgba(0,0,0,0) 35%, rgba(30,15,5,.38)),
+    linear-gradient(to right, rgba(30,15,5,.35), transparent 6%, transparent 94%, rgba(30,15,5,.35)),
+    url('3d/tex/wood-color.webp');
+  background-size: 100% 100%, 100% 100%, 520px auto;
+  background-position: 0 0, 0 0, 0 70%;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 3px 4px rgba(0,0,0,.35);
 }
 .card { all: unset; cursor: pointer; text-align: center; display: block; width: var(--book-slot); }
-.tag { margin-top: calc(var(--plank-front) + 34px); padding: 0 4px; }
+.tag { margin-top: calc(var(--plank-front) + 30px); padding: 0 4px; }
 .card h3 { margin: 0 0 2px; font-size: 15px; line-height: 1.25; text-shadow: 0 1px 6px rgba(0,0,0,.3); }
 .card p { margin: 0; color: var(--accent); font-size: 12px; font-weight: 600; }
+/* the notebook being read leaves a gap on the shelf */
+.card.away .nb { visibility: hidden; }
 
-/* Closed notebook in 3D: front board with the cover, page edge and back board */
+/* Closed notebook in 3D: two boards with thickness, the page block between them */
 .nb {
+  --bt: 2.5px;          /* board thickness */
   position: relative;
   width: var(--book-w);
   margin: 26px auto 0;
   aspect-ratio: 2 / 3;
-  perspective: 1100px;
-  perspective-origin: 50% 0%;
+  perspective: 900px;
+  perspective-origin: 50% 15%;
 }
 .nb .box {
   position: absolute; inset: 0;
   transform-style: preserve-3d;
-  transform: rotateX(14deg) rotateY(-24deg);
+  transform-origin: 50% 100%;
+  transform: rotateX(3deg) rotateY(-30deg);
   transition: transform .6s cubic-bezier(.2,.8,.2,1);
 }
 .nb .box > div, .nb .b-hinge > div { position: absolute; }
-.nb .b-back { inset: 0; transform: translateZ(calc(var(--d) / -2)); background: #2d3032; border-radius: 3px 9px 9px 3px; }
+.nb .b-back { inset: 0; transform: translateZ(calc(var(--d) / -2 + var(--bt))); background: linear-gradient(to right, #cfcbc2, #e9e6df); border-radius: 2px 5px 5px 2px; }
+/* board edges: the cover paper wraps them, so they are a darker cover */
+.nb .b-back-edge, .nb .b-cover-edge {
+  top: 0; height: 100%; left: calc(100% - 1px); width: var(--bt);
+  transform-origin: 0 50%;
+  background: #1b1d1e;
+}
+.nb .b-back-edge { transform: translateZ(calc(var(--d) / -2 + var(--bt))) rotateY(90deg); }
+.nb .b-cover-edge { transform: rotateY(90deg); background: var(--cover) 100% 50% / auto 100%; filter: brightness(.5); }
+.nb .b-cover-top {
+  left: 0; width: 100%; top: 0; height: var(--bt);
+  transform-origin: 50% 0; transform: rotateX(-90deg);
+  background: var(--cover) 50% 0 / 100% auto; filter: brightness(.65);
+  border-radius: 2px 5px 0 0;
+}
+/* page block: a little smaller than the boards */
 .nb .b-edge-r {
-  top: 1.5%; bottom: 1.5%; left: calc(100% - 3px); width: var(--d);
-  transform-origin: 0 50%; transform: translateZ(calc(var(--d) / 2)) rotateY(90deg);
-  background: repeating-linear-gradient(to right, #f4f2ec 0 2px, #d9d6cd 2px 3px);
-  box-shadow: inset 0 0 6px rgba(0,0,0,.18);
+  top: 1.5%; bottom: 1.5%; left: calc(100% - 2.5px); width: calc(var(--d) - var(--bt) * 2);
+  transform-origin: 0 50%; transform: translateZ(calc(var(--d) / 2 - var(--bt))) rotateY(90deg);
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,.35), transparent 30%, transparent 75%, rgba(0,0,0,.18)),
+    repeating-linear-gradient(to right, #f6f4ee 0 1.6px, #d8d4ca 1.6px 2.2px);
+  box-shadow: inset 0 0 5px rgba(0,0,0,.25);
 }
 .nb .b-edge-t {
-  left: 2px; right: 3px; top: 1.5%; height: var(--d);
-  transform-origin: 50% 0; transform: translateZ(calc(var(--d) / 2)) rotateX(-90deg);
-  background: repeating-linear-gradient(to bottom, #f4f2ec 0 2px, #d9d6cd 2px 3px);
+  left: 2px; right: 2.5px; top: 1.5%; height: calc(var(--d) - var(--bt) * 2);
+  transform-origin: 50% 0; transform: translateZ(calc(var(--d) / 2 - var(--bt))) rotateX(-90deg);
+  background: repeating-linear-gradient(to bottom, #f8f6f0 0 1.6px, #dcd8ce 1.6px 2.2px);
 }
 .nb .b-inside {
-  inset: 1.5% 3px 1.5% 0; transform: translateZ(calc(var(--d) / 2 - 1px));
+  top: 1.5%; bottom: 1.5%; left: 0; right: 2.5px; transform: translateZ(calc(var(--d) / 2 - var(--bt)));
   background-color: var(--paper); background-size: 200% 100%; background-position: right center;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 3px 3px 0;
   box-shadow: inset 12px 0 16px -10px rgba(0,0,0,.35);
 }
 .nb .b-hinge {
@@ -117,34 +142,51 @@ body {
   transform-style: preserve-3d;
   transition: transform .6s cubic-bezier(.2,.8,.2,1);
 }
-.nb .b-cover, .nb .b-cover-in { inset: 0; backface-visibility: hidden; border-radius: 3px 9px 9px 3px; }
-.nb .b-cover {
-  background-size: cover; background-position: center;
-  box-shadow: 0 0 0 1px rgba(0,0,0,.08);
+.nb .b-cover, .nb .b-cover-in { inset: 0; backface-visibility: hidden; border-radius: 2px 5px 5px 2px; overflow: hidden; }
+.nb .b-cover { background: var(--cover) center / cover; }
+/* paper grain */
+.nb .b-cover::before {
+  content: ""; position: absolute; inset: 0;
+  background: url('3d/tex/paper-color.webp') 0 0 / 260px auto;
+  mix-blend-mode: multiply; opacity: .32;
 }
+/* hinge groove, light from the top left, darker lower corner and edges */
 .nb .b-cover::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit;
   background:
-    linear-gradient(to right, rgba(0,0,0,.28), rgba(0,0,0,.05) 4%, rgba(255,255,255,.12) 6%, transparent 9%),
-    linear-gradient(135deg, rgba(255,255,255,.18), transparent 40%);
+    linear-gradient(to right, rgba(0,0,0,.42), rgba(0,0,0,.12) 2%, rgba(255,255,255,.22) 3.2%, rgba(0,0,0,.2) 6%, rgba(255,255,255,.1) 7.2%, transparent 10%),
+    radial-gradient(130% 90% at 10% 0%, rgba(255,255,255,.24), rgba(255,255,255,0) 55%),
+    linear-gradient(155deg, transparent 50%, rgba(0,0,0,.22));
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.2), inset -1.5px 0 2px rgba(255,255,255,.18), inset 0 -2px 3px rgba(0,0,0,.18);
 }
 .nb .b-cover-in {
-  transform: rotateY(180deg);
+  transform: translateZ(calc(var(--bt) * -1)) rotateY(180deg);
   background-color: var(--paper); background-size: 200% 100%; background-position: left center;
-  border-radius: 9px 3px 3px 9px;
+  border-radius: 5px 2px 2px 5px;
+}
+/* shadows: on the wall behind (light from the top left) and on the shelf */
+.nb .wall-shadow {
+  position: absolute; left: 14%; right: -14%; top: 6%; bottom: 0;
+  background: rgba(0,0,0,.42); border-radius: 6px;
+  filter: blur(10px); transform: skewX(-8deg);
+  transition: transform .6s, opacity .6s;
 }
 .nb .ground {
-  position: absolute; left: -4%; right: -14%; bottom: -9%; height: 14%;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,.5), transparent 70%);
-  filter: blur(5px);
-  transition: transform .6s;
+  position: absolute; left: -6%; right: -16%; bottom: -5%; height: 10%;
+  background: radial-gradient(ellipse at 45% 50%, rgba(0,0,0,.7), rgba(0,0,0,.25) 45%, transparent 72%);
+  filter: blur(3px);
+  transition: transform .6s, opacity .6s;
 }
-.card:hover .box, .card:focus-visible .box { transform: rotateX(16deg) rotateY(-30deg) translateY(-10px); }
-.card:hover .b-hinge, .card:focus-visible .b-hinge { transform: translateZ(calc(var(--d) / 2)) rotateY(-38deg); }
-.card:hover .ground { transform: scale(.9); }
+.card:hover .box, .card:focus-visible .box { transform: rotateX(4deg) rotateY(-36deg) translateY(-10px); }
+.card:hover .b-hinge, .card:focus-visible .b-hinge { transform: translateZ(calc(var(--d) / 2)) rotateY(-34deg); }
+.card:hover .ground, .card:focus-visible .ground { transform: scale(.85); opacity: .6; }
+.card:hover .wall-shadow, .card:focus-visible .wall-shadow { transform: skewX(-8deg) translate(4px, -10px); opacity: .8; }
 
 /* ---------- Reader ---------- */
-#reader { display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; }
+/* the reader sits over the shelf, so the shelf keeps its scroll and the book can fly between them */
+#reader { position: fixed; inset: 0; z-index: 5; display: flex; flex-direction: column; overflow: hidden; }
+.reader-bg { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 50% 35%, var(--bg-1) 0%, #5d6061 45%, var(--bg-2) 100%); }
+html.reading { overflow: hidden; }
 .reader-head { text-align: center; padding: 22px 16px 0; flex: none; position: relative; z-index: 2; }
 .reader-head h2 { margin: 0; font-size: 28px; text-shadow: 0 2px 8px rgba(0,0,0,.25); }
 .stage {
