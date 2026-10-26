@@ -10,7 +10,7 @@
    "url": "",
    "hashtag": "",
    "description": "",
-   "wallpaper": "",
+   "wallpaper": "wallpaper.png",
    "pattern": "",
    "author": "@oyabun",
    "sketchnotes": 11,
@@ -96,9 +96,22 @@
   },
   "cover": "img/lechazoconf-2024/cover.webp",
   "back": null,
-  "wallpaper": null,
+  "wallpaper": "img/lechazoconf-2024/wallpaper.webp",
   "pattern": null,
-  "posters": [],
+  "posters": [
+   {
+    "src": "img/lechazoconf-2024/poster-lechazo1.png.lol.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-lechazo1.png.lol.png"
+   },
+   {
+    "src": "img/lechazoconf-2024/poster-oficial.webp",
+    "w": 1024,
+    "h": 1536,
+    "name": "poster-oficial.png"
+   }
+  ],
   "thumb": "img/lechazoconf-2024/00-thumb.webp",
   "pages": [
    {
@@ -883,7 +896,7 @@
    "url": "",
    "hashtag": "",
    "description": "",
-   "wallpaper": "",
+   "wallpaper": "wallpaper.png",
    "pattern": "",
    "author": "@oyabun",
    "sketchnotes": 7,
@@ -941,9 +954,22 @@
   },
   "cover": "img/tarugo-2020/cover.webp",
   "back": null,
-  "wallpaper": null,
+  "wallpaper": "img/tarugo-2020/wallpaper.webp",
   "pattern": null,
-  "posters": [],
+  "posters": [
+   {
+    "src": "img/tarugo-2020/poster-pandemi.webp",
+    "w": 581,
+    "h": 839,
+    "name": "poster-pandemi.png"
+   },
+   {
+    "src": "img/tarugo-2020/poster-sofaedition.webp",
+    "w": 587,
+    "h": 839,
+    "name": "poster-sofaedition.png"
+   }
+  ],
   "thumb": "img/tarugo-2020/00-thumb.webp",
   "pages": [
    {
@@ -1458,12 +1484,6 @@
   "wallpaper": "img/tarugo-2024/wallpaper.webp",
   "pattern": null,
   "posters": [
-   {
-    "src": "img/tarugo-2024/poster-cola.webp",
-    "w": 1024,
-    "h": 1536,
-    "name": "poster-cola.png"
-   },
    {
     "src": "img/tarugo-2024/poster-enchanment.webp",
     "w": 1024,

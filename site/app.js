@@ -1,4 +1,4 @@
-import { t, translatePage } from './i18n.js';
+import { t, localized, translatePage } from './i18n.js';
 
 const $ = (id) => document.getElementById(id);
 const shelf = $('shelf'), reader = $('reader'), stage = $('stage'), bookEl = $('book');
@@ -133,6 +133,44 @@ function buildBook(nb) {
   }
   leafAt(-1).style.setProperty('--front', `url('${nb.cover}')`);
   if (nb.back) leafAt(n - 1).style.setProperty('--back', `url('${nb.back}')`);
+  else leafAt(n - 1).querySelector('.b-out').append(backCover(nb));
+}
+
+// "Tarugo 2022" → 2022 · "TRGCON26" → 2026
+function yearOf(title) {
+  const full = title.match(/\b(19|20)\d{2}\b/);
+  if (full) return full[0];
+  const short = title.match(/(\d{2})$/);
+  return short ? `20${short[1]}` : '';
+}
+
+// back cover from info.json, laid out like the 3D one: title, date · venue · count, talks, URL
+function backCover(nb) {
+  const info = nb.info || {};
+  const el = document.createElement('div');
+  el.className = 'back-text';
+  const add = (parent, tag, cls, text) => {
+    const child = document.createElement(tag);
+    child.className = cls;
+    if (text != null) child.textContent = text;
+    parent.append(child);
+    return child;
+  };
+  const index = notebooks.indexOf(nb) + 1;
+  add(el, 'p', 'bt-brand', `Drawing Talks / ${String(index).padStart(2, '0')}`);
+  add(el, 'h2', 'bt-title', nb.title).style.setProperty('--len', nb.title.length);
+  add(el, 'p', 'bt-meta', [localized(info.date) || yearOf(nb.title), localized(info.venue), label(nb.pages.length)].filter(Boolean).join('  ·  '));
+  const list = add(el, 'ol', 'bt-talks');
+  list.style.setProperty('--rows', Math.max(nb.pages.length, 6));
+  nb.pages.forEach((_, i) => {
+    const talk = info.talks?.[i];
+    const title = localized(talk?.title);
+    add(list, 'li', '', title ? (talk.speaker ? `${title} — ${talk.speaker}` : title) : t('sketchnote', i + 1));
+  });
+  const foot = add(el, 'p', 'bt-foot');
+  add(foot, 'span', '', localized(info.url).replace(/^https?:\/\//, '').replace(/\/$/, ''));
+  add(foot, 'span', '', 'Sketchnotes · @oyabun');
+  return el;
 }
 
 const leafAt = (j) => leaves[j + 1];

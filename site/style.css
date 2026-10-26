@@ -228,6 +228,31 @@ body {
 .cover-leaf .b-side { transform: translateZ(var(--bt)) rotateY(90deg); }
 .back-leaf .b-out { background-image: var(--back); transform: translateZ(calc(-1 * var(--bt))) rotateY(180deg); border-radius: 10px 2px 2px 10px; }
 .back-leaf .b-out::after { transform: scaleX(-1); }
+/* back cover text (when there's no back.png); sizes follow the board width like the 3D canvas */
+.back-leaf .b-out { container-type: size; }
+.back-text {
+  position: absolute; inset: 0; z-index: 1; padding: 7cqh 9cqw 0 10cqw;
+  display: flex; flex-direction: column; color: #fff; text-align: left;
+  font: 500 2.4cqw/1.3 Inter, "Helvetica Neue", Arial, sans-serif;
+}
+.back-text p { margin: 0; }
+.bt-brand { letter-spacing: .4cqw; text-transform: uppercase; padding-bottom: 2.2cqh; border-bottom: 2px solid rgba(255,255,255,.72); align-self: flex-start; width: 23cqw; white-space: nowrap; }
+.bt-title { margin: 6cqh 0 0; font: 400 clamp(5cqw, calc(130cqw / var(--len, 12)), 9.9cqw)/1 "Iowan Old Style", Baskerville, Georgia, serif; }
+.bt-meta { margin-top: 2.4cqh !important; letter-spacing: .34cqw; text-transform: uppercase; font-size: 2.6cqw; padding-bottom: 3cqh; border-bottom: 1px solid rgba(255,255,255,.5); }
+.bt-talks {
+  flex: 1; margin: 4cqh 0 0; padding: 0; list-style: none; counter-reset: talk;
+  display: grid; grid-template-rows: repeat(var(--rows), minmax(0, 4.9cqh)); align-content: start;
+  font: 400 clamp(2.1cqw, calc(30cqh / var(--rows)), 3.5cqw)/1.2 "Iowan Old Style", Baskerville, Georgia, serif;
+}
+.bt-talks li { counter-increment: talk; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-left: 6.5cqw; position: relative; align-self: center; }
+.bt-talks li::before {
+  content: counter(talk, decimal-leading-zero); position: absolute; left: 0; top: .25em;
+  font: 500 .72em Inter, "Helvetica Neue", Arial, sans-serif; letter-spacing: .2cqw; opacity: .62;
+}
+.bt-foot {
+  display: flex; justify-content: space-between; gap: 2cqw; margin: 0 0 5.5cqh !important; padding-top: 2.6cqh;
+  border-top: 1px solid rgba(255,255,255,.68); letter-spacing: .34cqw; text-transform: uppercase; font-size: 1.95cqw; opacity: .9;
+}
 .back-leaf .b-in { transform: translateZ(-.5px); border-radius: 2px 10px 10px 2px; }
 .back-leaf .b-side { transform: rotateY(90deg); }
 /* page block when closed: striped fore-edge and head */
