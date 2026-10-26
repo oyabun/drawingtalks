@@ -8,7 +8,7 @@ const shelf = $('shelf'), reader = $('reader'), stage = $('stage'), bookEl = $('
 // Leaf j: front = right half of sketchnote j, back = left half of sketchnote j+1.
 // Leaf N-1 = back board: its back is the back cover.
 // page: -1 = closed showing the front, 0..N-1 = open at that sketchnote, N = closed showing the back.
-const OPEN = 24;      // degrees each half lifts towards the viewer
+const OPEN = 8;       // degrees each half lifts towards the viewer
 const FAN = 0.7;      // extra degrees per stacked leaf; the block's edge shows without fanning
 const FAN_Z = 1.5;    // depth between stacked leaves
 const STACK = 6;      // leaves visible on each side (the boards always show underneath)
