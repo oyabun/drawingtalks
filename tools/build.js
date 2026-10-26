@@ -139,5 +139,15 @@ const board = (file, out) =>
   // notebook folders that no longer exist
   const slugs = new Set(notebooks.map((n) => n.slug));
   for (const d of fs.readdirSync(`${OUT}/img`)) if (!slugs.has(d)) fs.rmSync(`${OUT}/img/${d}`, { recursive: true });
+  // shelf order: by year (info.json date, else the title), oldest first; notebooks without a year go last
+  const yearOf = (nb) => {
+    const date = nb.info?.date;
+    const text = `${typeof date === 'object' && date ? date.en ?? date.es ?? '' : date ?? ''} ${nb.title}`;
+    const full = text.match(/\b(19|20)\d{2}\b/);
+    if (full) return +full[0];
+    const short = nb.title.match(/(\d{2})$/);
+    return short ? 2000 + +short[1] : Infinity;
+  };
+  notebooks.sort((a, b) => yearOf(a) - yearOf(b) || a.title.localeCompare(b.title));
   fs.writeFileSync(`${OUT}/notebooks.json`, JSON.stringify(notebooks, null, 1));
 })();
