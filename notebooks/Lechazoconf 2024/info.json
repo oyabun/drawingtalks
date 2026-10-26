@@ -6,7 +6,7 @@
   "url": "",
   "hashtag": "",
   "description": "",
-  "wallpaper": "",
+  "wallpaper": "wallpaper.png",
   "pattern": "",
   "author": "@oyabun",
   "sketchnotes": 11,
@@ -84,8 +84,8 @@
     {
       "sketchnote": 11,
       "file": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
-      "title": "10 años de Plantonic Games, 10 lecciones aprendidas",
-      "speaker": "",
+      "title": "10 años de Platonic Games, 10 lecciones aprendidas",
+      "speaker": "Valeria Castro",
       "url": ""
     }
   ]

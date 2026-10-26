@@ -1,12 +1,18 @@
 {
   "event": "Tarugo",
   "edition": "2020",
-  "date": "2020",
-  "venue": "",
-  "url": "",
+  "date": {
+    "en": "27 November 2020",
+    "es": "27 de noviembre de 2020"
+  },
+  "venue": {
+    "en": "Online (Sofá Edition)",
+    "es": "Online (Sofá Edition)"
+  },
+  "url": "https://2020.tarugoconf.com",
   "hashtag": "",
   "description": "",
-  "wallpaper": "",
+  "wallpaper": "wallpaper.png",
   "pattern": "",
   "author": "@oyabun",
   "sketchnotes": 7,
@@ -14,51 +20,59 @@
     {
       "sketchnote": 1,
       "file": "Tarugo 20 - 1 - 20 años haciendo Software.png",
-      "title": "20 años haciendo Software",
-      "speaker": "",
+      "title": "20 años haciendo software",
+      "speaker": "Javi Santana",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "Tarugo 20 - 2 - Cripto Covid.png",
-      "title": "Cripto Covid",
-      "speaker": "",
+      "title": "CriptoCovid",
+      "speaker": "Cris Carrascosa",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "Tarugo 20 - 3 - La bárbara historia de Conan.png",
-      "title": "La bárbara historia de Conan",
-      "speaker": "",
+      "title": "La bárbara historia de Conan",
+      "speaker": "Diego Rodríguez-Losada y Luis Martínez de Bartolomé",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "Tarugo 20 - 4 - Lo veo todo negro.png",
       "title": "Lo veo todo negro",
-      "speaker": "",
+      "speaker": "Juanjo Montiel",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png",
-      "title": "La tecnología detrás de un empaste",
-      "speaker": "",
+      "title": "La tecnología (y el bisnes) detrás de un empaste",
+      "speaker": "Christian del Rey",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png",
-      "title": "Videoyayadas  y hackandemias en tiempo del cocinamiento",
-      "speaker": "",
+      "title": "Videoyayadas y hackandemia en los tiempos del cocinamiento",
+      "speaker": "Marta López",
       "url": ""
     },
     {
       "sketchnote": 7,
       "file": "Tarugo 20 - 7 - Covidgedon.png",
-      "title": "Covidgedon",
-      "speaker": "",
+      "title": "Transparencia e información durante el COVIDgedón",
+      "speaker": "Eva Belmonte",
       "url": ""
     }
-  ]
+  ],
+  "posters": {
+    "poster-pandemi.png": {
+      "x": 2.9,
+      "y": 3.0,
+      "height": 2.3,
+      "rotation": 1.5
+    }
+  }
 }

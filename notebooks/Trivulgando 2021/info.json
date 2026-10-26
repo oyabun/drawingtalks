@@ -1,9 +1,15 @@
 {
   "event": "Trivulgando",
-  "edition": "2021",
-  "date": "2021",
-  "venue": "",
-  "url": "",
+  "edition": "2020",
+  "date": {
+    "en": "10 December 2020",
+    "es": "10 de diciembre de 2020"
+  },
+  "venue": {
+    "en": "Online, from the Residencia de Estudiantes (Madrid)",
+    "es": "Online, desde la Residencia de Estudiantes (Madrid)"
+  },
+  "url": "https://trivulgando.es/trivulgando2020/divulga.html",
   "hashtag": "",
   "description": "",
   "wallpaper": "",
@@ -14,43 +20,43 @@
     {
       "sketchnote": 1,
       "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
-      "title": "La psicología del negacionismo",
-      "speaker": "",
+      "title": "La psicología del negacionismo: cómo entenderla y afrontarla",
+      "speaker": "Alicia Martos",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "2-Trivulgando 2020 - Let's play.png",
-      "title": "Let's play",
-      "speaker": "",
+      "title": "Let's play!",
+      "speaker": "Raquel Tenorio (Ludo ergo sum)",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
-      "title": "Datos, la materia prima de la epidemiologia",
-      "speaker": "",
+      "title": "Datos: la materia prima de la epidemiología",
+      "speaker": "Nacho de Blas",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
-      "title": "Trucos para sobrevivir informedia, la pandemia de información",
-      "speaker": "",
+      "title": "Trucos para sobrevivir a la infodemia, la pandemia de información",
+      "speaker": "Patricia Martínez (Proyecto Kennis)",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
-      "title": "Divulgación Científica contra los bulos",
-      "speaker": "",
+      "title": "Divulgación científica contra los bulos",
+      "speaker": "Rocío Benavente (Maldita Ciencia)",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
-      "title": "Divulgar para niños en redes",
-      "speaker": "",
+      "title": "Divulgar para niños en redes",
+      "speaker": "Oriol Marimon y Helena González (Clowntifics)",
       "url": ""
     }
   ]

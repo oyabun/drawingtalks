@@ -4,10 +4,13 @@
   "title": "T3chFest 2020",
   "info": {
    "event": "T3chFest",
-   "edition": "2020",
-   "date": "2020",
-   "venue": "",
-   "url": "",
+   "edition": "2019",
+   "date": {
+    "en": "14 March 2019",
+    "es": "14 de marzo de 2019"
+   },
+   "venue": "Universidad Carlos III, Leganés",
+   "url": "https://t3chfest.uc3m.es/2019/programa/framework-independent-decoupled-frontend-architecture-for-large-scale-projects",
    "hashtag": "",
    "description": "",
    "wallpaper": "",
@@ -18,29 +21,29 @@
     {
      "sketchnote": 1,
      "file": "Paper.Techfest.32.png",
-     "title": "",
-     "speaker": "",
+     "title": "A framework-independent, decoupled frontend architecture for large-scale projects (1/3)",
+     "speaker": "Carlos Villuendas",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "Paper.Techfest.33.png",
-     "title": "",
-     "speaker": "",
+     "title": "A framework-independent, decoupled frontend architecture for large-scale projects (2/3)",
+     "speaker": "Carlos Villuendas",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "Paper.Techfest.34.png",
-     "title": "",
-     "speaker": "",
+     "title": "A framework-independent, decoupled frontend architecture for large-scale projects (3/3)",
+     "speaker": "Carlos Villuendas",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "t3chfest - Carlos Villuendas - A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019.png",
-     "title": "Carlos Villuendas · A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019",
-     "speaker": "",
+     "title": "A framework-independent, decoupled frontend architecture for large-scale projects",
+     "speaker": "Carlos Villuendas",
      "url": ""
     }
    ]
@@ -88,9 +91,15 @@
   "info": {
    "event": "Tarugo",
    "edition": "2020",
-   "date": "2020",
-   "venue": "",
-   "url": "",
+   "date": {
+    "en": "27 November 2020",
+    "es": "27 de noviembre de 2020"
+   },
+   "venue": {
+    "en": "Online (Sofá Edition)",
+    "es": "Online (Sofá Edition)"
+   },
+   "url": "https://2020.tarugoconf.com",
    "hashtag": "",
    "description": "",
    "wallpaper": "wallpaper.png",
@@ -101,53 +110,61 @@
     {
      "sketchnote": 1,
      "file": "Tarugo 20 - 1 - 20 años haciendo Software.png",
-     "title": "20 años haciendo Software",
-     "speaker": "",
+     "title": "20 años haciendo software",
+     "speaker": "Javi Santana",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "Tarugo 20 - 2 - Cripto Covid.png",
-     "title": "Cripto Covid",
-     "speaker": "",
+     "title": "CriptoCovid",
+     "speaker": "Cris Carrascosa",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "Tarugo 20 - 3 - La bárbara historia de Conan.png",
-     "title": "La bárbara historia de Conan",
-     "speaker": "",
+     "title": "La bárbara historia de Conan",
+     "speaker": "Diego Rodríguez-Losada y Luis Martínez de Bartolomé",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "Tarugo 20 - 4 - Lo veo todo negro.png",
      "title": "Lo veo todo negro",
-     "speaker": "",
+     "speaker": "Juanjo Montiel",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "Tarugo 20 - 5 - La tecnología detrás de un empaste.png",
-     "title": "La tecnología detrás de un empaste",
-     "speaker": "",
+     "title": "La tecnología (y el bisnes) detrás de un empaste",
+     "speaker": "Christian del Rey",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "Tarugo 20 - 6 - Videoyayadas  y hackandemias en tiempo del cocinamiento.png",
-     "title": "Videoyayadas  y hackandemias en tiempo del cocinamiento",
-     "speaker": "",
+     "title": "Videoyayadas y hackandemia en los tiempos del cocinamiento",
+     "speaker": "Marta López",
      "url": ""
     },
     {
      "sketchnote": 7,
      "file": "Tarugo 20 - 7 - Covidgedon.png",
-     "title": "Covidgedon",
-     "speaker": "",
+     "title": "Transparencia e información durante el COVIDgedón",
+     "speaker": "Eva Belmonte",
      "url": ""
     }
-   ]
+   ],
+   "posters": {
+    "poster-pandemi.png": {
+     "x": 2.9,
+     "y": 3,
+     "height": 2.3,
+     "rotation": 1.5
+    }
+   }
   },
   "cover": "img/tarugo-2020/cover.webp",
   "back": null,
@@ -158,13 +175,11 @@
     "src": "img/tarugo-2020/poster-pandemi.webp",
     "w": 581,
     "h": 839,
-    "name": "poster-pandemi.png"
-   },
-   {
-    "src": "img/tarugo-2020/poster-sofaedition.webp",
-    "w": 587,
-    "h": 839,
-    "name": "poster-sofaedition.png"
+    "name": "poster-pandemi.png",
+    "x": 2.9,
+    "y": 3,
+    "height": 2.3,
+    "rotation": 1.5
    }
   ],
   "thumb": "img/tarugo-2020/00-thumb.webp",
@@ -217,6 +232,123 @@
     "w": 2732,
     "h": 2048,
     "name": "Tarugo 20 - 7 - Covidgedon.png"
+   }
+  ]
+ },
+ {
+  "slug": "trivulgando-2021",
+  "title": "Trivulgando 2021",
+  "info": {
+   "event": "Trivulgando",
+   "edition": "2020",
+   "date": {
+    "en": "10 December 2020",
+    "es": "10 de diciembre de 2020"
+   },
+   "venue": {
+    "en": "Online, from the Residencia de Estudiantes (Madrid)",
+    "es": "Online, desde la Residencia de Estudiantes (Madrid)"
+   },
+   "url": "https://trivulgando.es/trivulgando2020/divulga.html",
+   "hashtag": "",
+   "description": "",
+   "wallpaper": "",
+   "pattern": "",
+   "author": "@oyabun",
+   "sketchnotes": 6,
+   "talks": [
+    {
+     "sketchnote": 1,
+     "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
+     "title": "La psicología del negacionismo: cómo entenderla y afrontarla",
+     "speaker": "Alicia Martos",
+     "url": ""
+    },
+    {
+     "sketchnote": 2,
+     "file": "2-Trivulgando 2020 - Let's play.png",
+     "title": "Let's play!",
+     "speaker": "Raquel Tenorio (Ludo ergo sum)",
+     "url": ""
+    },
+    {
+     "sketchnote": 3,
+     "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
+     "title": "Datos: la materia prima de la epidemiología",
+     "speaker": "Nacho de Blas",
+     "url": ""
+    },
+    {
+     "sketchnote": 4,
+     "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
+     "title": "Trucos para sobrevivir a la infodemia, la pandemia de información",
+     "speaker": "Patricia Martínez (Proyecto Kennis)",
+     "url": ""
+    },
+    {
+     "sketchnote": 5,
+     "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
+     "title": "Divulgación científica contra los bulos",
+     "speaker": "Rocío Benavente (Maldita Ciencia)",
+     "url": ""
+    },
+    {
+     "sketchnote": 6,
+     "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
+     "title": "Divulgar para niños en redes",
+     "speaker": "Oriol Marimon y Helena González (Clowntifics)",
+     "url": ""
+    }
+   ]
+  },
+  "cover": "img/trivulgando-2021/cover.webp",
+  "back": null,
+  "wallpaper": null,
+  "pattern": null,
+  "posters": [],
+  "thumb": "img/trivulgando-2021/00-thumb.webp",
+  "pages": [
+   {
+    "src": "img/trivulgando-2021/00.webp",
+    "hd": "img/trivulgando-2021/00-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "1-Trivulgando 2020 - La psicología del negacionismo.png"
+   },
+   {
+    "src": "img/trivulgando-2021/01.webp",
+    "hd": "img/trivulgando-2021/01-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "2-Trivulgando 2020 - Let's play.png"
+   },
+   {
+    "src": "img/trivulgando-2021/02.webp",
+    "hd": "img/trivulgando-2021/02-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png"
+   },
+   {
+    "src": "img/trivulgando-2021/03.webp",
+    "hd": "img/trivulgando-2021/03-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png"
+   },
+   {
+    "src": "img/trivulgando-2021/04.webp",
+    "hd": "img/trivulgando-2021/04-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png"
+   },
+   {
+    "src": "img/trivulgando-2021/05.webp",
+    "hd": "img/trivulgando-2021/05-hd.webp",
+    "w": 2732,
+    "h": 2048,
+    "name": "6-Trivulgando 2020 - Divulgar para niños en redes.png"
    }
   ]
  },
@@ -281,8 +413,8 @@
     {
      "sketchnote": 7,
      "file": "Tarugo 21 - 7 - Ousman Umar.png",
-     "title": "Ousman Umar",
-     "speaker": "",
+     "title": "NASCO Feeding Minds",
+     "speaker": "Ousman Umar",
      "url": ""
     }
    ]
@@ -346,125 +478,17 @@
   ]
  },
  {
-  "slug": "trivulgando-2021",
-  "title": "Trivulgando 2021",
-  "info": {
-   "event": "Trivulgando",
-   "edition": "2021",
-   "date": "2021",
-   "venue": "",
-   "url": "",
-   "hashtag": "",
-   "description": "",
-   "wallpaper": "",
-   "pattern": "",
-   "author": "@oyabun",
-   "sketchnotes": 6,
-   "talks": [
-    {
-     "sketchnote": 1,
-     "file": "1-Trivulgando 2020 - La psicología del negacionismo.png",
-     "title": "La psicología del negacionismo",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 2,
-     "file": "2-Trivulgando 2020 - Let's play.png",
-     "title": "Let's play",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 3,
-     "file": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png",
-     "title": "Datos, la materia prima de la epidemiologia",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 4,
-     "file": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png",
-     "title": "Trucos para sobrevivir informedia, la pandemia de información",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 5,
-     "file": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png",
-     "title": "Divulgación Científica contra los bulos",
-     "speaker": "",
-     "url": ""
-    },
-    {
-     "sketchnote": 6,
-     "file": "6-Trivulgando 2020 - Divulgar para niños en redes.png",
-     "title": "Divulgar para niños en redes",
-     "speaker": "",
-     "url": ""
-    }
-   ]
-  },
-  "cover": "img/trivulgando-2021/cover.webp",
-  "back": null,
-  "wallpaper": null,
-  "pattern": null,
-  "posters": [],
-  "thumb": "img/trivulgando-2021/00-thumb.webp",
-  "pages": [
-   {
-    "src": "img/trivulgando-2021/00.webp",
-    "hd": "img/trivulgando-2021/00-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "1-Trivulgando 2020 - La psicología del negacionismo.png"
-   },
-   {
-    "src": "img/trivulgando-2021/01.webp",
-    "hd": "img/trivulgando-2021/01-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "2-Trivulgando 2020 - Let's play.png"
-   },
-   {
-    "src": "img/trivulgando-2021/02.webp",
-    "hd": "img/trivulgando-2021/02-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "3-Trivulgando 2020 - Datos, la materia prima de la epidemiologia.png"
-   },
-   {
-    "src": "img/trivulgando-2021/03.webp",
-    "hd": "img/trivulgando-2021/03-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "4-Trivulgando 2020 - Trucos para sobrevivir informedia, la pandemia de información.png"
-   },
-   {
-    "src": "img/trivulgando-2021/04.webp",
-    "hd": "img/trivulgando-2021/04-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "5-Trivulgando 2020 - Divulgación Científica contra los bulos.png"
-   },
-   {
-    "src": "img/trivulgando-2021/05.webp",
-    "hd": "img/trivulgando-2021/05-hd.webp",
-    "w": 2732,
-    "h": 2048,
-    "name": "6-Trivulgando 2020 - Divulgar para niños en redes.png"
-   }
-  ]
- },
- {
   "slug": "tarugo-2022",
   "title": "Tarugo 2022",
   "info": {
    "event": "Tarugo",
    "edition": "2022",
-   "date": "2022",
-   "venue": "",
-   "url": "",
+   "date": {
+    "en": "21 October 2022",
+    "es": "21 de octubre de 2022"
+   },
+   "venue": "La Nave, Madrid",
+   "url": "https://tarugoconf.com",
    "hashtag": "",
    "description": "",
    "wallpaper": "",
@@ -476,56 +500,56 @@
      "sketchnote": 1,
      "file": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
      "title": "Un framework mental para enfrentarte al mundo real",
-     "speaker": "Recuenco",
+     "speaker": "Javier G. Recuenco",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
      "title": "Algoritmos que salvan vidas",
-     "speaker": "",
+     "speaker": "Ana Freire",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
-     "title": "La tecnología necesaria para que te tomes una buena caña",
-     "speaker": "",
+     "title": "La tecnología necesaria para que te tomes una buena caña",
+     "speaker": "Macame Dopazo",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
-     "title": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
-     "speaker": "",
+     "title": "Cómo hacer un desarrollo iterativo en un proyecto de hostelería",
+     "speaker": "Alex Urbón y Ezequiel Maldjian",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
-     "title": "Cómo producir un videojuego",
-     "speaker": "",
+     "title": "Cómo producir un videojuego",
+     "speaker": "Ramón Nafría",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
-     "title": "Debe un abogado aprender a programar?",
-     "speaker": "",
+     "title": "¿Debe un abogado aprender a programar?",
+     "speaker": "Elen Irazabal",
      "url": ""
     },
     {
      "sketchnote": 7,
      "file": "Tarugo 22 - 7 - Ventas para ingenieros.png",
      "title": "Ventas para ingenieros",
-     "speaker": "",
+     "speaker": "Paulo Rodríguez",
      "url": ""
     },
     {
      "sketchnote": 8,
      "file": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
-     "title": "Cómo aplicar la inteligenci artificial para el bien",
-     "speaker": "",
+     "title": "Cómo aplicar la inteligencia artificial para hacer el bien",
+     "speaker": "Conchita Díaz Cantarero",
      "url": ""
     }
    ]
@@ -601,8 +625,14 @@
   "info": {
    "event": "miduFEST",
    "edition": "2023",
-   "date": "2023",
-   "venue": "",
+   "date": {
+    "en": "21–22 March 2023",
+    "es": "21–22 de marzo de 2023"
+   },
+   "venue": {
+    "en": "Online (Twitch)",
+    "es": "Online (Twitch)"
+   },
    "url": "",
    "hashtag": "",
    "description": "",
@@ -614,50 +644,50 @@
     {
      "sketchnote": 1,
      "file": "1.Back to the future, CSS Edition.png",
-     "title": "Back to the future, CSS Edition",
-     "speaker": "",
+     "title": "Back to the future: CSS edition",
+     "speaker": "Carmen Ansio",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "2.Este codigo es una ruina.png",
-     "title": "Este codigo es una ruina",
-     "speaker": "",
+     "title": "¡Este código es una ruina! Estrategias de accesibilidad web",
+     "speaker": "Adrián Bolonio",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "3.De JS a React.png",
-     "title": "De JS a React",
-     "speaker": "",
+     "title": "De JavaScript a React",
+     "speaker": "Estefany Aguilar",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "4.Rendimiento Web .png",
-     "title": "Rendimiento Web",
-     "speaker": "",
+     "title": "Rendimiento web: JavaScript y todos los errores que estamos cometiendo",
+     "speaker": "David East",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "5.React server components.png",
-     "title": "React server components",
-     "speaker": "",
+     "title": "React Server Components: más concerns, menos preocupaciones",
+     "speaker": "Rodrigo Pombo",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "7.Una saga de infortunios.png",
-     "title": "Una saga de infortunios",
-     "speaker": "",
+     "title": "Una saga de infortunios de renderizado web",
+     "speaker": "Alba Silvente",
      "url": ""
     },
     {
      "sketchnote": 7,
      "file": "8.Del front al back.png",
      "title": "Del front al back",
-     "speaker": "",
+     "speaker": "Ari Jurado",
      "url": ""
     },
     {
@@ -670,36 +700,36 @@
     {
      "sketchnote": 9,
      "file": "10.Encontrar trabajo DEV en timepos loquísimos.png",
-     "title": "Encontrar trabajo DEV en timepos loquísimos",
-     "speaker": "",
+     "title": "Encontrar trabajo dev en tiempos loquísimos",
+     "speaker": "Irene M. Morgado",
      "url": ""
     },
     {
      "sketchnote": 10,
      "file": "11.Nuevas features de nodejs.png",
-     "title": "Nuevas features de nodejs",
-     "speaker": "",
+     "title": "Nuevas features en Node.js que deberías conocer",
+     "speaker": "Lizz Parody",
      "url": ""
     },
     {
      "sketchnote": 11,
      "file": "12.Conectado programacion con IA.png",
-     "title": "Conectado programacion con IA",
+     "title": "Conectando programación con IA",
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 12,
      "file": "13.Patrones de diseno y cervezas.png",
-     "title": "Patrones de diseno y cervezas",
-     "speaker": "",
+     "title": "Patrones de diseño y cervezas",
+     "speaker": "Héctor de León",
      "url": ""
     },
     {
      "sketchnote": 13,
      "file": "14.Ni estatico ni dinamico, ambos.png",
-     "title": "Ni estatico ni dinamico, ambos",
-     "speaker": "",
+     "title": "Ni estático ni dinámico, ambos: usando Next.js cache con app directory",
+     "speaker": "Goncy Pozzo",
      "url": ""
     }
    ]
@@ -810,9 +840,12 @@
   "info": {
    "event": "T3chfest",
    "edition": "2023",
-   "date": "2023",
-   "venue": "",
-   "url": "",
+   "date": {
+    "en": "2–3 March 2023",
+    "es": "2–3 de marzo de 2023"
+   },
+   "venue": "Universidad Carlos III, Leganés",
+   "url": "https://t3chfest.es/2023/programa",
    "hashtag": "",
    "description": "",
    "wallpaper": "",
@@ -823,127 +856,127 @@
     {
      "sketchnote": 1,
      "file": "t3chfest - Dia 1 - Lamina 1.png",
-     "title": "Dia 1 · Lamina 1",
-     "speaker": "",
+     "title": "Encontrando nuestro nicho en el mundo de los videojuegos",
+     "speaker": "Valeria Castro",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "t3chfest - Dia 1 - Lamina 2.png",
-     "title": "Dia 1 · Lamina 2",
-     "speaker": "",
+     "title": "¿Trolls al servicio del estado? La guerra sucia digital del autoritarismo 3.0",
+     "speaker": "Iago Moreno",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "t3chfest - Dia 1 - Lamina 3.png",
-     "title": "Dia 1 · Lamina 3",
-     "speaker": "",
+     "title": "Próxima estación: Metro de Madrid",
+     "speaker": "José Miguel Moreno",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "t3chfest - Dia 1 - Lamina 4.png",
-     "title": "Dia 1 · Lamina 4",
-     "speaker": "",
+     "title": "Adiós USB, hola ADN",
+     "speaker": "María Gómez Romero",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "t3chfest - Dia 1 - Lamina 5.png",
-     "title": "Dia 1 · Lamina 5",
-     "speaker": "",
+     "title": "Diseño de vacunas contra el cáncer con Python",
+     "speaker": "Helena Gómez Pozo y Marina Moro López",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "t3chfest - Dia 1 - Lamina 6.png",
-     "title": "Dia 1 · Lamina 6",
-     "speaker": "",
+     "title": "Cómo hackear tu carrera profesional",
+     "speaker": "David Bonilla",
      "url": ""
     },
     {
      "sketchnote": 7,
      "file": "t3chfest - Dia 1 - Lamina 7.png",
-     "title": "Dia 1 · Lamina 7",
-     "speaker": "",
+     "title": "¡Luces, cámara, programación!",
+     "speaker": "Míriam González",
      "url": ""
     },
     {
      "sketchnote": 8,
      "file": "t3chfest - Dia 1 - Lamina 8.png",
-     "title": "Dia 1 · Lamina 8",
-     "speaker": "",
+     "title": "La senda del freelance",
+     "speaker": "Brais Moure",
      "url": ""
     },
     {
      "sketchnote": 9,
      "file": "t3chfest - Dia 1 - Lamina 9.png",
-     "title": "Dia 1 · Lamina 9",
-     "speaker": "",
+     "title": "No, la IA no va a sustituir al periodista (pero le hará la vida más fácil)",
+     "speaker": "Teresa Mondría",
      "url": ""
     },
     {
      "sketchnote": 10,
      "file": "t3chfest - Dia 2 - Lamina 10.png",
-     "title": "Dia 2 · Lamina 10",
-     "speaker": "",
+     "title": "Desarrollo y diseño: todas a una, Fuenteovejuna",
+     "speaker": "Carmen Ansio y María Barrios",
      "url": ""
     },
     {
      "sketchnote": 11,
      "file": "t3chfest - Dia 2 - Lamina 11.png",
-     "title": "Dia 2 · Lamina 11",
-     "speaker": "",
+     "title": "Hablemos del futuro de la IA",
+     "speaker": "Carlos Santana",
      "url": ""
     },
     {
      "sketchnote": 12,
      "file": "t3chfest - Dia 2 - Lamina 12.png",
-     "title": "Dia 2 · Lamina 12",
-     "speaker": "",
+     "title": "Hackear los sentidos: experiencias de transformación del cuerpo con wearables",
+     "speaker": "Ana Tajadura, Elena Márquez, Judith G. Ley y Joaquín R. Díaz",
      "url": ""
     },
     {
      "sketchnote": 13,
      "file": "t3chfest - Dia 2 - Lamina 13.png",
-     "title": "Dia 2 · Lamina 13",
-     "speaker": "",
+     "title": "¿Cómo ha cambiado y cambiará la tecnología la industria de la música?",
+     "speaker": "Sara Gozalo",
      "url": ""
     },
     {
      "sketchnote": 14,
      "file": "t3chfest - Dia 2 - Lamina 14.png",
-     "title": "Dia 2 · Lamina 14",
-     "speaker": "",
+     "title": "Innovación y nuevas narrativas en los medios: el Lab de RTVE",
+     "speaker": "César Peña",
      "url": ""
     },
     {
      "sketchnote": 15,
      "file": "t3chfest - Dia 2 - Lamina 15.png",
-     "title": "Dia 2 · Lamina 15",
-     "speaker": "",
+     "title": "In coders... we trust?",
+     "speaker": "Irene M. Morgado",
      "url": ""
     },
     {
      "sketchnote": 16,
      "file": "t3chfest - Dia 2 - Lamina 16.png",
-     "title": "Dia 2 · Lamina 16",
-     "speaker": "",
+     "title": "Un paseo por la evolución del frontend",
+     "speaker": "Carlos Azaustre",
      "url": ""
     },
     {
      "sketchnote": 17,
      "file": "t3chfest - Dia 2 - Lamina 17.png",
-     "title": "Dia 2 · Lamina 17",
-     "speaker": "",
+     "title": "Decidim: democracia participativa, libre y de código abierto",
+     "speaker": "Andrés Pereira de Lucena",
      "url": ""
     },
     {
      "sketchnote": 18,
      "file": "t3chfest - Dia 2 - Lamina 18.png",
-     "title": "Dia 2 · Lamina 18",
-     "speaker": "",
+     "title": "Hackeando el miedo a la transparencia",
+     "speaker": "Jaime Gómez-Obregón",
      "url": ""
     }
    ]
@@ -1089,8 +1122,11 @@
   "info": {
    "event": "Tarugo",
    "edition": "2023",
-   "date": "2023",
-   "venue": "",
+   "date": {
+    "en": "27 October 2023",
+    "es": "27 de octubre de 2023"
+   },
+   "venue": "La Nave, Madrid",
    "url": "",
    "hashtag": "",
    "description": "",
@@ -1102,7 +1138,7 @@
     {
      "sketchnote": 1,
      "file": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
-     "title": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
+     "title": "Los 10 problemas de seguridad más importantes de ChatGPT y otros LLM",
      "speaker": "",
      "url": ""
     },
@@ -1297,8 +1333,8 @@
     {
      "sketchnote": 11,
      "file": "11-Lechazoconf 24 - 10 años de Plantonic Games, 10 lecciones aprendidas.png",
-     "title": "10 años de Plantonic Games, 10 lecciones aprendidas",
-     "speaker": "",
+     "title": "10 años de Platonic Games, 10 lecciones aprendidas",
+     "speaker": "Valeria Castro",
      "url": ""
     }
    ]
@@ -1442,7 +1478,7 @@
     {
      "sketchnote": 4,
      "file": "TRGCON24 - 4 - Evangelismo ténnico, qué, cómo y por qué (Trisha Gee).png",
-     "title": "Evangelismo ténnico, qué, cómo y por qué",
+     "title": "Evangelismo técnico: qué, cómo y por qué",
      "speaker": "Trisha Gee",
      "url": ""
     },
@@ -1552,9 +1588,12 @@
   "info": {
    "event": "TRGCON26",
    "edition": "2026",
-   "date": "2026",
-   "venue": "",
-   "url": "",
+   "date": {
+    "en": "23 October 2026",
+    "es": "23 de octubre de 2026"
+   },
+   "venue": "La Nave, Madrid",
+   "url": "https://trgcon.com",
    "hashtag": "",
    "description": "",
    "wallpaper": "wallpaper.png",
@@ -1565,50 +1604,50 @@
     {
      "sketchnote": 1,
      "file": "Paper.Bloc.2.png",
-     "title": "",
-     "speaker": "",
+     "title": "La odisea del programador",
+     "speaker": "Andrés Torrubia",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "Paper.Bloc.3.png",
-     "title": "",
-     "speaker": "",
+     "title": "Quemar tokens sin quemar tu empresa",
+     "speaker": "Cristian Córdova",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "Paper.Bloc.4.png",
-     "title": "",
-     "speaker": "",
+     "title": "Matar al SaaS es fácil, lo difícil viene después",
+     "speaker": "José Ramón Pérez",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "Paper.Bloc.5.png",
-     "title": "",
-     "speaker": "",
+     "title": "Cómo programan quienes programan la IA",
+     "speaker": "Mai Giménez",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "Paper.Bloc.6.png",
-     "title": "",
-     "speaker": "",
+     "title": "El diseño post-ChatGPT: eliminando barreras, no trabajos",
+     "speaker": "Nuria Mediavilla",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "Paper.Bloc.7.png",
-     "title": "",
-     "speaker": "",
+     "title": "Fue la IA, señoría (que no te pase a ti)",
+     "speaker": "Ari Font",
      "url": ""
     },
     {
      "sketchnote": 7,
      "file": "Paper.Bloc.8.png",
-     "title": "",
-     "speaker": "",
+     "title": "Lo veo todo negro (AI Powered Edition™)",
+     "speaker": "Juanjo Montiel",
      "url": ""
     }
    ]
@@ -1700,13 +1739,16 @@
   "slug": "mas-que-startups",
   "title": "Mas Que Startups",
   "info": {
-   "event": "Mas Que Startups",
+   "event": "Más Que Startups",
    "edition": "",
    "date": "",
    "venue": "",
    "url": "",
    "hashtag": "",
-   "description": "",
+   "description": {
+    "en": "Weekly show about startups",
+    "es": "Show semanal sobre startups"
+   },
    "wallpaper": "",
    "pattern": "",
    "author": "@oyabun",
@@ -1715,43 +1757,61 @@
     {
      "sketchnote": 1,
      "file": "Más Que Startups - 5 1.png",
-     "title": "",
-     "speaker": "",
+     "title": {
+      "en": "Episode 8 · Legal advice for startups",
+      "es": "Episodio 8 · Abogados para startups"
+     },
+     "speaker": "Tomás F. Serna",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "MQS - 7 - Loly Garrido.png",
-     "title": "Loly Garrido",
-     "speaker": "",
+     "title": {
+      "en": "Episode 7 · Gudog",
+      "es": "Episodio 7 · Gudog"
+     },
+     "speaker": "Loly Garrido",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "MQS - 9 - Guillermo Montoya.png",
-     "title": "Guillermo Montoya",
-     "speaker": "",
+     "title": {
+      "en": "Episode 9 · Deiser",
+      "es": "Episodio 9 · Deiser"
+     },
+     "speaker": "Guillermo Montoya",
      "url": ""
     },
     {
      "sketchnote": 4,
      "file": "MQS - 10 - Rated Power.png",
-     "title": "Rated Power",
+     "title": {
+      "en": "Episode 10 · RatedPower",
+      "es": "Episodio 10 · RatedPower"
+     },
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 5,
      "file": "MSQ - 11 - Danie Seijo.png",
-     "title": "Danie Seijo",
-     "speaker": "",
+     "title": {
+      "en": "Episode 11 · Diariomotor",
+      "es": "Episodio 11 · Diariomotor"
+     },
+     "speaker": "Daniel Seijo",
      "url": ""
     },
     {
      "sketchnote": 6,
      "file": "MQS - 12 - Carlos de Otto.png",
-     "title": "Carlos de Otto",
-     "speaker": "",
+     "title": {
+      "en": "Episode 12 · Rockola.fm",
+      "es": "Episodio 12 · Rockola.fm"
+     },
+     "speaker": "Carlos de Otto",
      "url": ""
     }
    ]
@@ -1814,10 +1874,13 @@
    "event": "Open Space, Emprendimiento Social",
    "edition": "",
    "date": "",
-   "venue": "",
+   "venue": "Edificio Embarcadero, Cáceres",
    "url": "",
    "hashtag": "",
-   "description": "",
+   "description": {
+    "en": "Open space on social entrepreneurship, facilitated by Adolfo Chautón with EOI",
+    "es": "Open space de emprendimiento social, facilitado por Adolfo Chautón con la EOI"
+   },
    "wallpaper": "",
    "pattern": "",
    "author": "@oyabun",
@@ -1826,21 +1889,30 @@
     {
      "sketchnote": 1,
      "file": "sketch_0.jpeg",
-     "title": "",
-     "speaker": "",
+     "title": {
+      "en": "Opening",
+      "es": "Apertura"
+     },
+     "speaker": "Adolfo Chautón",
      "url": ""
     },
     {
      "sketchnote": 2,
      "file": "sketch_ 1.jpeg",
-     "title": "",
+     "title": {
+      "en": "Education",
+      "es": "Educación"
+     },
      "speaker": "",
      "url": ""
     },
     {
      "sketchnote": 3,
      "file": "sketch_ 2.jpeg",
-     "title": "",
+     "title": {
+      "en": "New economy",
+      "es": "Nueva economía"
+     },
      "speaker": "",
      "url": ""
     }

@@ -1,9 +1,12 @@
 {
   "event": "Tarugo",
   "edition": "2022",
-  "date": "2022",
-  "venue": "",
-  "url": "",
+  "date": {
+    "en": "21 October 2022",
+    "es": "21 de octubre de 2022"
+  },
+  "venue": "La Nave, Madrid",
+  "url": "https://tarugoconf.com",
   "hashtag": "",
   "description": "",
   "wallpaper": "",
@@ -15,56 +18,56 @@
       "sketchnote": 1,
       "file": "Tarugo 22 - 1 - Un framework mental para enfrentarte al mundo real (Recuenco).png",
       "title": "Un framework mental para enfrentarte al mundo real",
-      "speaker": "Recuenco",
+      "speaker": "Javier G. Recuenco",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "Tarugo 22 - 2 - Algoritmos que salvan vidas.png",
       "title": "Algoritmos que salvan vidas",
-      "speaker": "",
+      "speaker": "Ana Freire",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "Tarugo 22 - 3 - La tecnología necesaria para que te tomes una buena caña.png",
-      "title": "La tecnología necesaria para que te tomes una buena caña",
-      "speaker": "",
+      "title": "La tecnología necesaria para que te tomes una buena caña",
+      "speaker": "Macame Dopazo",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "Tarugo 22 - 4 - Cómo hacer un desarrollo iterativo en un proyecto de hosteleria.png",
-      "title": "Cómo hacer un desarrollo iterativo en un proyecto de hosteleria",
-      "speaker": "",
+      "title": "Cómo hacer un desarrollo iterativo en un proyecto de hostelería",
+      "speaker": "Alex Urbón y Ezequiel Maldjian",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "Tarugo 22 - 5 - Cómo producir un videojuego.png",
-      "title": "Cómo producir un videojuego",
-      "speaker": "",
+      "title": "Cómo producir un videojuego",
+      "speaker": "Ramón Nafría",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "Tarugo 22 - 6 - Debe un abogado aprender a programar?.png",
-      "title": "Debe un abogado aprender a programar?",
-      "speaker": "",
+      "title": "¿Debe un abogado aprender a programar?",
+      "speaker": "Elen Irazabal",
       "url": ""
     },
     {
       "sketchnote": 7,
       "file": "Tarugo 22 - 7 - Ventas para ingenieros.png",
       "title": "Ventas para ingenieros",
-      "speaker": "",
+      "speaker": "Paulo Rodríguez",
       "url": ""
     },
     {
       "sketchnote": 8,
       "file": "Tarugo 22 - 8 - Cómo aplicar la inteligenci artificial para el bien.png",
-      "title": "Cómo aplicar la inteligenci artificial para el bien",
-      "speaker": "",
+      "title": "Cómo aplicar la inteligencia artificial para hacer el bien",
+      "speaker": "Conchita Díaz Cantarero",
       "url": ""
     }
   ]

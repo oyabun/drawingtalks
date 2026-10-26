@@ -1,8 +1,11 @@
 {
   "event": "Tarugo",
   "edition": "2023",
-  "date": "2023",
-  "venue": "",
+  "date": {
+    "en": "27 October 2023",
+    "es": "27 de octubre de 2023"
+  },
+  "venue": "La Nave, Madrid",
   "url": "",
   "hashtag": "",
   "description": "",
@@ -14,7 +17,7 @@
     {
       "sketchnote": 1,
       "file": "TRGCON23 - 1 -  Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM.png",
-      "title": "Los 10 problemas de seguridad más importantes de CHATGpt y otros LLM",
+      "title": "Los 10 problemas de seguridad más importantes de ChatGPT y otros LLM",
       "speaker": "",
       "url": ""
     },

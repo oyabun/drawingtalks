@@ -1,9 +1,12 @@
 {
   "event": "T3chfest",
   "edition": "2023",
-  "date": "2023",
-  "venue": "",
-  "url": "",
+  "date": {
+    "en": "2–3 March 2023",
+    "es": "2–3 de marzo de 2023"
+  },
+  "venue": "Universidad Carlos III, Leganés",
+  "url": "https://t3chfest.es/2023/programa",
   "hashtag": "",
   "description": "",
   "wallpaper": "",
@@ -14,127 +17,127 @@
     {
       "sketchnote": 1,
       "file": "t3chfest - Dia 1 - Lamina 1.png",
-      "title": "Dia 1 · Lamina 1",
-      "speaker": "",
+      "title": "Encontrando nuestro nicho en el mundo de los videojuegos",
+      "speaker": "Valeria Castro",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "t3chfest - Dia 1 - Lamina 2.png",
-      "title": "Dia 1 · Lamina 2",
-      "speaker": "",
+      "title": "¿Trolls al servicio del estado? La guerra sucia digital del autoritarismo 3.0",
+      "speaker": "Iago Moreno",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "t3chfest - Dia 1 - Lamina 3.png",
-      "title": "Dia 1 · Lamina 3",
-      "speaker": "",
+      "title": "Próxima estación: Metro de Madrid",
+      "speaker": "José Miguel Moreno",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "t3chfest - Dia 1 - Lamina 4.png",
-      "title": "Dia 1 · Lamina 4",
-      "speaker": "",
+      "title": "Adiós USB, hola ADN",
+      "speaker": "María Gómez Romero",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "t3chfest - Dia 1 - Lamina 5.png",
-      "title": "Dia 1 · Lamina 5",
-      "speaker": "",
+      "title": "Diseño de vacunas contra el cáncer con Python",
+      "speaker": "Helena Gómez Pozo y Marina Moro López",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "t3chfest - Dia 1 - Lamina 6.png",
-      "title": "Dia 1 · Lamina 6",
-      "speaker": "",
+      "title": "Cómo hackear tu carrera profesional",
+      "speaker": "David Bonilla",
       "url": ""
     },
     {
       "sketchnote": 7,
       "file": "t3chfest - Dia 1 - Lamina 7.png",
-      "title": "Dia 1 · Lamina 7",
-      "speaker": "",
+      "title": "¡Luces, cámara, programación!",
+      "speaker": "Míriam González",
       "url": ""
     },
     {
       "sketchnote": 8,
       "file": "t3chfest - Dia 1 - Lamina 8.png",
-      "title": "Dia 1 · Lamina 8",
-      "speaker": "",
+      "title": "La senda del freelance",
+      "speaker": "Brais Moure",
       "url": ""
     },
     {
       "sketchnote": 9,
       "file": "t3chfest - Dia 1 - Lamina 9.png",
-      "title": "Dia 1 · Lamina 9",
-      "speaker": "",
+      "title": "No, la IA no va a sustituir al periodista (pero le hará la vida más fácil)",
+      "speaker": "Teresa Mondría",
       "url": ""
     },
     {
       "sketchnote": 10,
       "file": "t3chfest - Dia 2 - Lamina 10.png",
-      "title": "Dia 2 · Lamina 10",
-      "speaker": "",
+      "title": "Desarrollo y diseño: todas a una, Fuenteovejuna",
+      "speaker": "Carmen Ansio y María Barrios",
       "url": ""
     },
     {
       "sketchnote": 11,
       "file": "t3chfest - Dia 2 - Lamina 11.png",
-      "title": "Dia 2 · Lamina 11",
-      "speaker": "",
+      "title": "Hablemos del futuro de la IA",
+      "speaker": "Carlos Santana",
       "url": ""
     },
     {
       "sketchnote": 12,
       "file": "t3chfest - Dia 2 - Lamina 12.png",
-      "title": "Dia 2 · Lamina 12",
-      "speaker": "",
+      "title": "Hackear los sentidos: experiencias de transformación del cuerpo con wearables",
+      "speaker": "Ana Tajadura, Elena Márquez, Judith G. Ley y Joaquín R. Díaz",
       "url": ""
     },
     {
       "sketchnote": 13,
       "file": "t3chfest - Dia 2 - Lamina 13.png",
-      "title": "Dia 2 · Lamina 13",
-      "speaker": "",
+      "title": "¿Cómo ha cambiado y cambiará la tecnología la industria de la música?",
+      "speaker": "Sara Gozalo",
       "url": ""
     },
     {
       "sketchnote": 14,
       "file": "t3chfest - Dia 2 - Lamina 14.png",
-      "title": "Dia 2 · Lamina 14",
-      "speaker": "",
+      "title": "Innovación y nuevas narrativas en los medios: el Lab de RTVE",
+      "speaker": "César Peña",
       "url": ""
     },
     {
       "sketchnote": 15,
       "file": "t3chfest - Dia 2 - Lamina 15.png",
-      "title": "Dia 2 · Lamina 15",
-      "speaker": "",
+      "title": "In coders... we trust?",
+      "speaker": "Irene M. Morgado",
       "url": ""
     },
     {
       "sketchnote": 16,
       "file": "t3chfest - Dia 2 - Lamina 16.png",
-      "title": "Dia 2 · Lamina 16",
-      "speaker": "",
+      "title": "Un paseo por la evolución del frontend",
+      "speaker": "Carlos Azaustre",
       "url": ""
     },
     {
       "sketchnote": 17,
       "file": "t3chfest - Dia 2 - Lamina 17.png",
-      "title": "Dia 2 · Lamina 17",
-      "speaker": "",
+      "title": "Decidim: democracia participativa, libre y de código abierto",
+      "speaker": "Andrés Pereira de Lucena",
       "url": ""
     },
     {
       "sketchnote": 18,
       "file": "t3chfest - Dia 2 - Lamina 18.png",
-      "title": "Dia 2 · Lamina 18",
-      "speaker": "",
+      "title": "Hackeando el miedo a la transparencia",
+      "speaker": "Jaime Gómez-Obregón",
       "url": ""
     }
   ]

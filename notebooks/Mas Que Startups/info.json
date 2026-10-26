@@ -1,11 +1,14 @@
 {
-  "event": "Mas Que Startups",
+  "event": "Más Que Startups",
   "edition": "",
   "date": "",
   "venue": "",
   "url": "",
   "hashtag": "",
-  "description": "",
+  "description": {
+    "en": "Weekly show about startups",
+    "es": "Show semanal sobre startups"
+  },
   "wallpaper": "",
   "pattern": "",
   "author": "@oyabun",
@@ -14,43 +17,61 @@
     {
       "sketchnote": 1,
       "file": "Más Que Startups - 5 1.png",
-      "title": "",
-      "speaker": "",
+      "title": {
+        "en": "Episode 8 · Legal advice for startups",
+        "es": "Episodio 8 · Abogados para startups"
+      },
+      "speaker": "Tomás F. Serna",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "MQS - 7 - Loly Garrido.png",
-      "title": "Loly Garrido",
-      "speaker": "",
+      "title": {
+        "en": "Episode 7 · Gudog",
+        "es": "Episodio 7 · Gudog"
+      },
+      "speaker": "Loly Garrido",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "MQS - 9 - Guillermo Montoya.png",
-      "title": "Guillermo Montoya",
-      "speaker": "",
+      "title": {
+        "en": "Episode 9 · Deiser",
+        "es": "Episodio 9 · Deiser"
+      },
+      "speaker": "Guillermo Montoya",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "MQS - 10 - Rated Power.png",
-      "title": "Rated Power",
+      "title": {
+        "en": "Episode 10 · RatedPower",
+        "es": "Episodio 10 · RatedPower"
+      },
       "speaker": "",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "MSQ - 11 - Danie Seijo.png",
-      "title": "Danie Seijo",
-      "speaker": "",
+      "title": {
+        "en": "Episode 11 · Diariomotor",
+        "es": "Episodio 11 · Diariomotor"
+      },
+      "speaker": "Daniel Seijo",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "MQS - 12 - Carlos de Otto.png",
-      "title": "Carlos de Otto",
-      "speaker": "",
+      "title": {
+        "en": "Episode 12 · Rockola.fm",
+        "es": "Episodio 12 · Rockola.fm"
+      },
+      "speaker": "Carlos de Otto",
       "url": ""
     }
   ]

@@ -1,9 +1,12 @@
 {
   "event": "TRGCON26",
   "edition": "2026",
-  "date": "2026",
-  "venue": "",
-  "url": "",
+  "date": {
+    "en": "23 October 2026",
+    "es": "23 de octubre de 2026"
+  },
+  "venue": "La Nave, Madrid",
+  "url": "https://trgcon.com",
   "hashtag": "",
   "description": "",
   "wallpaper": "wallpaper.png",
@@ -14,50 +17,50 @@
     {
       "sketchnote": 1,
       "file": "Paper.Bloc.2.png",
-      "title": "",
-      "speaker": "",
+      "title": "La odisea del programador",
+      "speaker": "Andrés Torrubia",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "Paper.Bloc.3.png",
-      "title": "",
-      "speaker": "",
+      "title": "Quemar tokens sin quemar tu empresa",
+      "speaker": "Cristian Córdova",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "Paper.Bloc.4.png",
-      "title": "",
-      "speaker": "",
+      "title": "Matar al SaaS es fácil, lo difícil viene después",
+      "speaker": "José Ramón Pérez",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "Paper.Bloc.5.png",
-      "title": "",
-      "speaker": "",
+      "title": "Cómo programan quienes programan la IA",
+      "speaker": "Mai Giménez",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "Paper.Bloc.6.png",
-      "title": "",
-      "speaker": "",
+      "title": "El diseño post-ChatGPT: eliminando barreras, no trabajos",
+      "speaker": "Nuria Mediavilla",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "Paper.Bloc.7.png",
-      "title": "",
-      "speaker": "",
+      "title": "Fue la IA, señoría (que no te pase a ti)",
+      "speaker": "Ari Font",
       "url": ""
     },
     {
       "sketchnote": 7,
       "file": "Paper.Bloc.8.png",
-      "title": "",
-      "speaker": "",
+      "title": "Lo veo todo negro (AI Powered Edition™)",
+      "speaker": "Juanjo Montiel",
       "url": ""
     }
   ]

@@ -2,10 +2,13 @@
   "event": "Open Space, Emprendimiento Social",
   "edition": "",
   "date": "",
-  "venue": "",
+  "venue": "Edificio Embarcadero, Cáceres",
   "url": "",
   "hashtag": "",
-  "description": "",
+  "description": {
+    "en": "Open space on social entrepreneurship, facilitated by Adolfo Chautón with EOI",
+    "es": "Open space de emprendimiento social, facilitado por Adolfo Chautón con la EOI"
+  },
   "wallpaper": "",
   "pattern": "",
   "author": "@oyabun",
@@ -14,21 +17,30 @@
     {
       "sketchnote": 1,
       "file": "sketch_0.jpeg",
-      "title": "",
-      "speaker": "",
+      "title": {
+        "en": "Opening",
+        "es": "Apertura"
+      },
+      "speaker": "Adolfo Chautón",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "sketch_ 1.jpeg",
-      "title": "",
+      "title": {
+        "en": "Education",
+        "es": "Educación"
+      },
       "speaker": "",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "sketch_ 2.jpeg",
-      "title": "",
+      "title": {
+        "en": "New economy",
+        "es": "Nueva economía"
+      },
       "speaker": "",
       "url": ""
     }

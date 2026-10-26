@@ -1,8 +1,14 @@
 {
   "event": "miduFEST",
   "edition": "2023",
-  "date": "2023",
-  "venue": "",
+  "date": {
+    "en": "21–22 March 2023",
+    "es": "21–22 de marzo de 2023"
+  },
+  "venue": {
+    "en": "Online (Twitch)",
+    "es": "Online (Twitch)"
+  },
   "url": "",
   "hashtag": "",
   "description": "",
@@ -14,50 +20,50 @@
     {
       "sketchnote": 1,
       "file": "1.Back to the future, CSS Edition.png",
-      "title": "Back to the future, CSS Edition",
-      "speaker": "",
+      "title": "Back to the future: CSS edition",
+      "speaker": "Carmen Ansio",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "2.Este codigo es una ruina.png",
-      "title": "Este codigo es una ruina",
-      "speaker": "",
+      "title": "¡Este código es una ruina! Estrategias de accesibilidad web",
+      "speaker": "Adrián Bolonio",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "3.De JS a React.png",
-      "title": "De JS a React",
-      "speaker": "",
+      "title": "De JavaScript a React",
+      "speaker": "Estefany Aguilar",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "4.Rendimiento Web .png",
-      "title": "Rendimiento Web",
-      "speaker": "",
+      "title": "Rendimiento web: JavaScript y todos los errores que estamos cometiendo",
+      "speaker": "David East",
       "url": ""
     },
     {
       "sketchnote": 5,
       "file": "5.React server components.png",
-      "title": "React server components",
-      "speaker": "",
+      "title": "React Server Components: más concerns, menos preocupaciones",
+      "speaker": "Rodrigo Pombo",
       "url": ""
     },
     {
       "sketchnote": 6,
       "file": "7.Una saga de infortunios.png",
-      "title": "Una saga de infortunios",
-      "speaker": "",
+      "title": "Una saga de infortunios de renderizado web",
+      "speaker": "Alba Silvente",
       "url": ""
     },
     {
       "sketchnote": 7,
       "file": "8.Del front al back.png",
       "title": "Del front al back",
-      "speaker": "",
+      "speaker": "Ari Jurado",
       "url": ""
     },
     {
@@ -70,36 +76,36 @@
     {
       "sketchnote": 9,
       "file": "10.Encontrar trabajo DEV en timepos loquísimos.png",
-      "title": "Encontrar trabajo DEV en timepos loquísimos",
-      "speaker": "",
+      "title": "Encontrar trabajo dev en tiempos loquísimos",
+      "speaker": "Irene M. Morgado",
       "url": ""
     },
     {
       "sketchnote": 10,
       "file": "11.Nuevas features de nodejs.png",
-      "title": "Nuevas features de nodejs",
-      "speaker": "",
+      "title": "Nuevas features en Node.js que deberías conocer",
+      "speaker": "Lizz Parody",
       "url": ""
     },
     {
       "sketchnote": 11,
       "file": "12.Conectado programacion con IA.png",
-      "title": "Conectado programacion con IA",
+      "title": "Conectando programación con IA",
       "speaker": "",
       "url": ""
     },
     {
       "sketchnote": 12,
       "file": "13.Patrones de diseno y cervezas.png",
-      "title": "Patrones de diseno y cervezas",
-      "speaker": "",
+      "title": "Patrones de diseño y cervezas",
+      "speaker": "Héctor de León",
       "url": ""
     },
     {
       "sketchnote": 13,
       "file": "14.Ni estatico ni dinamico, ambos.png",
-      "title": "Ni estatico ni dinamico, ambos",
-      "speaker": "",
+      "title": "Ni estático ni dinámico, ambos: usando Next.js cache con app directory",
+      "speaker": "Goncy Pozzo",
       "url": ""
     }
   ]

@@ -1,9 +1,12 @@
 {
   "event": "T3chFest",
-  "edition": "2020",
-  "date": "2020",
-  "venue": "",
-  "url": "",
+  "edition": "2019",
+  "date": {
+    "en": "14 March 2019",
+    "es": "14 de marzo de 2019"
+  },
+  "venue": "Universidad Carlos III, Leganés",
+  "url": "https://t3chfest.uc3m.es/2019/programa/framework-independent-decoupled-frontend-architecture-for-large-scale-projects",
   "hashtag": "",
   "description": "",
   "wallpaper": "",
@@ -14,29 +17,29 @@
     {
       "sketchnote": 1,
       "file": "Paper.Techfest.32.png",
-      "title": "",
-      "speaker": "",
+      "title": "A framework-independent, decoupled frontend architecture for large-scale projects (1/3)",
+      "speaker": "Carlos Villuendas",
       "url": ""
     },
     {
       "sketchnote": 2,
       "file": "Paper.Techfest.33.png",
-      "title": "",
-      "speaker": "",
+      "title": "A framework-independent, decoupled frontend architecture for large-scale projects (2/3)",
+      "speaker": "Carlos Villuendas",
       "url": ""
     },
     {
       "sketchnote": 3,
       "file": "Paper.Techfest.34.png",
-      "title": "",
-      "speaker": "",
+      "title": "A framework-independent, decoupled frontend architecture for large-scale projects (3/3)",
+      "speaker": "Carlos Villuendas",
       "url": ""
     },
     {
       "sketchnote": 4,
       "file": "t3chfest - Carlos Villuendas - A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019.png",
-      "title": "Carlos Villuendas · A framework-independent, decoupled frontend architecture for large-scale projects | T3chFest 2019",
-      "speaker": "",
+      "title": "A framework-independent, decoupled frontend architecture for large-scale projects",
+      "speaker": "Carlos Villuendas",
       "url": ""
     }
   ]
