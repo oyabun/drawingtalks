@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Drawing Talks</title>
 <meta http-equiv="Cache-Control" content="no-cache">
-<link rel="stylesheet" href="3d/style.css?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="3d/style.css?v=5">
 <script type="importmap">
 { "imports": { "three165": "./vendor/three-0.165.0.module.min.js" } }
 </script>
@@ -40,6 +43,9 @@
     <button id="close-detail" class="dt-pill dt-close" type="button" data-i18n-aria="backToShelf">
       <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg> <span data-i18n="shelf"></span>
     </button>
+    <button id="close-book" class="dt-round dt-x" type="button" data-i18n-aria="backToShelf" data-i18n-title="backToShelf" hidden>
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
     <div class="dt-pager detail-controls">
       <button id="previous-page" class="dt-round" type="button"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
       <div class="dt-page"><strong id="page-label"></strong><span id="page-counter"></span></div>
@@ -64,6 +70,6 @@
     <button class="dt-lang" type="button" data-lang-toggle></button>
   </nav>
 </div>
-<script type="module" src="3d/main.js?v=9"></script>
+<script type="module" src="3d/main.js?v=10"></script>
 </body>
 </html>

@@ -218,6 +218,8 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
     const SHELF_TRANSITION_DURATION = 0.92;
     let openingViewOffsetX = 0;
     let pendingSpread = null;
+    const cornerBox = new THREE.Box3();
+    const cornerPoint = new THREE.Vector3();
     let closingViewOffsetX = 0;
 
     const shared = {
@@ -490,14 +492,14 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.fillStyle = book.foil;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.font = '500 18px Inter, "Helvetica Neue", Arial, sans-serif';
+      ctx.font = '500 18px Kalam, "Marker Felt", "Comic Sans MS", cursive';
       ctx.letterSpacing = "4px";
       ctx.fillText(`WORKING VOLUMES  /  ${book.roman}`, canvasTexture.width / 2, 92);
 
       const titleSize = book.title.length > 10 ? 72 : 88;
-      ctx.font = `400 ${titleSize}px "Iowan Old Style", Baskerville, Georgia, serif`;
+      ctx.font = `400 ${titleSize}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
       ctx.fillText(book.title, canvasTexture.width / 2, canvasTexture.height * 0.72);
-      ctx.font = '500 16px Inter, "Helvetica Neue", Arial, sans-serif';
+      ctx.font = '500 16px Kalam, "Marker Felt", "Comic Sans MS", cursive';
       ctx.fillText(book.discipline.toUpperCase(), canvasTexture.width / 2, canvasTexture.height * 0.79);
 
       return configureCanvasTexture(new THREE.CanvasTexture(canvasTexture));
@@ -575,7 +577,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.textAlign = "left";
       ctx.textBaseline = "alphabetic";
 
-      ctx.font = '500 15px Inter, "Helvetica Neue", Arial, sans-serif';
+      ctx.font = '500 15px Kalam, "Marker Felt", "Comic Sans MS", cursive';
       ctx.letterSpacing = "2.8px";
       ctx.fillText(`WORKING VOLUMES  /  ${pad(index)}`, 58, 70);
       ctx.globalAlpha = 0.7;
@@ -587,9 +589,9 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.globalAlpha = 1;
 
       const titleSize = book.title.length > 10 ? 64 : 78;
-      ctx.font = `400 ${titleSize}px "Iowan Old Style", Baskerville, Georgia, serif`;
+      ctx.font = `400 ${titleSize}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
       ctx.fillText(book.title, 58, 1020);
-      ctx.font = '500 14px Inter, "Helvetica Neue", Arial, sans-serif';
+      ctx.font = '500 14px Kalam, "Marker Felt", "Comic Sans MS", cursive';
       ctx.letterSpacing = "2.4px";
       ctx.fillText(book.discipline.toUpperCase(), 60, 1066);
 
@@ -781,7 +783,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         ctx.fillStyle = `rgba(${red},${green},${blue},0.2)`;
         ctx.textAlign = "left";
         ctx.textBaseline = "alphabetic";
-        ctx.font = '500 15px Inter, "Helvetica Neue", Arial, sans-serif';
+        ctx.font = '500 15px Kalam, "Marker Felt", "Comic Sans MS", cursive';
         ctx.letterSpacing = "2px";
         ctx.fillText(book.title.toUpperCase(), 84, 98);
         ctx.fillRect(84, 121, 190, 2);
@@ -800,7 +802,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         }
 
         ctx.globalAlpha = 0.32;
-        ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
+        ctx.font = '400 17px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
         ctx.fillText(book.roman, paperCanvas.width - 104, paperCanvas.height - 72);
         ctx.globalAlpha = 1;
       }
@@ -843,7 +845,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       const size = book.title.length > 18 ? 78 : 96;
-      ctx.font = `400 ${size}px "Iowan Old Style", Baskerville, Georgia, serif`;
+      ctx.font = `400 ${size}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
       const lines = [];
       book.title.split(/\s+/).forEach((word) => {
         const last = lines[lines.length - 1];
@@ -895,7 +897,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         ctx.textBaseline = "alphabetic";
 
         ctx.globalAlpha = 0.58;
-        ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
+        ctx.font = '500 10px Kalam, "Marker Felt", "Comic Sans MS", cursive';
         ctx.letterSpacing = "1.8px";
         ctx.fillText(`WORKING VOLUMES  /  ${book.roman}`, 48, 48);
         ctx.textAlign = "right";
@@ -905,25 +907,25 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         ctx.globalAlpha = 1;
 
         if (pageIndex === 0) {
-          ctx.font = '500 12px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 12px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2.3px";
           ctx.fillText(book.discipline.toUpperCase(), 54, 174);
-          ctx.font = `400 ${book.title.length > 10 ? 48 : 58}px "Iowan Old Style", Baskerville, Georgia, serif`;
+          ctx.font = `400 ${book.title.length > 10 ? 48 : 58}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
           ctx.letterSpacing = "0px";
           drawWrappedCanvasText(ctx, book.title, 52, 246, 18, 58, 2);
           ctx.globalAlpha = 0.55;
-          ctx.font = '400 22px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 22px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(ctx, book.note, 54, 462, 36, 30, 4);
         } else if (pageIndex === 1 || pageIndex === 3) {
           const chapterIndex = pageIndex === 1 ? 0 : 1;
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText(`CHAPTER ${pad(chapterIndex + 1)}`, 54, 166);
-          ctx.font = '400 49px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 49px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "0px";
           drawWrappedCanvasText(ctx, book.chapters[chapterIndex], 52, 244, 18, 54, 3);
           ctx.globalAlpha = 0.52;
-          ctx.font = '400 20px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 20px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(
             ctx,
             chapterIndex === 0 ? book.note : book.deck,
@@ -934,7 +936,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
             6
           );
         } else if (pageIndex === 2) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText("PLATE 01  /  SYSTEM MOTIF", 54, 146);
           ctx.save();
@@ -942,10 +944,10 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           drawMotif(ctx, { ...book, foil: ink }, logicalWidth, logicalHeight * 0.92);
           ctx.restore();
           ctx.globalAlpha = 0.48;
-          ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 17px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(ctx, book.theme, 54, 650, 44, 24, 3);
         } else if (pageIndex === 4) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText(`NOTES  /  ${book.chapters[1].toUpperCase()}`, 54, 138);
           ctx.globalAlpha = 0.44;
@@ -958,21 +960,21 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           }
           ctx.globalAlpha = 0.78;
           ctx.strokeRect(54, 654, 404, 54);
-          ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 10px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "1.4px";
           ctx.fillText(book.motif.toUpperCase(), 70, 686);
         } else if (pageIndex === 5) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText("CHAPTER 03", 54, 166);
-          ctx.font = '400 49px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 49px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "0px";
           drawWrappedCanvasText(ctx, book.chapters[2], 52, 244, 18, 54, 3);
           ctx.globalAlpha = 0.52;
-          ctx.font = '400 20px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 20px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(ctx, book.deck, 54, 438, 42, 28, 6);
         } else if (pageIndex === 6) {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText("PLATE 02  /  TECHNICAL SYSTEM", 54, 146);
           ctx.save();
@@ -993,17 +995,17 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
           }
           ctx.restore();
           ctx.globalAlpha = 0.48;
-          ctx.font = '400 17px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 17px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(ctx, book.theme, 54, 650, 44, 24, 3);
         } else {
-          ctx.font = '500 11px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 11px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "2px";
           ctx.fillText("COLOPHON", 54, 164);
-          ctx.font = '400 32px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 32px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "0px";
           ctx.fillText(book.title, 54, 230);
           ctx.globalAlpha = 0.58;
-          ctx.font = '400 18px "Iowan Old Style", Baskerville, Georgia, serif';
+          ctx.font = '400 18px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive';
           drawWrappedCanvasText(
             ctx,
             `${book.binding}. ${book.format}. Conceived as an original editorial study for Working Volumes.`,
@@ -1014,7 +1016,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
             7
           );
           ctx.globalAlpha = 0.74;
-          ctx.font = '500 10px Inter, "Helvetica Neue", Arial, sans-serif';
+          ctx.font = '500 10px Kalam, "Marker Felt", "Comic Sans MS", cursive';
           ctx.letterSpacing = "1.8px";
           ctx.fillText(`SPECIMEN ${book.roman} / ${book.seed}  ·  IMAGINED EDITION`, 54, 676);
         }
@@ -1225,14 +1227,14 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
 
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.font = '500 24px Inter, "Helvetica Neue", Arial, sans-serif';
+      ctx.font = '500 24px Kalam, "Marker Felt", "Comic Sans MS", cursive';
       ctx.letterSpacing = "5px";
       ctx.fillText(book.roman, foilCanvas.width * 0.5, 118);
 
       ctx.save();
       ctx.translate(foilCanvas.width * 0.5, foilCanvas.height * 0.5);
       ctx.rotate(Math.PI / 2);
-      ctx.font = `400 ${book.title.length > 10 ? 58 : 68}px "Iowan Old Style", Baskerville, Georgia, serif`;
+      ctx.font = `400 ${book.title.length > 10 ? 58 : 68}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
       ctx.letterSpacing = "0px";
       ctx.fillText(book.title, 0, 0);
       ctx.restore();
@@ -1309,8 +1311,8 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       ctx.scale(foilCanvas.width / 768, foilCanvas.height / 1152);
       const left = 68;
       const right = 700;
-      const sans = (size) => `500 ${size}px Inter, "Helvetica Neue", Arial, sans-serif`;
-      const serif = (size) => `400 ${size}px "Iowan Old Style", Baskerville, Georgia, serif`;
+      const sans = (size) => `500 ${size}px Kalam, "Marker Felt", "Comic Sans MS", cursive`;
+      const serif = (size) => `400 ${size}px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`;
       const fit = (text, maxWidth) => {
         if (ctx.measureText(text).width <= maxWidth) return text;
         let cut = text;
@@ -1356,7 +1358,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
         ctx.fillText(String(index + 1).padStart(2, "0"), left, y);
         ctx.globalAlpha = 1;
         ctx.letterSpacing = "0px";
-        ctx.font = serif(fontSize);
+        ctx.font = sans(fontSize);
         ctx.fillText(fit(talk, right - left - 50), left + 50, y);
       });
 
@@ -4172,10 +4174,27 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       controls.enableDamping = !reducedMotion;
       controls.update();
       if (pendingSpread !== null) {
-        const spread = pendingSpread;
+        // from a link: the cover first, then it opens on the title page, then turns to the sketchnote
+        const spread = clamp(pendingSpread, 0, spreadCount() - 1);
+        const book = activeBook;
         pendingSpread = null;
-        setReadingOpen(true, false);
-        currentSpread = clamp(spread, 0, spreadCount() - 1);
+        const still = () => mode === "detail" && activeBook === book;
+        const turnTo = () => {
+          if (!still() || !readingOpen || currentSpread !== 0) return;
+          currentSpread = spread;
+          updatePageControls(true);
+          requestFrame();
+        };
+        if (reducedMotion) {
+          setReadingOpen(true, false);
+          currentSpread = spread;
+        } else {
+          setTimeout(() => {
+            if (!still() || readingOpen) return;
+            setReadingOpen(true, false);
+            if (spread > 0) setTimeout(turnTo, 1100);
+          }, 500);
+        }
       }
       updatePageControls(false);
       experience.classList.remove("is-opening");
@@ -4487,6 +4506,22 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       }
 
       renderer.render(scene, camera);
+      if (mode === "detail" && activeBook && callbacks.onBookCorner) {
+        activeBook.backCover ??= activeBook.root.getObjectByName(`${activeBook.data.id}-back-cover`);
+        cornerBox.makeEmpty().expandByObject(activeBook.backCover).expandByObject(activeBook.frontCover);
+        let right = -Infinity;
+        let top = Infinity;
+        for (let i = 0; i < 8; i += 1) {
+          cornerPoint.set(
+            i & 1 ? cornerBox.max.x : cornerBox.min.x,
+            i & 2 ? cornerBox.max.y : cornerBox.min.y,
+            i & 4 ? cornerBox.max.z : cornerBox.min.z
+          ).project(camera);
+          right = Math.max(right, (cornerPoint.x + 1) / 2 * canvas.clientWidth);
+          top = Math.min(top, (1 - cornerPoint.y) / 2 * canvas.clientHeight);
+        }
+        callbacks.onBookCorner({ right, top });
+      }
 
       const shelfMoving = Math.abs(position - targetPosition) > 0.0005 || wheelIdle > 0;
       const shouldContinue = !reducedMotion
@@ -4673,7 +4708,7 @@ export function createBookshelfRenderer(host, canvas, callbacks = {}) {
       );
 
       try {
-        await document.fonts.load("600 82px Inter");
+        await Promise.all([`400 82px "Permanent Marker", "Marker Felt", "Comic Sans MS", cursive`, `400 40px Kalam, "Marker Felt", "Comic Sans MS", cursive`, `700 40px Kalam, "Marker Felt", "Comic Sans MS", cursive`].map((font) => document.fonts.load(font)));
       } catch (error) {
         // The system sans-serif fallback keeps the interface usable offline.
       }

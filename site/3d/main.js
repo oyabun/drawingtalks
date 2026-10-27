@@ -4,6 +4,7 @@ import { t, localized, translatePage } from '../i18n.js';
 const host = document.getElementById('shelf3d');
 const canvas = document.getElementById('shelf3d-canvas');
 const flipButton = document.getElementById('flip-book');
+const closeBook = document.getElementById('close-book');
 translatePage();
 
 function loadImage(src) {
@@ -177,10 +178,17 @@ api = createBookshelfRenderer(host, canvas, {
     document.title = `${books[index].title} · Drawing Talks`;
   },
   onModeChange: (mode) => {
+    if (mode !== 'detail') closeBook.hidden = true;
     if (mode === 'shelf') { setHash('#/'); document.title = 'Drawing Talks'; }
   },
   onFlipChange: (flipped) => {
     flipButton.textContent = t(flipped ? 'showCover' : 'turnOver');
+  },
+  // the close button rides on the book's top-right corner, kept inside the screen
+  onBookCorner: ({ right, top }) => {
+    closeBook.hidden = false;
+    closeBook.style.left = `${Math.min(right + 6, host.clientWidth - 50)}px`;
+    closeBook.style.top = `${Math.max(top - 48, 64)}px`;
   },
   onSpreadChange: ({ index, open, spread }) => {
     const b = books[index];
@@ -190,6 +198,7 @@ api = createBookshelfRenderer(host, canvas, {
 });
 
 flipButton.addEventListener('click', () => api.flip());
+closeBook.addEventListener('click', () => { closeBook.hidden = true; api.close(); });
 new ResizeObserver(() => api.resize()).observe(host);
 addEventListener('hashchange', route);
 host.focus({ preventScroll: true });

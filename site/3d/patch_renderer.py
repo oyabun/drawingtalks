@@ -426,10 +426,27 @@ rep(
     }""",
     """      controls.update();
       if (pendingSpread !== null) {
-        const spread = pendingSpread;
+        // from a link: the cover first, then it opens on the title page, then turns to the sketchnote
+        const spread = clamp(pendingSpread, 0, spreadCount() - 1);
+        const book = activeBook;
         pendingSpread = null;
-        setReadingOpen(true, false);
-        currentSpread = clamp(spread, 0, spreadCount() - 1);
+        const still = () => mode === "detail" && activeBook === book;
+        const turnTo = () => {
+          if (!still() || !readingOpen || currentSpread !== 0) return;
+          currentSpread = spread;
+          updatePageControls(true);
+          requestFrame();
+        };
+        if (reducedMotion) {
+          setReadingOpen(true, false);
+          currentSpread = spread;
+        } else {
+          setTimeout(() => {
+            if (!still() || readingOpen) return;
+            setReadingOpen(true, false);
+            if (spread > 0) setTimeout(turnTo, 1100);
+          }, 500);
+        }
       }
       updatePageControls(false);
       experience.classList.remove("is-opening");
@@ -1036,7 +1053,7 @@ rep_between("    function makeBackFoilTexture(book) {", "    function createMesh
         ctx.fillText(String(index + 1).padStart(2, "0"), left, y);
         ctx.globalAlpha = 1;
         ctx.letterSpacing = "0px";
-        ctx.font = serif(fontSize);
+        ctx.font = sans(fontSize);
         ctx.fillText(fit(talk, right - left - 50), left + 50, y);
       });
 
@@ -1846,6 +1863,51 @@ s = s[:a] + "      // plain endpaper: no grid or emblem\n      drawPaperSurface(
 rep("color: new THREE.Color(book.palette.paperPale).lerp(new THREE.Color(0xf2ead8), 0.5),", "color: 0xffffff,")
 # more neutral light, so white paper reads as white
 rep("SpotLight(0xffd6a0, 26, 0, 0.58, 0.85, 1.4)", "SpotLight(0xffeedd, 26, 0, 0.58, 0.85, 1.4)")
+
+# --- the open book's top-right corner on screen, for the close button (callbacks.onBookCorner)
+rep(
+    "    let pendingSpread = null;\n",
+    "    let pendingSpread = null;\n    const cornerBox = new THREE.Box3();\n    const cornerPoint = new THREE.Vector3();\n",
+)
+rep(
+    """        updatePaginatedBook(activeBook, delta, getDetailOpenAmount());
+      }
+
+      renderer.render(scene, camera);
+""",
+    """        updatePaginatedBook(activeBook, delta, getDetailOpenAmount());
+      }
+
+      renderer.render(scene, camera);
+      if (mode === "detail" && activeBook && callbacks.onBookCorner) {
+        activeBook.backCover ??= activeBook.root.getObjectByName(`${activeBook.data.id}-back-cover`);
+        cornerBox.makeEmpty().expandByObject(activeBook.backCover).expandByObject(activeBook.frontCover);
+        let right = -Infinity;
+        let top = Infinity;
+        for (let i = 0; i < 8; i += 1) {
+          cornerPoint.set(
+            i & 1 ? cornerBox.max.x : cornerBox.min.x,
+            i & 2 ? cornerBox.max.y : cornerBox.min.y,
+            i & 4 ? cornerBox.max.z : cornerBox.min.z
+          ).project(camera);
+          right = Math.max(right, (cornerPoint.x + 1) / 2 * canvas.clientWidth);
+          top = Math.min(top, (1 - cornerPoint.y) / 2 * canvas.clientHeight);
+        }
+        callbacks.onBookCorner({ right, top });
+      }
+""",
+)
+
+# --- handwritten type, like the sketchnotes: Permanent Marker for titles, Kalam for small text (Google Fonts, index.html)
+MARKER = '"Permanent Marker", "Marker Felt", "Comic Sans MS", cursive'
+HAND = 'Kalam, "Marker Felt", "Comic Sans MS", cursive'
+for old, new in (('"Iowan Old Style", Baskerville, Georgia, serif', MARKER), ('Inter, "Helvetica Neue", Arial, sans-serif', HAND)):
+    assert old in s, old
+    s = s.replace(old, new)
+rep(
+    '        await document.fonts.load("600 82px Inter");',
+    f"        await Promise.all([`400 82px {MARKER}`, `400 40px {HAND}`, `700 40px {HAND}`].map((font) => document.fonts.load(font)));",
+)
 
 assert "COVER_CROPS" not in s and "coverAtlas" not in s and "SPREAD_COUNT" not in s and "PAGINATED_LEAF_COUNT" not in s
 open(OUT, "w").write(s)

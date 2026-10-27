@@ -20,7 +20,9 @@ against the original source text, and the script is the full list of changes:
   the relief
 - the open book: page stacks as thick as the real leaves, the left board drops to table level,
   the spine flattens and every leaf bends down to the same point of the spine
-- orbit limits, URL hooks (`openBook`, `onSpreadChange`), UI copy through `callbacks.t` (English and Spanish, `../i18n.js`)
+- orbit limits, URL hooks (`openBook`, `onSpreadChange`; a link to a sketchnote shows the cover, opens on the title page,
+  then turns to it), `onBookCorner` (the open book's top-right corner on screen, for the close button), UI copy through `callbacks.t` (English and Spanish, `../i18n.js`)
+- handwritten type like the sketchnotes: Permanent Marker for titles, Kalam for small text (Google Fonts)
 
 To regenerate:
 
